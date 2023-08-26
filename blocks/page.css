@@ -1,0 +1,23 @@
+.page {
+  background-color: black;
+  color: white;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.page__content {
+  margin: 0 200px 0 200px;
+}
+
+.header {
+  margin: 45px 0 0 0;
+  max-width: 880px;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas: "little button" "description description";
+}
