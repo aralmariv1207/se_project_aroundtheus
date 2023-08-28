@@ -1,12 +1,6 @@
-.page {
-  background-color: black;
-  color: white;
-}
-
-.page__content {
-  margin: 0 200px 0 200px;
-}
-
-.header {
-  margin: 45px 0 0 0;
-}
+@import url("../vendor/normalize.css");
+@import url("../vendor/fonts.css");
+@import url("../blocks/page.css");
+@import url("../blocks/content.css");
+@import url("../blocks/card.css");
+@import url("../blocks/gallery.css");
