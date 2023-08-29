@@ -12,7 +12,7 @@
 
 .profile__info {
   display: grid;
-  grid-template-areas: "little button" "description description";
+  grid-template-areas: "title button" "description description";
   grid-template-columns: minmax(auto, 373px) auto;
 }
 
@@ -55,6 +55,13 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
+}
+
+.footer__copyright {
+  width: 218px;
+  height: 18px;
+  margin: 1139px 0 200px 0;
+  color: gray;
 }
 
 @media screen and (max-width: 480px) {

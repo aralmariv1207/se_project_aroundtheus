@@ -18,6 +18,12 @@
   margin: 0;
 }
 
+.card__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .card__image {
   width: 282px;
   height: 282px;
@@ -32,15 +38,12 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   max-width: 373px;
   margin: 0;
 }
 
 .card__like-button {
-  background: transparent url(..images/like-inactive.svg) center no-repeat;
+  background: transparent url(../images/heart-icon_.svg) center no-repeat;
   width: 21px;
   height: 18px;
 }
