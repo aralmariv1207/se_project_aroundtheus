@@ -20,6 +20,7 @@
   background: transparent url(../images/edit-button_vector.svg) center no-repeat;
   height: 24px;
   width: 24px;
+  border: 1px solid #fff;
 }
 
 .profile__add-button {
@@ -27,6 +28,7 @@
   width: 150px;
   height: 50px;
   margin-left: auto;
+  border: 2px solid #fff;
 }
 
 .profile__title {
@@ -58,11 +60,10 @@
 }
 
 .footer {
-  margin: 0;
 }
 
 .footer__copyright {
-  width: 218px;
+  width: 318px;
   height: 18px;
   margin: 1139px 0 200px 0;
   color: gray;
