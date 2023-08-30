@@ -48,3 +48,27 @@
   width: 21px;
   height: 18px;
 }
+
+@media screen and (max-width: 480px) {
+  .profile {
+    background-color: color;
+    flex-direction: column;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    width: 100%;
+    margin: 0;
+  }
+}

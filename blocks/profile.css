@@ -20,7 +20,7 @@
   height: 24px;
   width: 24px;
   border: 1px solid #fff;
-  margin: auto;
+  margin-left: auto;
 }
 
 .profile__add-button {
@@ -28,7 +28,7 @@
   max-width: 880px;
   width: 150px;
   height: 50px;
-  margin: 0;
+  margin-left: auto;
   border: 2px solid #fff;
   flex-shrink: 0;
 }
