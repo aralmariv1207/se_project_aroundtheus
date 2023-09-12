@@ -47,6 +47,10 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
+  max-width: 880px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -55,6 +59,7 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  max-width: 880px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
