@@ -10,7 +10,7 @@
 
 - [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
 
-- [Link to project on GH Pages](https://github.com/aralmariv1207/se_project_aroundtheus.git)
+- [Link to project on GH Pages](https://aralmariv1207.github.io/se_project_aroundtheus/)
 
 Based on the Figma design provided, this is the third project of the Software Engineering bootcamp at TripleTen.
 
