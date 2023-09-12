@@ -12,7 +12,6 @@
   grid-template-areas: "title button" "description description";
   grid-template-columns: minmax(auto, 373px) auto;
   gap: 18px;
-  margin: auto;
 }
 
 .profile__edit-button {
