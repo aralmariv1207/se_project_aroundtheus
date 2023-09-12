@@ -24,6 +24,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 880px;
 }
 
 .card__image {
@@ -48,6 +49,11 @@
   background: transparent url(../images/heart-icon_vector.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  border: none;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
