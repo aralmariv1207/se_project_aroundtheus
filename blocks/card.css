@@ -1,24 +1,9 @@
-.cards {
-  margin: 30px auto 0 auto;
-  max-width: 880px;
-}
-
 .card {
   display: flex;
   flex-direction: column;
   list-style: none;
   border-radius: 10px;
   overflow: hidden;
-}
-
-.cards__list {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  max-width: 880px;
-  padding: 0;
-  margin: 0 auto;
 }
 
 .card__title {
