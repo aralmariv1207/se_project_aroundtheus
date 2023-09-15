@@ -91,6 +91,7 @@
   .profile__title {
     font-size: 22px;
     line-height: normal;
+    max-width: 240px;
   }
 
   .profile__description {
