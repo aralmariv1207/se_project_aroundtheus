@@ -46,7 +46,7 @@
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
-  margin: 0;
+  margin: 40px 0 0 0;
   max-width: 373px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -58,7 +58,7 @@
   line-height: 22px;
   font-weight: 400;
   grid-area: description;
-  margin: 0;
+  margin: 0 0 51px 0;
   max-width: 373px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -107,7 +107,7 @@
   }
 
   .profile__add-button {
-    margin: 0;
+    margin: 36px 0 0 0;
     width: 282px;
     height: 50px;
   }
