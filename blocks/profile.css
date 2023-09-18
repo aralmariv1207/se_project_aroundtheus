@@ -72,11 +72,6 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
-}
-
-.ellipse {
-  width: 120px;
-  height: 120px;
   fill: #c4c4c4;
 }
 
