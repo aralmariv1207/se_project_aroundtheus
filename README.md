@@ -14,7 +14,7 @@
 
 Based on the Figma design provided, this is the third project of the Software Engineering bootcamp at TripleTen.
 
-It was made not only with HTML and CSS but also with its elements displayed on popular screen sizes.
+It was made not only with HTML and CSS but also with its elements displayed on popular screen sizes (e.g., desktop and mobile screen resolutions).
 
 **Project Features**
 
@@ -22,7 +22,7 @@ It was made not only with HTML and CSS but also with its elements displayed on p
 - Flexbox
 - Positioning
 - Flat BEM File Structure
-- Media Files
+- Media Queries
 - Figma
 - Images
 
