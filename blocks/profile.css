@@ -86,6 +86,7 @@
 
   .profile__image {
     margin-bottom: 26.25px;
+    margin-right: 0;
   }
 
   .profile__info {
