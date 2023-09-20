@@ -81,7 +81,11 @@
     background-color: black;
     color: white;
     flex-direction: column;
-    gap: 0;
+    margin-top: 42px;
+  }
+
+  .profile__image {
+    margin-bottom: 26.25px;
   }
 
   .profile__info {
@@ -89,7 +93,6 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    margin: 30px 0 36px;
     align-items: center;
   }
 
@@ -108,10 +111,12 @@
     max-width: 373px;
     font-size: 14px;
     line-height: normal;
+    margin-top: 14px;
   }
 
   .profile__add-button {
-    margin: 36px 0 0 0;
+    margin-top: 36px;
+    margin-right: 19px;
     width: 282px;
     height: 50px;
   }
@@ -119,5 +124,6 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
+    margin-right: 10px;
   }
 }
