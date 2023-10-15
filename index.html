@@ -133,14 +133,27 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
       </footer>
+
       <div class="modal" id="profile-edit-modal">
         <div class="modal__container">
-          <button class="modal__close"></button>
+          <button class="modal__close" type="button"></button>
           <p class="modal__heading">Edit Profile</p>
           <form class="modal__form">
-            <input type="text" name="title" />
-            <input type="text" name="description" />
-            <button class="modal__button">Save</button>
+            <input
+              class="modal__input"
+              name="name"
+              id="profile-title-input"
+              placeholder="Name"
+              type="text"
+            />
+            <input
+              class="modal__input"
+              name="description"
+              placeholder="Description"
+              type="text"
+            />
+
+            <button class="button modal__button" type="submit">Save</button>
           </form>
         </div>
       </div>
