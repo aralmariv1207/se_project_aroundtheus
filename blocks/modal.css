@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   padding: 0 19px;
-  display: none;
+  display: flex;
 }
 
 .modal_opened {
