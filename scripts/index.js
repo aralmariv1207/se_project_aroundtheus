@@ -40,7 +40,7 @@ const profileDescriptionInput = document.querySelector("#profile-title-input");
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 
-function closePopop() {
+function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
