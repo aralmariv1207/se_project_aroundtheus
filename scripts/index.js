@@ -30,6 +30,69 @@ const initialCards = [
   },
 ];
 
+<template id="card-template">
+  <ul class="cards__list">
+    <li class="card">
+      <img
+        src="./images/yosemite.jpg"
+        alt="Yosemite Valley Image"
+        class="card__image"
+      />
+      <div class="card__description">
+        <h2 class="card__title">Yosemite Valley</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+    <li class="card">
+      <img
+        src="./images/lake-louise.jpg"
+        alt="Lake Louise Image"
+        class="card__image"
+      />
+      <div class="card__description">
+        <h2 class="card__title">Lake Louise</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+    <li class="card">
+      <img
+        src="./images/bald-mountains.jpg"
+        alt="Bald Mountains Image"
+        class="card__image"
+      />
+      <div class="card__description">
+        <h2 class="card__title">Bald Mountains</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+    <li class="card">
+      <img src="./images/latemar.jpg" alt="Latemar Image" class="card__image" />
+      <div class="card__description">
+        <h2 class="card__title">Latemar</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+    <li class="card">
+      <img
+        src="./images/vanoise.jpg"
+        alt="Vanoise National Park Image"
+        class="card__image"
+      />
+      <div class="card__description">
+        <h2 class="card__title">Vanoise National Park</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+    <li class="card">
+      <img src="./images/lago.jpg" alt="Lago di Braies" class="card__image" />
+      <div class="card__description">
+        <h2 class="card__title">Lago di Braies</h2>
+        <button type="button" class="card__like-button" aria-label></button>
+      </div>
+    </li>
+  </ul>
+</template>;
+
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
