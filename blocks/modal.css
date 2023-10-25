@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   padding: 0 19px;
-  display: flex;
+  display: none;
 }
 .modal__heading {
   width: 330px;
@@ -99,7 +99,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     padding: 0 19px;
-    display: flex;
+    display: none;
   }
   .modal__heading {
     width: 330px;
