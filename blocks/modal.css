@@ -29,6 +29,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border-top: #000;
+  border-left: #000;
+  border-right: #000;
 }
 
 .modal__button {
