@@ -35,7 +35,9 @@
           </div>
           <button type="button" class="profile__add-button" aria-label></button>
         </section>
-        <section class="cards page__section"></section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
       </main>
 
       <div class="modal" id="profile-edit-modal">
@@ -65,21 +67,15 @@
         </div>
       </div>
 
-      <ul class="cards__list">
-        <template id="card-template">
-          <li class="card">
-            <img src="" alt="" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title"></h2>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label
-              ></button>
-            </div>
-          </li>
-        </template>
-      </ul>
+      <template id="card-template">
+        <li class="card">
+          <img src="" alt="" class="card__image" />
+          <div class="card__description">
+            <h2 class="card__title"></h2>
+            <button type="button" class="card__like-button" aria-label></button>
+          </div>
+        </li>
+      </template>
 
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
