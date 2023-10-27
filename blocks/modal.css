@@ -81,7 +81,6 @@
 .modal__form {
   width: 430px;
   height: 330px;
-  flex-shrink: 0;
   border-radius: 10px;
   background: #fff;
 }
