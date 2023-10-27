@@ -42,13 +42,13 @@
   color: #fff;
 }
 
-.modal_opened {
-  display: flex;
-}
-
-.modal_opened:hover {
+.modal__button:hover {
   opacity: 0.6px;
   cursor: pointer;
+}
+
+.modal_opened {
+  display: flex;
 }
 
 .modal__container {
@@ -57,11 +57,6 @@
   background-color: #fff;
   margin: auto;
   border-radius: 10px;
-}
-
-.modal__container:hover {
-  opacity: 0.6px;
-  cursor: pointer;
 }
 
 .modal__close {
@@ -84,12 +79,12 @@
 }
 
 .modal__form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
+  width: 430px;
+  height: 330px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (max-width: 480px) {
