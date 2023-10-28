@@ -48,7 +48,7 @@
 }
 
 .modal__button:hover {
-  opacity: 0.6px;
+  opacity: 0.6;
   cursor: pointer;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .modal__close:hover {
-  opacity: 0.6px;
+  opacity: 0.6;
   cursor: pointer;
 }
 
