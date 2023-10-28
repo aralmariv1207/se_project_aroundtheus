@@ -29,9 +29,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-top: #000;
   border-left: #000;
   border-right: #000;
+  margin-top: 29.74px;
+  margin-bottom: 43px;
 }
 
 .modal__button {
@@ -40,6 +44,7 @@
   border-radius: 2px;
   background: #000;
   color: #fff;
+  margin-top: 61.34px;
 }
 
 .modal__button:hover {
