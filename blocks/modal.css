@@ -93,6 +93,7 @@
   .modal__form {
     width: 282px;
     height: 100%;
+    overflow: hidden;
   }
 
   .modal__close {
@@ -100,5 +101,9 @@
     height: 26px;
     fill: #fff;
     margin-bottom: 13.62px;
+  }
+
+  .modal__button {
+    position: absolute;
   }
 }
