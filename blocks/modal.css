@@ -92,7 +92,7 @@
 @media screen and (max-width: 480px) {
   .modal__form {
     width: 282px;
-    height: 322px;
+    height: 100%;
   }
 
   .modal__close {
