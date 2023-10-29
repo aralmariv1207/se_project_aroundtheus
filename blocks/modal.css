@@ -90,10 +90,13 @@
 }
 
 @media screen and (max-width: 480px) {
+  .modal__container {
+    overflow: hidden;
+  }
+
   .modal__form {
     width: 282px;
     height: 100%;
-    overflow: hidden;
   }
 
   .modal__close {
