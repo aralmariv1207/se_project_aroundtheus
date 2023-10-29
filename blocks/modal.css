@@ -104,6 +104,7 @@
     height: 26px;
     fill: #fff;
     margin-bottom: 13.62px;
-    position: absolute;
+    bottom: calc(100% + 1px);
+    left: calc(100% + 1px);
   }
 }
