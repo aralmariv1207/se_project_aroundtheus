@@ -44,7 +44,6 @@
   border-radius: 2px;
   background: #000;
   color: #fff;
-  margin-top: 61.34px;
 }
 
 .modal__button:hover {
@@ -85,10 +84,21 @@
 
 .modal__form {
   width: 430px;
-  height: 330px;
+  height: 100%;
   border-radius: 10px;
   background: #fff;
 }
 
 @media screen and (max-width: 480px) {
+  .modal__form {
+    width: 282px;
+    height: 322px;
+  }
+
+  .modal__close {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+    margin-bottom: 13.62px;
+  }
 }
