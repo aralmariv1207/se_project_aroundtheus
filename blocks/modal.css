@@ -90,10 +90,20 @@
 }
 
 @media screen and (max-width: 320px) {
+  .modal__heading {
+    margin-bottom: 50px;
+  }
+
+  .modal__input {
+    margin-top: 40px;
+  }
+
   .modal__close {
     height: 26px;
     fill: #fff;
     margin-bottom: 13.62px;
     margin-right: 18.62px;
+    bottom: calc(100% + 10px);
+    left: calc(100% + -30px);
   }
 }
