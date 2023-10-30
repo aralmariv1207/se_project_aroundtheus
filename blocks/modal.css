@@ -103,7 +103,7 @@
     fill: #fff;
     margin-bottom: 13.62px;
     margin-right: 18.62px;
-    bottom: calc(100% + 10px);
-    left: calc(100% + -30px);
+    left: calc(100% - 40px);
+    bottom: calc(100% + 20px);
   }
 }
