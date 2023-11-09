@@ -67,21 +67,65 @@
         </div>
       </div>
 
-      <template id="card-template">
-        <li class="card">
-          <img src="" alt="" class="card__image" />
-          <div class="card__description">
-            <h2 class="card__title"></h2>
-            <button type="button" class="card__like-button" aria-label></button>
-          </div>
-        </li>
-      </template>
+     <!-- Edit modal -->
 
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
-      </footer>
+<div class="modal" id="edit-modal">
+  <div class="modal__content">
+  <button class="modal_close" type="button>
+  <h3 class="modal__form" id="edit-profile-form"></h3>
+  <input
+  class="modal__input modal__input_type_name"
+  name="name"
+  placeholder="Name"
+  type="text"
+  />
+  
+  <input
+  class="modal__input modal__input_type_description"
+  name="description"
+  placeholder="Description"
+  type="text"
+  />
+  
+  <button class="button modal__button" type="submit">Save</button>
+  </div>
+  </div>
+  
+  <!-- Add a card modal -->
+  
+  <div class="modal" id="add-card-modal">
+  <div class="modal__content">
+  <button class="modal__close" type="button"></button>
+  <h3 class="modal__title">New Place</h3>
+  <form class="modal__form" id="add-card-form">
+  <input class="modal__input modal__input_type_title"
+  name="title"
+  placeholder="Title"
+  type="text"
+  />
+  
+  <input class="modal__input modal__input_type_url"
+  name="url"
+  placeholder="Image URL"
+  type="text"
+  />
+  
+  <button class="button modal__button" type="submit">Save</button>
+  </form>
+  </div>
+  </div>
+  </div>
 
-      <script src="./scripts/index.js" defer></script>
-    </div>
+  <script defer src="./scripts/index.js></script>
+  
+  <template id="card-template">
+  <li class="card">
+  <img class="card__image" src="" alt="" />
+  <div class="card__description">
+  <h2 class="card__title"></h2>
+  <button class="card__like-button" type="button"></button>
+  </div>
+  </li>
+  </template>
   </body>
-</html>
+  </html>
