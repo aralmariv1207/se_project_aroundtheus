@@ -42,9 +42,9 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 )
 
-const profileEditForm = profileEditModal.querySelector(".modal__form") {
+const profileEditForm = profileEditModal.querySelector(".modal__form") 
 const cardListEl = document.querySelector(".cards__list")
-}
+
 
 // Functions //
 
@@ -97,11 +97,8 @@ const profileFormElement = editProfileModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 // Buttons and other DOM nodes
-const profileEditButton = document.querySelector(".profile__edit-button");
 const profileModalCloseButton = editProfileModal.querySelector(".modal__close");
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
-const profileTitle = document.querySelector(".profile__title");
-const profileDescription = document.querySelector(".profile__description");
 const addNewCardButton = document.querySelector(".profile__add-button");
 
 // Form data //
