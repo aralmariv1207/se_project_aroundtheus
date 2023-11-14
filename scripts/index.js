@@ -83,11 +83,6 @@ profileEditCloseButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.append(cardElement);
-});
-
 // Wrappers
 const cardsWrap = document.querySelector(".cards__list");
 const editProfileModal = document.querySelector("#edit-modal");
@@ -112,11 +107,11 @@ const cardTitleInput = addCardFormElement.querySelector(
 const CardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+  modal.classList.remove("modal__opened");
 }
 
 function openModal(modal) {
-  modal.classList.add("modal_opened");
+  modal.classList.add("modal__opened");
 }
 
 function renderCard(cardData, wrapper) {
@@ -175,5 +170,5 @@ addCardModalCloseButton.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => {
-  cardsWrap.prepend(getCardElement(cardData));
+  cardsWrap.append(getCardElement(cardData));
 });
