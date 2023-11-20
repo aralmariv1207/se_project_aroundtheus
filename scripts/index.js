@@ -142,6 +142,11 @@ function getCardElement(data) {
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
 
+  cardImage.addEventListener("click", () => {
+    cardImage.classList.toggle("modal__preview-image");
+    openModal(previewImageModal);
+  });
+
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
