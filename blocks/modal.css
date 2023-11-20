@@ -89,6 +89,10 @@
   background: #fff;
 }
 
+.modal__preview-container {
+  background: url("../images/");
+}
+
 @media screen and (max-width: 550px) {
   .modal__heading {
     margin-bottom: 50px;
