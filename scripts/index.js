@@ -141,6 +141,7 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+  const previewImageModal = document.querySelector(".modal__preview-container");
 
   cardImage.addEventListener("click", () => {
     cardImage.classList.toggle("modal__preview-image");
