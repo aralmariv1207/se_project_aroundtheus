@@ -96,13 +96,9 @@
 }
 
 .modal__preview-image {
-  width: 75vw;
-  height: 75vh;
-}
-
-.modal__preview-image:hover {
-  opacity: 0.6;
-  cursor: pointer;
+  max-width: 75vw;
+  max-height: 75vh;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 @media screen and (max-width: 550px) {

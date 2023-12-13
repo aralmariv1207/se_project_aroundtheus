@@ -153,6 +153,11 @@ function getCardElement(data) {
     openModal(previewImageModal);
   });
 
+  cardImage.addEventListener("click", () => {
+    previewImageElement.src = data.link;
+    closeModal(previewImageModal);
+  });
+
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
