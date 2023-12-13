@@ -147,12 +147,13 @@ function getCardElement(data) {
   const previewImageElement = previewImageModal.querySelector(
     ".modal__preview-image"
   );
+
   const previewModalCloseButton = previewImageElement.querySelector(
     ".modal__preview-image"
   );
 
   previewModalCloseButton.addEventListener("click", () => {
-    closeModal(previewModalCloseButton);
+    closeModal(previewImageModal);
   });
 
   cardImage.addEventListener("click", () => {
