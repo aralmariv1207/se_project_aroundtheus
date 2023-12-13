@@ -142,6 +142,7 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+
   const previewImageModal = document.querySelector("#image-preview-modal");
   const previewImageElement = document.querySelector("#image-preview-modal");
   const previewImageElment = previewImageModal.querySelector(
