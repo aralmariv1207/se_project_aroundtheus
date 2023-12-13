@@ -7,7 +7,10 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   padding: 0 19px;
-  display: none;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 .modal__heading {
   width: 100%;
@@ -53,6 +56,8 @@
 
 .modal_opened {
   display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -98,7 +103,6 @@
 .modal__preview-image {
   max-width: 75vw;
   max-height: 75vh;
-  transition: visibility 0s, opacity 0.5s linear;
 }
 
 @media screen and (max-width: 550px) {
