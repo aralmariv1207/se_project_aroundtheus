@@ -91,6 +91,8 @@
 
 .modal__preview-container {
   background: url("../images/");
+  width: 75vw;
+  height: 75vh;
 }
 
 @media screen and (max-width: 550px) {
