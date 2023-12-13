@@ -147,15 +147,17 @@ function getCardElement(data) {
   const previewImageElement = previewImageModal.querySelector(
     ".modal__preview-image"
   );
+  const previewModalCloseButton = previewImageElement.querySelector(
+    ".modal__preview-image"
+  );
 
-  cardImage.addEventListener("click", () => {
-    previewImageElement.src = data.link;
-    openModal(previewImageModal);
+  previewModalCloseButton.addEventListener("click", () => {
+    closeModal(previewModalCloseButton);
   });
 
   cardImage.addEventListener("click", () => {
     previewImageElement.src = data.link;
-    closeModal(previewImageModal);
+    openModal(previewImageModal);
   });
 
   likeButton.addEventListener("click", () => {
