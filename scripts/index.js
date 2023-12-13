@@ -148,9 +148,8 @@ function getCardElement(data) {
     ".modal__preview-image"
   );
 
-  const previewModalCloseButton = previewImageModal.querySelector(
-    ".modal__preview-image"
-  );
+  const previewModalCloseButton =
+    previewImageModal.querySelector(".modal__close");
 
   previewModalCloseButton.addEventListener("click", () => {
     closeModal(previewImageModal);
