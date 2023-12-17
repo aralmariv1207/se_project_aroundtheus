@@ -142,6 +142,9 @@ function getCardElement(data) {
   const previewImageElement = previewImageModal.querySelector(
     ".modal__preview-image"
   );
+  const previewModalCaption = previewImageElement.querySelector(
+    "modal__preview-image"
+  );
 
   const previewModalCloseButton =
     previewImageModal.querySelector(".modal__close");
@@ -151,18 +154,19 @@ function getCardElement(data) {
   });
 
   cardImage.addEventListener("click", () => {
+    previewModalCaption.textContent.data.name;
     previewImageElement.src = data.link;
     openModal(previewImageModal);
   });
 
-  const previewModalCardImageCaption = previewImageModal.querySelector(
-    ".modal__preview-image"
-  );
+  // const previewModalCardImageCaption = previewImageModal.querySelector(
+  //   ".modal__preview-image"
+  // );
 
-  previewModalCardImageCaption.addEventListener("click", () => {
-    previewModalCardImageCaption.src = data.link;
-    previewModalCardImageCaption(previewImageModal);
-  });
+  // previewModalCardImageCaption.addEventListener("click", () => {
+  //   previewModalCardImageCaption.src = data.link;
+  //   previewModalCardImageCaption(previewImageModal);
+  // });
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
