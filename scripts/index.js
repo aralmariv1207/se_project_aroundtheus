@@ -34,8 +34,6 @@ const initialCards = [
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const nameInput = profileEditModal.querySelector(".modal__input");
-const jobInput = profileEditModal.querySelector(".modal__input");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
@@ -50,38 +48,22 @@ const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
-// Functions //
 
-function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
-}
-function getCardElement(cardData) {
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  return cardElement;
-}
+const previewImageModal = document.querySelector("#image-preview-modal");
+const previewImageElement = previewImageModal.querySelector(
+  ".modal__preview-image"
+);
+const previewModalCaption = document.querySelector(".modal__caption");
 
-// Event Handlers //
+const previewModalCloseButton =
+  previewImageModal.querySelector(".modal__close");
 
-function handleProfileEditSubmit(e) {
-  e.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
-}
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewImageModal);
 
 // Event Listeners //
 
-profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
-});
-
-profileEditCloseButton.addEventListener("click", closePopup);
+profileEditCloseButton.addEventListener("click", closeModal);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
@@ -137,25 +119,19 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
-
-  const previewImageModal = document.querySelector("#image-preview-modal");
-  const previewImageElement = previewImageModal.querySelector(
-    ".modal__preview-image"
-  );
-  const previewModalCaption = document.querySelector(".modal__caption");
-
-  const previewModalCloseButton =
-    previewImageModal.querySelector(".modal__close");
-
-  previewModalCloseButton.addEventListener("click", () => {
-    closeModal(previewImageModal);
-  });
+  };
 
   cardImage.addEventListener("click", () => {
     previewModalCaption.textContent = data.name;
     previewImageElement.src = data.link;
+    Yosemite Valley.previewImageElement = data.name;
+    Lake Louise.previewImageElement = data.name;
+    Bald Mountains.previewImageElement = data.name;
+    Latemar.previewImageElement = data.name;
+    Vanoise National Park.previewImageElement = data.name;
+    Lago di Braies.previewImageElement = data.name;
     openModal(previewImageModal);
-  });
+    });
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -176,8 +152,6 @@ function getCardElement(data) {
 // Form Listeners //
 
 profileEditModal.addEventListener("submit", handleProfileFormSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
-
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
