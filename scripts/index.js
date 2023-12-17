@@ -157,15 +157,6 @@ function getCardElement(data) {
     openModal(previewImageModal);
   });
 
-  // const previewModalCardImageCaption = previewImageModal.querySelector(
-  //   ".modal__preview-image"
-  // );
-
-  // previewModalCardImageCaption.addEventListener("click", () => {
-  //   previewModalCardImageCaption.src = data.link;
-  //   previewModalCardImageCaption(previewImageModal);
-  // });
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
