@@ -143,7 +143,7 @@ function getCardElement(data) {
     ".modal__preview-image"
   );
   const previewModalCaption = previewImageElement.querySelector(
-    "modal__preview-image"
+    ".modal__preview-image"
   );
 
   const previewModalCloseButton =
