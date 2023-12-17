@@ -142,9 +142,7 @@ function getCardElement(data) {
   const previewImageElement = previewImageModal.querySelector(
     ".modal__preview-image"
   );
-  const previewModalCaption = previewImageElement.querySelector(
-    ".modal__preview-image"
-  );
+  const previewModalCaption = document.querySelector(".modal__caption");
 
   const previewModalCloseButton =
     previewImageModal.querySelector(".modal__close");
@@ -154,7 +152,7 @@ function getCardElement(data) {
   });
 
   cardImage.addEventListener("click", () => {
-    previewModalCaption.textContent.data.name;
+    previewModalCaption.textContent = data.name;
     previewImageElement.src = data.link;
     openModal(previewImageModal);
   });
