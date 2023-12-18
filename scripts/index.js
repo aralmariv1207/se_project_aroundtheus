@@ -87,7 +87,7 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
-function openModal(modal) {
+function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
