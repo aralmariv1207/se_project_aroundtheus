@@ -48,7 +48,6 @@ const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
-
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageElement = previewImageModal.querySelector(
   ".modal__preview-image"
@@ -60,19 +59,17 @@ const previewModalCloseButton =
 
 previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewImageModal);
+});
 
 // Event Listeners //
 
 profileEditCloseButton.addEventListener("click", closeModal);
-
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
 
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
-const previewImageModal = document.querySelector(".modal__preview-container");
 
 // Buttons and other DOM Nodes //
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
@@ -119,35 +116,29 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
-  };
-
-  cardImage.addEventListener("click", () => {
-    previewModalCaption.textContent = data.name;
-    previewImageElement.src = data.link;
-    Yosemite Valley.previewImageElement = data.name;
-    Lake Louise.previewImageElement = data.name;
-    Bald Mountains.previewImageElement = data.name;
-    Latemar.previewImageElement = data.name;
-    Vanoise National Park.previewImageElement = data.name;
-    Lago di Braies.previewImageElement = data.name;
-    openModal(previewImageModal);
-    });
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  deleteButton.addEventListener("click", () => {
-    deleteButton.classList.toggle("card__delete-button");
-    cardElement.remove();
-  });
-
-  cardImage.src = data.link;
-  cardImage.alt = data.name;
-  cardTitle.textContent = data.name;
-
-  return cardElement;
 }
+
+cardImage.addEventListener("click", () => {
+  previewModalCaption.textContent = data.name;
+  previewImageElement.src = data.link;
+  previewImageElement.textContent = data.name;
+  openModal(previewImageModal);
+});
+
+likeButton.addEventListener("click", () => {
+  likeButton.classList.toggle("card__like-button_active");
+});
+
+deleteButton.addEventListener("click", () => {
+  deleteButton.classList.toggle("card__delete-button");
+  cardElement.remove();
+});
+
+cardImage.src = data.link;
+cardImage.alt = data.name;
+cardTitle.textContent = data.name;
+
+return cardElement;
 
 // Form Listeners //
 
@@ -155,8 +146,8 @@ profileEditModal.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileDescription.textContent;
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 profileModalCloseButton.addEventListener("click", () =>
