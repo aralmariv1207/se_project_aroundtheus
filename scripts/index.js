@@ -61,12 +61,6 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewImageModal);
 });
 
-// Event Listeners //
-
-// profileEditCloseButton.addEventListener("click", () =>
-//   closeModal(profileEditModal)
-// );
-
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
 
@@ -122,7 +116,7 @@ function getCardElement(data) {
   cardImage.addEventListener("click", () => {
     previewModalCaption.textContent = data.name;
     previewImageElement.src = data.link;
-    previewImageElement.textContent = data.name;
+    previewImageElement.alt = data.name;
     openModal(previewImageModal);
   });
 
