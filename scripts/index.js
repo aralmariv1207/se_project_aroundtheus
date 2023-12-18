@@ -63,9 +63,9 @@ previewModalCloseButton.addEventListener("click", () => {
 
 // Event Listeners //
 
-profileEditCloseButton.addEventListener("click", () =>
-  closeModal(profileEditModal)
-);
+// profileEditCloseButton.addEventListener("click", () =>
+//   closeModal(profileEditModal)
+// );
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
@@ -127,11 +127,11 @@ function getCardElement(data) {
   });
 
   likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
+    likeButton.classList("card__like-button_active");
   });
 
   deleteButton.addEventListener("click", () => {
-    deleteButton.classList.toggle("card__delete-button");
+    deleteButton.classList("card__delete-button");
     cardElement.remove();
   });
 
