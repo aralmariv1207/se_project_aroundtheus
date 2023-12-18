@@ -75,7 +75,7 @@ const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 // Buttons and other DOM Nodes //
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
-// const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
+const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 
 const cardTitleInput = addCardFormElement.querySelector(
