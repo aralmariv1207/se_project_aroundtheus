@@ -116,29 +116,29 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+
+  cardImage.addEventListener("click", () => {
+    previewModalCaption.textContent = data.name;
+    previewImageElement.src = data.link;
+    previewImageElement.textContent = data.name;
+    openModal(previewImageModal);
+  });
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", () => {
+    deleteButton.classList.toggle("card__delete-button");
+    cardElement.remove();
+  });
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+  return cardElement;
 }
-
-cardImage.addEventListener("click", () => {
-  previewModalCaption.textContent = data.name;
-  previewImageElement.src = data.link;
-  previewImageElement.textContent = data.name;
-  openModal(previewImageModal);
-});
-
-likeButton.addEventListener("click", () => {
-  likeButton.classList.toggle("card__like-button_active");
-});
-
-deleteButton.addEventListener("click", () => {
-  deleteButton.classList.toggle("card__delete-button");
-  cardElement.remove();
-});
-
-cardImage.src = data.link;
-cardImage.alt = data.name;
-cardTitle.textContent = data.name;
-
-return cardElement;
 
 // Form Listeners //
 
