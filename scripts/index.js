@@ -121,12 +121,10 @@ function getCardElement(data) {
   });
 
   likeButton.addEventListener("click", () => {
-    likeButton.classList.add("card__like-button_active");
-    cardElement.add();
+    likeButton.classList.toggle("card__like-button_active");
   });
 
   deleteButton.addEventListener("click", () => {
-    deleteButton.classList.remove("card__delete-button");
     cardElement.remove();
   });
 
