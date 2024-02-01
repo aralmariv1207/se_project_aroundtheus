@@ -75,7 +75,6 @@ setEventListeners(formEl, options) {
 
 }
 
-
     // look for all inputs inside of form
     // loop through all inputs to see if all are valid
         // if input is not valid
