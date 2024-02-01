@@ -24,7 +24,7 @@ function checkInputValidity(formEl, inputEl, options) {
 }
 
 function hasInvalidInput(inputList) {
-    return !inputList.every(inputEl) => (inputEl.validity.valid);
+    return !inputList.every((inputEl) => inputEl.validity.valid);
 }
 
 function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
