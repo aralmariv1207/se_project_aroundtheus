@@ -105,6 +105,41 @@
   max-height: 75vh;
 }
 
+.modal__button_disabled {
+  width: 430px;
+  height: 330px;
+  top: 195px;
+  left: 425px;
+  radius: 10px;
+}
+
+/* "Error text field" */
+.modal__input_type_error {
+  /* layout */
+  width: 327px;
+  height: 38px;
+  top: 653px;
+  left: 107px;
+
+  /* typography */
+  font: inter;
+  weight: 400;
+  size: 18px;
+  line-height: 21.78px;
+
+  /* colors */
+  color: #000000;
+}
+
+.modal__error_visible {
+  width: 358px;
+  height: 44px;
+  top: 408px;
+  left: 107px;
+  border: 1px;
+  color: #ff0000;
+}
+
 @media screen and (max-width: 550px) {
   .modal__heading {
     margin-bottom: 50px;
