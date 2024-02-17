@@ -58,7 +58,7 @@ function disableButton(submitButtonSelector, config) {
 function setEventListeners(formEl, config) {
   const { inputSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButtonSelector = formEl.querySelector(".modal__form");
+  const submitButton = formEl.querySelector(".modal__button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, config);
