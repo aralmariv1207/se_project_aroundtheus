@@ -50,7 +50,7 @@ function enableButton(submitButton, config) {
 }
 
 // disableButton
-function disableButton(submitButton, config) {
+function disableButton(submitButtonSelector, config) {
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = true;
 }
