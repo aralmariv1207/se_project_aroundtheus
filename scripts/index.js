@@ -156,6 +156,7 @@ addCardModalCloseButton.addEventListener("click", () =>
   closeModal(addCardModal)
 );
 
-initialCards.forEach((cardData) => {
-  renderCard({ name, link }, cardsWrap);
+initialCards.forEach((card) => {
+  const cardData = { name: card.name, link: card.link };
+  renderCard(cardData, cardsWrap);
 });
