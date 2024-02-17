@@ -35,23 +35,11 @@ function checkInputValidity(formEl, inputEl, config) {
     });
     if (foundInvalid) {
       submitButton.classList.add(inactiveButtonClass);
-      return (submitButton.disabled = true);
+      submitButton.disabled = true;
+    } else {
+      submitButton.classList.remove(inactiveButtonClass);
+      submitButton.disabled = false;
     }
-
-    submitButton.classList.remove(inactiveButtonClass);
-    submitButton.disabled = false;
-  }
-
-  // enableButton
-  function enableButton(submitButton, config) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.enabled = true;
-  }
-
-  // disableButton
-  function disableButton(submitButtonSelector, config) {
-    submitButton.classList.remove(inactiveButtonClass);
-    submitButton.disabled = true;
   }
 
   function setEventListeners(formEl, config) {
