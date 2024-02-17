@@ -15,12 +15,12 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   errorMessageEl.classList.remove(errorClass);
 }
 
-function checkInputValidity(formEl, inputEl, options) {
+function checkInputValidity(formEl, inputEl, config) {
   if (!inputEl.validity.valid) {
-    return showInputError(formEl, inputEl, options);
+    return showInputError(formEl, inputEl, config);
   }
 
-  hideInputError(formEl, inputEl, options);
+  hideInputError(formEl, inputEl, config);
 }
 
 function hasInvalidInput(inputList) {
@@ -44,37 +44,37 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 }
 
 // enableButton
-function enableButton(submitButton, options) {
+function enableButton(submitButton, config) {
   submitButton.classList.add(inactiveButtonClass);
   submitButton.enabled = true;
 }
 
 // disableButton
-function disableButton(submitButton, options) {
+function disableButton(submitButton, config) {
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = true;
 }
 
-function setEventListeners(formEl, options) {
-  const { inputSelector } = options;
+function setEventListeners(formEl, config) {
+  const { inputSelector } = config;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".modal__form");
+  const submitButtonSelector = formEl.querySelector(".modal__form");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputEls, submitButton, options);
+      checkInputValidity(formEl, inputEl, config);
+      toggleButtonState(inputEls, submitButton, config);
     });
   });
 }
 
-function enableValidation(options) {
-  const formEls = [...document.querySelectorAll(options.formSelector)];
+function enableValidation(config) {
+  const formEls = [...document.querySelectorAll(config.formSelector)];
   formEls.forEach((formEl) => {
     formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
 
-    setEventListeners(formEl, options);
+    setEventListeners(formEl, config);
 
     // look for all inputs inside of form
     // loop through all inputs to see if all are valid
