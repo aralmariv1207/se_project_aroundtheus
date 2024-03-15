@@ -57,7 +57,10 @@
               maxlength="40"
               required
             />
-            <span id="profile-title-input-error" class="modal__input:invalid">
+            <span
+              id="profile-title-input-error"
+              class="modal__input_type_error"
+            >
             </span>
 
             <input
@@ -72,7 +75,7 @@
             />
             <span
               id="profile-description-input-error"
-              class="modal__input:invalid"
+              class="modal__input_type_error"
             >
             </span>
 
@@ -95,9 +98,11 @@
               type="text"
               required
             />
-            <span class="modal__input:invalid"> </span>
+            <span id="add-card-form-error" class="modal__input_type_error">
+            </span>
 
             <input
+              id="add-url"
               class="modal__input modal__input_type_url"
               name="url"
               placeholder="Image URL"
@@ -105,7 +110,7 @@
               required
             />
 
-            <span class="modal__input:invalid"> </span>
+            <span id="add-url-error" class="modal__input_type_error"> </span>
 
             <button class="button modal__button" type="submit">Save</button>
           </form>
