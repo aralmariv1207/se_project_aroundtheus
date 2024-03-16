@@ -115,7 +115,7 @@
 }
 
 /* This class applies to 'input element' when there is an error */
-.modal__input_type_error {
+.modal__error {
   border-bottom: 1px solid red;
 }
 
