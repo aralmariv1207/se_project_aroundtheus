@@ -67,6 +67,7 @@
   background-color: #fff;
   margin: auto;
   border-radius: 10px;
+  max-width: 430px;
 }
 
 .modal__close {
@@ -107,25 +108,22 @@
 }
 
 .modal__button_disabled {
-  width: 100%;
-  height: 50.152px;
-  border-radius: 2px;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 /* This class applies to 'input element' when there is an error */
-.modal__error {
-  border-bottom: 1px solid red;
-}
-
 .modal__error_visible {
   width: 358px;
   height: 44px;
   top: 408px;
   left: 107px;
-  border: 1px;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px;
   color: #ff0000;
+  margin: auto;
 }
 
 @media screen and (max-width: 550px) {

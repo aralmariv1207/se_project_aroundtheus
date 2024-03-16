@@ -57,7 +57,10 @@
               maxlength="40"
               required
             />
-            <span id="profile-title-input-error" class="modal__error">
+            <span
+              id="profile-title-input-error"
+              class="modal__error_visible modal__input_type_error"
+            >
             </span>
 
             <input
@@ -72,14 +75,15 @@
             />
             <span
               id="profile-description-input-error"
-              class="modal__error"
+              class="modal__error_visible modal__input_type_error"
             >
             </span>
 
             <button class="button modal__button" type="submit">Save</button>
           </form>
         </div>
-  
+      </div>
+
       <!-- Add-a-New-Card Modal -->
 
       <div class="modal" id="add-card-modal">
@@ -87,14 +91,19 @@
           <button class="modal__close" type="button"></button>
           <h3 class="modal__heading">New Place</h3>
           <form class="modal__form">
-            <input  id="add-card-form"
+            <input
+              id="add-card-form"
               class="modal__input modal__input__type"
               name="title"
               placeholder="Title"
               type="text"
               required
             />
-            <span id="add-card-form-error" class="modal__error"> </span>
+            <span
+              id="add-card-form-error"
+              class="modal__error_visible modal__input_type_error"
+            >
+            </span>
 
             <input
               id="add-url"
@@ -105,7 +114,11 @@
               required
             />
 
-            <span id="add-url-error" class="modal__error"> </span>
+            <span
+              id="add-url-error"
+              class="modal__error_visible modal__input_type_error"
+            >
+            </span>
 
             <button class="button modal__button" type="submit">Save</button>
           </form>
