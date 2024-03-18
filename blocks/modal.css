@@ -22,6 +22,7 @@
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin: 0 0 54px;
 }
 
 .modal__input {
@@ -38,8 +39,8 @@
   border-top: #000;
   border-left: #000;
   border-right: #000;
-  margin-top: 29.74px;
-  margin-bottom: 5px;
+  padding-bottom: 13px;
+  margin-bottom: 30px;
 }
 
 .modal__button {
@@ -48,6 +49,7 @@
   border-radius: 2px;
   background: #000;
   color: #fff;
+  margin-top: 18px;
 }
 
 .modal__button:hover {
@@ -117,14 +119,15 @@
   color: #ff0000;
   visibility: hidden;
   display: block;
-  margin-bottom: 43px;
 }
 .modal__error_visible {
   visibility: visible;
+  margin-bottom: 13px;
 }
 
 .modal__input_type_error {
   border-bottom: 1px solid red;
+  margin-bottom: 13px;
 }
 
 @media screen and (max-width: 550px) {
