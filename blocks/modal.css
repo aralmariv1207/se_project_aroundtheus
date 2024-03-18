@@ -39,7 +39,7 @@
   border-left: #000;
   border-right: #000;
   margin-top: 29.74px;
-  margin-bottom: 43px;
+  margin-bottom: 5px;
 }
 
 .modal__button {
@@ -68,6 +68,7 @@
   margin: auto;
   border-radius: 10px;
   max-width: 430px;
+  width: 100%;
 }
 
 .modal__close {
@@ -112,18 +113,18 @@
   color: #000;
 }
 
-/* This class applies to 'input element' when there is an error */
+.modal__error {
+  color: #ff0000;
+  visibility: hidden;
+  display: block;
+  margin-bottom: 43px;
+}
 .modal__error_visible {
-  width: 358px;
-  height: 44px;
-  top: 408px;
-  left: 107px;
+  visibility: visible;
 }
 
 .modal__input_type_error {
-  border-bottom: 1px;
-  color: #ff0000;
-  margin: auto;
+  border-bottom: 1px solid red;
 }
 
 @media screen and (max-width: 550px) {
