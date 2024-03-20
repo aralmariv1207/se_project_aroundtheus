@@ -77,6 +77,12 @@ function enableValidation(config) {
   });
 }
 
+function closeModalOverlay(event) {
+  if (event.target === event.currentTarget) closeModal(event.currentTarget);
+  modal.addEventListener("mousedown", closeModalOverlay);
+  modal_opened.addEventListener("mousedown", closeModalOverlay);
+}
+
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
