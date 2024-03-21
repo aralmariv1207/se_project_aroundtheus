@@ -160,3 +160,9 @@ initialCards.forEach((card) => {
   console.log(card);
   renderCard(card, cardsWrap);
 });
+
+function closeModalOverlay(event) {
+  if (event.target === event.currentTarget) closeModal(event.currentTarget);
+  modal.addEventListener("mousedown", closeModalOverlay);
+  modal_opened.addEventListener("mousedown", closeModalOverlay);
+}
