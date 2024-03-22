@@ -162,6 +162,9 @@ initialCards.forEach((card) => {
 });
 
 
+closeModalOverlay.addEventListener("click", () =>
+  closeModalOverlay(closeModalOverlay)
+);
 
 
 
