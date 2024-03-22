@@ -162,9 +162,6 @@ initialCards.forEach((card) => {
 });
 
 
-closeModalOverlay.addEventListener("click" () =>
-  closeModalOverlay(closeModalOverlay)
-);
 
 
 
@@ -173,7 +170,7 @@ closeModalOverlay.addEventListener("click" () =>
 const popups = ...;
 
 popups.forEach((popup) => {
-  popups.addEventListener("mousedown" () =>
+  popups.addEventListener("mousedown", () =>
   popups(handlePopupClose)
 );
 });
