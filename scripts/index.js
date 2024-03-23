@@ -161,21 +161,16 @@ initialCards.forEach((card) => {
   renderCard(card, cardsWrap);
 });
 
-
 closeModalOverlay.addEventListener("click", () =>
   closeModalOverlay(closeModalOverlay)
 );
 
-
-
 // Modal Overlay Closure //
 
-const popups = ...;
+const popups = [closeModal, closeModalOverlay];
 
 popups.forEach((popup) => {
-  popups.addEventListener("mousedown", () =>
-  popups(handlePopupClose)
-);
+  popups.addEventListener("mousedown", () => popups(handlePopupClose));
 });
 
 // This is the handler for the mousedown listener
