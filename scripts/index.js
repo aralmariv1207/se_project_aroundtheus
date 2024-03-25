@@ -164,7 +164,7 @@ initialCards.forEach((card) => {
 // Modal Overlay Closure //
 const closeModalOverlay = [profileEditModal, addCardModal];
 closeModalOverlay.forEach((modal) => {
-  addEventListener("mousedown");
+  addEventListener("mousedown", closeModalOverlay);
 });
 closeModalOverlay((modal) => {});
 
