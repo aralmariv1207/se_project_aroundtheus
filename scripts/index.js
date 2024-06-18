@@ -72,13 +72,16 @@ const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 
-const cardTitleInput = addCardFormElement.querySelector(
-  ".modal__input_type_title"
-);
-const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
+const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
+function closeModalThroughOverlay(modal) {
+  const 
+  console.log(closeModalThroughOverlay);
+}
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("click", closeModalThroughOverlay);
 }
 
 function closeModal(modal) {
@@ -99,6 +102,7 @@ function handleProfileFormSubmit(evt) {
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
+  console.log(cardTitleInput);
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardsWrap);
