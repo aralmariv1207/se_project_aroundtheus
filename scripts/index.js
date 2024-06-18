@@ -87,11 +87,12 @@ function closeModalByPressingESC(evt) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("click", closeModalByOverlay, closeModalByPressingESC);
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+  modal.classList.remove("modal_closed");
+  modal.addEventListener("click", closeModalByOverlay);
+  modal.addEventListener("press", closeModalByPressingESC);
 }
 
 function renderCard(cardData, wrapper) {
