@@ -80,18 +80,14 @@ function closeModalByOverlay(evt) {
   console.log(123);
 }
 
-function closeModalByPressingESCKey(evt) {
+function closeModalByPressingESC(evt) {
   closeModal(evt.currentTarget);
   console.log(123);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener(
-    "click",
-    closeModalByOverlay,
-    closeModalByPressingESCKey
-  );
+  modal.addEventListener("click", closeModalByOverlay, closeModalByPressingESC);
 }
 
 function closeModal(modal) {
