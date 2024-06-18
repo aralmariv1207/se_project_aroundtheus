@@ -85,15 +85,15 @@ function closeModalByPressingESC(evt) {
   console.log();
 }
 
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  console.log();
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("click", closeModalByOverlay);
   modal.addEventListener("keypress", closeModalByPressingESC);
-  console.log();
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_closed");
   console.log();
 }
 
