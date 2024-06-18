@@ -75,12 +75,12 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-function ABC() {
+function closeModalByOverlay() {
   console.log(123);
 }
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("click", ABC);
+  modal.addEventListener("click", closeModalByOverlay);
 }
 
 function closeModal(modal) {
