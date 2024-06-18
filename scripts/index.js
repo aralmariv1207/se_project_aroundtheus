@@ -76,7 +76,7 @@ const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 function closeModalByOverlay(evt) {
-  closeModal(evt.currentTarget);
+  closeModal(evt.target);
   console.log(123);
 }
 
@@ -92,7 +92,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_closed");
   modal.addEventListener("click", closeModalByOverlay);
-  modal.addEventListener("press", closeModalByPressingESC);
+  modal.addEventListener("keypress", closeModalByPressingESC);
 }
 
 function renderCard(cardData, wrapper) {
