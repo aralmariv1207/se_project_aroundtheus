@@ -75,7 +75,8 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-function closeModalByOverlay() {
+function closeModalByOverlay(evt) {
+  evt.currentTarget("modal_opened", "modal__close", "profile__add-button");
   console.log(123);
 }
 function openModal(modal) {
