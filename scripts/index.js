@@ -77,22 +77,24 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 function closeModalByOverlay(evt) {
   closeModal(evt.target);
-  console.log(123);
+  console.log();
 }
 
 function closeModalByPressingESC(evt) {
-  closeModal(evt.currentTarget);
-  console.log(123);
+  closeModal(evt.target);
+  console.log();
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("click", closeModalByOverlay);
+  modal.addEventListener("keypress", closeModalByPressingESC);
+  console.log();
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_closed");
-  modal.addEventListener("click", closeModalByOverlay);
-  modal.addEventListener("keypress", closeModalByPressingESC);
+  console.log();
 }
 
 function renderCard(cardData, wrapper) {
