@@ -76,7 +76,7 @@ const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 function closeModalByOverlay(evt) {
-  evt.currentTarget("modal_opened", "modal__close", "profile__add-button");
+  closeModal(evt.currentTarget);
   console.log(123);
 }
 function openModal(modal) {
