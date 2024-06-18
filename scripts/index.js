@@ -82,6 +82,7 @@ function closeModalByOverlay(evt) {
 
 function closeModalByPressingESC(evt) {
   closeModal(evt.target);
+  modal.classList.remove("modal_opened");
   console.log();
 }
 
