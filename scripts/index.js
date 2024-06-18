@@ -79,9 +79,19 @@ function closeModalByOverlay(evt) {
   closeModal(evt.currentTarget);
   console.log(123);
 }
+
+function closeModalByPressingESCKey(evt) {
+  closeModal(evt.currentTarget);
+  console.log(123);
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("click", closeModalByOverlay);
+  modal.addEventListener(
+    "click",
+    closeModalByOverlay,
+    closeModalByPressingESCKey
+  );
 }
 
 function closeModal(modal) {
