@@ -90,6 +90,7 @@ function closeModalByPressingESC(evt) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeModalByPressingESC);
+  modal.addEventListener("click", closeModalByOverlay);
   console.log();
 }
 
