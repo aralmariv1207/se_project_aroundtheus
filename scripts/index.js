@@ -83,8 +83,8 @@ function closeModalByPressingESC(evt) {
   }
 }
 
-function closeModalByOverlay() {
-  document.querySelector("modal_opened");
+function closeModalByOverlay(modal) {
+  modal.classList.add("modal_opened");
   document.addEventListener("click", closeModalByOverlay);
   console.log();
 }
