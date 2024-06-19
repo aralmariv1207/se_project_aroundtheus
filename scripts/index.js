@@ -76,14 +76,18 @@ const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 function closeModalByOverlay(evt) {
-  closeModal(evt.target);
-  console.log();
+  if (evt.key === "Overlay") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+    console.log();
+  }
 }
 
 function closeModalByPressingESC(evt) {
   if (evt.key === "Escape") {
     const modal = document.querySelector(".modal_opened");
     closeModal(modal);
+    console.log();
   }
 }
 
