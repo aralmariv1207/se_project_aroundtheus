@@ -81,20 +81,21 @@ function closeModalByOverlay(evt) {
 }
 
 function closeModalByPressingESC(evt) {
-  closeModal(evt.target);
-  modal.classList.remove("modal_opened");
+  closeModal(evt.target === "Escape");
+  const modal = document.querySelector(".modal_opened");
+  closeModal(modal);
   console.log();
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalByPressingESC);
   console.log();
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("click", closeModalByOverlay);
-  window.addEventListener("keypress", closeModalByPressingESC);
+  document.addEventListener("keydown", closeModalByPressingESC);
   console.log();
 }
 
