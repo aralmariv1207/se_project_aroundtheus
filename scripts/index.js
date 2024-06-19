@@ -75,14 +75,6 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-function closeModalByOverlay(evt) {
-  if (evt.key === "Overlay") {
-    const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
-    console.log();
-  }
-}
-
 function closeModalByPressingESC(evt) {
   if (evt.key === "Escape") {
     const modal = document.querySelector(".modal_opened");
@@ -91,15 +83,20 @@ function closeModalByPressingESC(evt) {
   }
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalByPressingESC);
+function closeModalByOverlay(evt) {
   console.log();
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalByPressingESC);
+  document.addEventListener("click", closeModalByOverlay);
+  console.log();
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalByPressingESC);
   console.log();
 }
 
