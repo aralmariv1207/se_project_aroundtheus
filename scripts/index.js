@@ -94,7 +94,7 @@ function closeModal(modal) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("click", closeModalByOverlay);
-  modal.addEventListener("keypress", closeModalByPressingESC);
+  window.addEventListener("keypress", closeModalByPressingESC);
   console.log();
 }
 
