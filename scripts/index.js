@@ -83,14 +83,15 @@ function closeModalByPressingESC(evt) {
   }
 }
 
-function closeModalByOverlay(evt) {
+function closeModalByOverlay() {
+  document.querySelector("modal_opened");
+  document.addEventListener("click", closeModalByOverlay);
   console.log();
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalByPressingESC);
-  document.addEventListener("click", closeModalByOverlay);
   console.log();
 }
 
