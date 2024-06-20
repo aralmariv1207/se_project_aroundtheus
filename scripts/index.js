@@ -88,10 +88,7 @@ function closeModalByPressingESC(evt) {
 }
 
 function closeModalByOverlay(evt) {
-  if (evt.key === "Overlay") {
-    const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
-  }
+  closeModal(evt.target);
 }
 
 function openModal(modal) {
