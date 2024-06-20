@@ -75,30 +75,33 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
+const modals = [addCardModal, profileEditModal, previewImageModal];
+modals.forEach((modal) => {
+  modal.addEventListener("click", closeModalByOverlay);
+});
+
 function closeModalByPressingESC(evt) {
   if (evt.key === "Escape") {
     const modal = document.querySelector(".modal_opened");
     closeModal(modal);
-    console.log();
   }
 }
 
-function closeModalByOverlay(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("click", closeModalByOverlay);
-  console.log();
+function closeModalByOverlay(evt) {
+  if (evt.key === "Overlay") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalByPressingESC);
-  console.log();
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeModalByPressingESC);
-  console.log();
 }
 
 function renderCard(cardData, wrapper) {
