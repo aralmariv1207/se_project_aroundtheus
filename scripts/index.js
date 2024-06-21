@@ -163,8 +163,6 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-closeButtons = document.querySelectorAll(".modal__opened");
-
 profileModalCloseButton.addEventListener("click", () =>
   closeModal(profileEditModal)
 );
