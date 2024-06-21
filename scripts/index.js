@@ -162,6 +162,9 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
+
+closeButtons = document.querySelectorAll(".modal__opened");
+
 profileModalCloseButton.addEventListener("click", () =>
   closeModal(profileEditModal)
 );
@@ -177,15 +180,3 @@ initialCards.forEach((card) => {
   console.log(card);
   renderCard(card, cardsWrap);
 });
-
-// Modal Overlay Closure //
-
-function closeModalOverlay() {
-  document.body.classList.remove("profile-edit-modal", "add-card-modal");
-  addEventListener("mousedown", () => modal(closeModalOverlay));
-}
-
-// This is the handler for the mousedown listener
-function modal(e) {
-  if (e.target === e.currentTarget) modal(e.currentTarget);
-}
