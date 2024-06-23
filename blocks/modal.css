@@ -126,12 +126,12 @@
 }
 .modal__error_visible {
   visibility: visible;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 .modal__input_type_error {
   border-bottom: 1px solid red;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 @media screen and (max-width: 550px) {
