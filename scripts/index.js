@@ -88,7 +88,7 @@ function closeModalByPressingESC(evt) {
 }
 
 function closeModalByOverlay(evt) {
-  if (evt.target.classList.contains(".modal")) {
+  if (evt.target.classList.contains("modal")) {
     closeModal(evt.target);
   }
 }
