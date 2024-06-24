@@ -124,6 +124,7 @@
   visibility: hidden;
   display: block;
 }
+
 .modal__error_visible {
   visibility: visible;
   margin-bottom: 12px;
