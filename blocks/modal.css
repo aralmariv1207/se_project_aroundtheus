@@ -127,12 +127,11 @@
 
 .modal__error_visible {
   visibility: visible;
-  margin-bottom: 12px;
-  position: absolute;
 }
 
 .modal__input_type_error {
   border-bottom: 1px solid red;
+  margin-top: 12px;
   margin-bottom: 12px;
 }
 
