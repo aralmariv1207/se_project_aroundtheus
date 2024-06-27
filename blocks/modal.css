@@ -124,8 +124,8 @@
   visibility: hidden;
   display: block;
   font-size: 12px;
-  line-height: 15px;
-  height: 15px;
+  line-height: 12px;
+  height: 12px;
 }
 
 .modal__error_visible {
@@ -134,7 +134,6 @@
 
 .modal__input_type_error {
   border-bottom: 1px solid red;
-  position: absolute;
 }
 
 .modal_label {
