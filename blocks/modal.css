@@ -123,6 +123,9 @@
   color: #ff0000;
   visibility: hidden;
   display: block;
+  font-size: 12px;
+  line-height: 15px;
+  height: 15px;
 }
 
 .modal__error_visible {
