@@ -131,8 +131,12 @@
 
 .modal__input_type_error {
   border-bottom: 1px solid red;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  position: absolute;
+}
+
+.modal_label {
+  position: relative;
+  width: 100%;
 }
 
 @media screen and (max-width: 550px) {

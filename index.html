@@ -84,30 +84,35 @@
           <button class="modal__close" type="button"></button>
           <h3 class="modal__heading">New Place</h3>
           <form class="modal__form">
-            <input
-              id="add-card-form"
-              class="modal__input"
-              name="title"
-              placeholder="Title"
-              type="text"
-              required
-            />
-            <span id="add-card-form-error" class="modal__error"
-              >Please fill out this field.</span
-            >
+            <label>
+              <input
+                id="add-card-form"
+                class="modal__input"
+                name="title"
+                placeholder="Title"
+                type="text"
+                required
+              />
 
-            <input
-              id="add-url"
-              class="modal__input"
-              name="url"
-              placeholder="Image URL"
-              type="url"
-              required
-            />
+              <span id="add-card-form-error" class="modal__error"
+                >Please fill out this field.</span
+              >
+            </label>
 
-            <span id="add-url-error" class="modal__error"
-              >Please enter a web address.</span
-            >
+            <label>
+              <input
+                id="add-url"
+                class="modal__input"
+                name="url"
+                placeholder="Image URL"
+                type="url"
+                required
+              />
+
+              <span id="add-url-error" class="modal__error"
+                >Please enter a web address.</span
+              >
+            </label>
 
             <button
               class="button modal__button modal__button_disabled"
