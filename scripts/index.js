@@ -32,7 +32,8 @@ const initialCards = [
   },
 ];
 
-const card = new Card(cardData);
+const card = new Card(initialCards, "#card-template");
+card.getView();
 
 // Elements //
 
