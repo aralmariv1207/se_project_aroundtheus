@@ -33,12 +33,8 @@ const initialCards = [
 ];
 
 function createCard(card) {
-  const card = new Card(initialCards, "#card-template");
-  return card.getView() {
-    this._imageElement = this._cardElement.querySelector(...);
-    this._titleElement = this.cardElement.querySelector(...);
-  
-  }
+  const cards = new Card(initialCards, "#card-template");
+  return card.getView();
 }
 
 // Elements //

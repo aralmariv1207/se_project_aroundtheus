@@ -37,10 +37,12 @@ export default class Card {
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
-      .content.querySelector(".card")
+      .content.querySelector(".cards")
       .cloneNode(true);
 
     // get the card view
+    this._imageElement = this._cardElement.querySelector(...);
+    this._titleElement = this.cardElement.querySelector(...);
 
     // set event listeners
     this._setEventListeners();
