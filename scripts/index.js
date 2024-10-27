@@ -32,8 +32,14 @@ const initialCards = [
   },
 ];
 
-const card = new Card(initialCards, "#card-template");
-card.getView();
+function createCard(card) {
+  const card = new Card(initialCards, "#card-template");
+  return card.getView() {
+    this._imageElement = this._cardElement.querySelector(...);
+    this._titleElement = this.cardElement.querySelector(...);
+  
+  }
+}
 
 // Elements //
 
@@ -130,7 +136,7 @@ function handleAddCardFormSubmit(evt) {
   addCardFormElement.reset();
 }
 
-function getCardElement(data) {
+function renderCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");

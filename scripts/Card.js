@@ -46,5 +46,6 @@ export default class Card {
     this._setEventListeners();
 
     // return the card
+    return this._cardElement;
   }
 }
