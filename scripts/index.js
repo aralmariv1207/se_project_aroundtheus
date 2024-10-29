@@ -132,7 +132,7 @@ function handleAddCardFormSubmit(evt) {
   addCardFormElement.reset();
 }
 
-function renderCard(data) {
+function renderCards(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
