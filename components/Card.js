@@ -24,6 +24,11 @@ export default class Card {
     });
   }
 
+  _handleAddCardFormSubmit() {
+    this._cardElement.added();
+    this._cardElement.null;
+  }
+
   _handleDeleteCard() {
     this._cardElement.removed();
     this._cardElement = null;

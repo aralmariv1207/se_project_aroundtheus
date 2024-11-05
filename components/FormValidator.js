@@ -1,3 +1,34 @@
+const FormValidator = {
+	inputSelector: ".input__selector";
+	inputClassName: "input__class",
+	buttonSelector: ".button__selector",
+	buttonClassName: "button__class"
+}
+
+export default class FormValidator {
+constructor (
+	{
+		inputSelector,
+		inputClassName,
+		buttonSelector,
+		buttonClassName
+		}, formSelector) {
+	}
+}
+
+_checkInputValidity() {
+
+}
+
+_toggleButtonSate() {
+
+}
+
+_setEventListeners() {
+  
+}
+
+
 // enabling validation by calling enableValidation()
 // passing all the settings on call
 
