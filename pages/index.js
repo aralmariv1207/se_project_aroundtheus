@@ -37,6 +37,14 @@ function createCard(card) {
   return card.getView();
 }
 
+const profitleEditFormValidator = new FormValidator(
+  inputSelector,
+  inputClassName,
+  buttonSelector,
+  buttonClassName,
+  formSelector
+);
+
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
