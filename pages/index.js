@@ -45,6 +45,10 @@ const profitleEditFormValidator = new FormValidator(
   formSelector
 );
 
+const createCard = (data) => {
+  return new Card(data, cardSelector, handleImageClick).getView();
+};
+
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
