@@ -32,7 +32,7 @@ const initialCards = [
   },
 ];
 
-function createCard(card) {
+function createNewCard(card) {
   const cards = new Card(initialCards, "#card-template");
   return card.getView();
 }
