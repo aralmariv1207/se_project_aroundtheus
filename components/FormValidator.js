@@ -1,28 +1,15 @@
 export default class FormValidator {
-constructor (
-	{
-		inputSelector,
-		inputClassName,
-		buttonSelector,
-		buttonClassName
-		}, formSelector) {
-	}
+  constructor(
+    { inputSelector, inputClassName, buttonSelector, buttonClassName },
+    formSelector
+  ) {}
 }
 
+_checkInputValidity();
 
+_toggleButtonSate();
 
-_checkInputValidity() {
-
-}
-
-_toggleButtonSate() {
-
-}
-
-_setEventListeners() {
-
-}
-
+_setEventListeners();
 
 // enabling validation by calling enableValidation()
 // passing all the settings on call
