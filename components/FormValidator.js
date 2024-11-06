@@ -1,5 +1,5 @@
 const FormValidator = {
-	inputSelector: ".input__selector";
+	inputSelector: ".input__selector",
 	inputClassName: "input__class",
 	buttonSelector: ".button__selector",
 	buttonClassName: "button__class"
@@ -16,6 +16,8 @@ constructor (
 	}
 }
 
+
+
 _checkInputValidity() {
 
 }
@@ -25,7 +27,7 @@ _toggleButtonSate() {
 }
 
 _setEventListeners() {
-  
+
 }
 
 
