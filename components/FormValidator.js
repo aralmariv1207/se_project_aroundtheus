@@ -1,10 +1,3 @@
-const FormValidator = {
-	inputSelector: ".input__selector",
-	inputClassName: "input__class",
-	buttonSelector: ".button__selector",
-	buttonClassName: "button__class"
-}
-
 export default class FormValidator {
 constructor (
 	{

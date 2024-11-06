@@ -1,6 +1,13 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
+const FormValidator = {
+  inputSelector: ".input__selector",
+  inputClassName: "input__class",
+  buttonSelector: ".button__selector",
+  buttonClassName: "button__class",
+};
+
 const initialCards = [
   {
     name: "Yosemite Valley",
