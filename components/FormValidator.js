@@ -2,14 +2,20 @@ export default class FormValidator {
   constructor(
     { inputSelector, inputClassName, buttonSelector, buttonClassName },
     formSelector
-  ) {}
+  ) {
+    this._inputSelector = inputSelector;
+    this._inputClassName = inputClassName;
+    this._buttonSelector = buttonSelector;
+    this._buttonClassName = buttonClassName;
+    this._formSelector = formSelector;
+  }
+
+  _checkInputValidity() {}
+
+  _toggleButtonSate() {}
+
+  _setEventListeners() {}
 }
-
-_checkInputValidity();
-
-_toggleButtonSate();
-
-_setEventListeners();
 
 // enabling validation by calling enableValidation()
 // passing all the settings on call
@@ -89,14 +95,3 @@ function enableValidation(config) {
     // reset error messages
   });
 }
-
-const config = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
-
-enableValidation(config);
