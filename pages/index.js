@@ -54,6 +54,9 @@ const config = {
 const editProfileFormValidator = new FormValidator(config, editForm);
 
 editProfileFormValidator.enableValidation();
+editProfileFormValidator.cardSelector();
+editProfileFormValidator.handleImageClick();
+editProfileFormValidator.editForm();
 
 // Elements //
 
