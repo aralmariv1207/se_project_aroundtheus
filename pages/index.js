@@ -38,13 +38,7 @@ function createNewCard(card) {
   return card.getView();
 }
 
-const profitleEditFormValidator = new FormValidator(
-  inputSelector,
-  inputClassName,
-  buttonSelector,
-  buttonClassName,
-  formSelector
-);
+const profitleEditFormValidator = new FormValidator(config, profileEditForm);
 
 const createCard = (data) => {
   return new Card(data, cardSelector, handleImageClick).getView();
