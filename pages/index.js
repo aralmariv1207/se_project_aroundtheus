@@ -53,8 +53,6 @@ const config = {
 
 enableValidation(config);
 
-const profitleEditFormValidator = new FormValidator(config, profileEditForm);
-
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -85,6 +83,8 @@ const previewModalCloseButton =
 previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewImageModal);
 });
+
+const profitleEditFormValidator = new FormValidator(config, profileEditForm);
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
