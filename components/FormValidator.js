@@ -11,23 +11,25 @@ export default class FormValidator {
   }
 }
 
-_showInputError(inputElement);
+_showInputError(inputElement) {
 const ErrorElement = this._formElement.querySelector(
   `#${inputElement.id}-error`
 );
-inputEleent.classList.add(this_inputErrorClass);
+inputElement.classList.add(this_inputErrorClass);
 errorElement.textContent = inputElement.validationMessage;
 errorElement.classList.add(this._errorClass);
+}
 
-_hideInputError(inputElement);
+_hideInputError(inputElement) {
 const errorElement = this._formElement.querySelector(
   `#${inputElement.id}-error`
 );
 inputElement.classList.remove(this._inputErrorClass);
 errorElement.classList.remove(this._errorClass);
 errorElement.textContent = "";
+}
 
-_checkInputValidity(inputElement);
+_checkInputValidity(inputElement) {
 const checkInputValidity = new this._checkInputValidity(
   formEl,
   inputEl,
@@ -38,8 +40,9 @@ if (!inputEl.validity.valid) {
 } else {
   hideInputError(formEl, inputEl, config);
 }
+}
 
-_toggleButtonState(inputList);
+_toggleButtonState(inputList) {
 const toggleButtonState = this._toggleButtonState(inputEls, submitButton, {
   inactiveButtonClass,
 });
@@ -56,12 +59,14 @@ if (foundInvalid) {
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
 }
+}
 
-_hasInvalidInput(inputList, btnEl);
+_hasInvalidInput(inputList, btnEl) {
 const hasInvalidInput = this._hasInvalidInput(inputList);
 return !inputList.every((inputEl) => inputEl.validity.valid);
+}
 
-_setEventListeners(formEl, config);
+_setEventListeners(formEl, config) {
 const { inputSelector } = config;
 const inputEls = [...formEl.querySelectorAll(inputSelector)];
 const submitButton = formEl.querySelector(config.submitButtonSelector);
@@ -71,10 +76,14 @@ inputEls.forEach((inputEl) => {
     toggleButtonState(inputEls, submitButton, config);
   });
 });
+}
 
-enableValidation(formEl);
+enableValidation(formEl) {
 this._formElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
 });
+}
 
-_setEventListeners();
+_setEventListeners() {
+  
+}
