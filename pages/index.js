@@ -51,6 +51,10 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
+const editProfileFormValidator = new FormValidator(config, editForm);
+
+editProfileFormValidator.enableValidation();
+
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");

@@ -7,11 +7,11 @@ export default class FormValidator {
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
 
-    this._formElement = fomElement;
+    this._formElement = formElement;
   }
 
   _showInputError(inputElement) {
-    const ErrorElement = this._formElement.querySelector(
+    const errorElement = this._formElement.querySelector(
       `#${inputElement.id}-error`
     );
     inputElement.classList.add(this_inputErrorClass);
