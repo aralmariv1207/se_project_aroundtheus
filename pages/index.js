@@ -51,8 +51,6 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
-enableValidation(config);
-
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
