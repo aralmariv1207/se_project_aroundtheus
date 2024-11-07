@@ -38,8 +38,6 @@ function createNewCard(card) {
   return card.getView();
 }
 
-const profitleEditFormValidator = new FormValidator(config, profileEditForm);
-
 const createCard = (data) => {
   return new Card(data, cardSelector, handleImageClick).getView();
 };
@@ -54,6 +52,8 @@ const config = {
 };
 
 enableValidation(config);
+
+const profitleEditFormValidator = new FormValidator(config, profileEditForm);
 
 // Elements //
 
