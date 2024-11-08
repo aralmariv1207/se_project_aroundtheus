@@ -42,11 +42,6 @@ export default class FormValidator {
   }
 
   _toggleButtonState(inputList) {
-    const toggleButtonState (
-      this._inputEls,
-      this._submitButton,
-      { this_inactiveButtonClass }
-    );
     let foundInvalid = false;
     this._inputEls.forEach((inputEl) => {
       if (!inputEl.validity.valid) {
