@@ -42,7 +42,7 @@ export default class FormValidator {
   }
 
   _toggleButtonState(inputList) {
-    const toggleButtonState = this._toggleButtonState(
+    const toggleButtonState (
       this._inputEls,
       this._submitButton,
       { this_inactiveButtonClass }
