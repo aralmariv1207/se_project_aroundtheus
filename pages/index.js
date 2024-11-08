@@ -57,9 +57,6 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
-const editProfileFormValidator = new FormValidator(editForm, config);
-editProfileFormValidator.enableValidation();
-
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -73,6 +70,10 @@ const profileDescriptionInput = document.querySelector(
 );
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+
+const editProfileFormValidator = new FormValidator(profileEditForm, config);
+editProfileFormValidator.enableValidation();
+
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
   .querySelector("#card-template")
