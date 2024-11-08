@@ -38,9 +38,17 @@ function createNewCard(card) {
   return card.getView();
 }
 
-const handleImageClick();
-const cardSelector();
-const editForm();
+const handleImageClick = () => {
+  enableValidation();
+};
+
+const cardSelector = () => {
+  enableValidation();
+};
+
+const editForm = () => {
+  enableValidation();
+};
 
 const createCard = (data) => {
   return new Card(data, cardSelector, handleImageClick).getView();
