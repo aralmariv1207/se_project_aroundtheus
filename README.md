@@ -29,3 +29,25 @@ It was made not only with HTML and CSS but also with its elements displayed on p
 **Enhancement Plans**
 
 Enhancing this project will entail adding new features to be learned in upcoming sprints.
+
+# [UPDATE] Project 7: Around the U.S. (cont.)
+
+**Overview**
+
+Project 7 builds on the theory and practice laid out from projects 3 through 6.
+
+More specifically, we are introduced to the concept of Object-Oriented Programming (OOP) as it applies to JavaScript.
+
+Previous concepts like functions are further expanded to cover more advanced ones like Classes, for example.
+
+**Project Features**
+
+-OOP
+-Modular JS
+-JS Classes
+
+**Enhancement Plans**
+
+Based on Sprint 8, enhancing this project will entail applying more advanced concepts and tasks learned in the Software Engineering bootcamp, such as Interfaces in OOP, and Webpack among others.
+
+[Link to project on GH Pages](https://aralmariv1207.github.io/se_project_aroundtheus/)
