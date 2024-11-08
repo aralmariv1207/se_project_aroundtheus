@@ -36,7 +36,9 @@ Enhancing this project will entail adding new features to be learned in upcoming
 
 Project 7 builds on the theory and practice laid out from projects 3 through 6.
 
-More specifically, we are introduced to the concept of Object-Oriented Programming (OOP) as it applies to JavaScript.
+The basic goal of this project is to learn how to render six cards through JavaScript.
+
+In doing so, we are introduced to the concept of Object-Oriented Programming (OOP) as it applies to JavaScript.
 
 Previous concepts like functions are further expanded to cover more advanced ones like Classes, for example.
 
