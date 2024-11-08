@@ -83,8 +83,6 @@ export default class FormValidator {
     });
   }
 
-  _setEventListeners() {}
-
   resetValidator() {
     //create a variable to the input list
     // this variable will receive a list of inputs inside the form element. You already have a variable for formElement, so you can use this._formElement + querySelectorAll
@@ -97,16 +95,3 @@ export default class FormValidator {
     this._toggleButtonState();
   }
 }
-
-const inputErrorClass = () => {};
-const formEl = () => {};
-const inputEl = () => {};
-const inputEls = () => {};
-const config = () => {};
-const hideInputError = () => {};
-const showInputError = () => {};
-const submitButton = () => {};
-const inactiveButtonClass = () => {};
-const checkInputValidity = () => {};
-const toggleButtonState = () => {};
-const resetValidator = () => {};
