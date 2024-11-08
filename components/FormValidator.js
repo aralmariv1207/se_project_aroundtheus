@@ -14,7 +14,7 @@ export default class FormValidator {
     const errorElement = this._formElement.querySelector(
       `#${inputElement.id}-error`
     );
-    inputElement.classList.add(this_inputErrorClass);
+    inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = inputElement.validationMessage;
     errorElement.classList.add(this._errorClass);
   }
@@ -85,3 +85,15 @@ export default class FormValidator {
 
   _setEventListeners() {}
 }
+
+const inputErrorClass = () => {};
+const formEl = () => {};
+const inputEl = () => {};
+const inputEls = () => {};
+const config = () => {};
+const hideInputError = () => {};
+const showInputError = () => {};
+const submitButton = () => {};
+const inactiveButtonClass = () => {};
+const checkInputValidity = () => {};
+const toggleButtonState = () => {};
