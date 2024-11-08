@@ -84,6 +84,18 @@ export default class FormValidator {
   }
 
   _setEventListeners() {}
+
+  resetValidator() {
+    //create a variable to the input list
+    // this variable will receive a list of inputs inside the form element. You already have a variable for formElement, so you can use this._formElement + querySelectorAll
+    const inputList = this._formElement.querySelectorAll(this._inputSelector);
+
+    //now that you have a list of inputs, forEach one of them, hideInputError
+    inputList.forEach((input) => hideInputError(input));
+
+    // also, toggle the submit button (this._toggleButtonState())
+    this._toggleButtonState();
+  }
 }
 
 const inputErrorClass = () => {};
@@ -98,16 +110,3 @@ const inactiveButtonClass = () => {};
 const checkInputValidity = () => {};
 const toggleButtonState = () => {};
 const resetValidator = () => {};
-
-resetValidator();
-{
-  //create a variable to the input list
-  // this variable will receive a list of inputs inside the form element. You already have a variable for formElement, so you can use this._formElement + querySelectorAll
-  const inputList = this._formElement.querySelectorAll(this._inputSelector);
-
-  //now that you have a list of inputs, forEach one of them, hideInputError
-  inputList.forEach((input) => hideInputError(input));
-
-  // also, toggle the submit button (this._toggleButtonState())
-  this._toggleButtonState();
-}
