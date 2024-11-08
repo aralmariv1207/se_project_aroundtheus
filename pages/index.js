@@ -91,7 +91,7 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewImageModal);
 });
 
-const profitleEditFormValidator = new FormValidator(config, profileEditForm);
+const profileEditFormValidator = new FormValidator(config, profileEditForm);
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
