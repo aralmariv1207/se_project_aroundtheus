@@ -97,3 +97,4 @@ const submitButton = () => {};
 const inactiveButtonClass = () => {};
 const checkInputValidity = () => {};
 const toggleButtonState = () => {};
+const resetValidator = () => {};
