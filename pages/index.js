@@ -57,7 +57,7 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
-const editProfileFormValidator = new FormValidator(config, editForm);
+const editProfileFormValidator = new FormValidator(editForm, config);
 editProfileFormValidator.enableValidation();
 
 // Elements //
