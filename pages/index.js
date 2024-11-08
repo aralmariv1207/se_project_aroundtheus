@@ -71,8 +71,7 @@ const profileDescriptionInput = document.querySelector(
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 
-const editProfileFormValidator = new FormValidator(profileEditForm, config);
-editProfileFormValidator.enableValidation();
+const editProfileFormValidator = new FormValidator(config, profileEditForm);
 
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
