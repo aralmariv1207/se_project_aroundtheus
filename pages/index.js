@@ -45,7 +45,8 @@ const cardSelector = "#card-template";
 const editForm = () => {};
 
 const createCard = (data) => {
-  return new Card(data, cardSelector, handleImageClick).getView();
+  const card = new Card(data, cardSelector, handleImageClick);
+  return card.getView();
 };
 
 const config = {
