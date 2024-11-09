@@ -92,14 +92,15 @@ previewModalCloseButton.addEventListener("click", () => {
 });
 
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
-const addCardFormValidator = new FormValidator(settings, addCardFormElement);
-addCardFormValidator.enableValidation();
+profileEditFormValidator.enableValidation();
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
 
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
+const addCardFormValidator = new FormValidator(config, addCardFormElement);
+addCardFormValidator.enableValidation();
 
 // Buttons and other DOM Nodes //
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
