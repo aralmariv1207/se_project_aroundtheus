@@ -92,6 +92,8 @@ previewModalCloseButton.addEventListener("click", () => {
 });
 
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
+const addCardFormValidator = new FormValidator(settings, addCardFormElement);
+addCardFormValidator.enableValidation();
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
