@@ -40,7 +40,7 @@ function createNewCard(card) {
 
 const handleImageClick = () => {};
 
-const cardSelector = () => {};
+const cardSelector = "#card-template";
 
 const editForm = () => {};
 
@@ -139,7 +139,7 @@ function closeModal(modal) {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
+  const cardElement = createCard(cardData);
   wrapper.prepend(cardElement);
 }
 
