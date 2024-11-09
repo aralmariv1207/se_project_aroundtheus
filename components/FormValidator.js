@@ -75,20 +75,24 @@ export default class FormValidator {
   }
 
   enableValidation(formEl) {
+    // Call the _setEventListeners method and pass the form element and the input selector (Note To Self [NTS]: because these are the things you expect in your setEventListener method— check it out :) )
+    this._setEventListeners(this._formElement, {
+      inputSelector: this._inputSelector,
+    });
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
   }
 
   resetValidator() {
-    //create a variable to the input list
-    // this variable will receive a list of inputs inside the form element. You already have a variable for formElement, so you can use this._formElement + querySelectorAll
+    //creates a variable to the input list
+    // this variable will receive a list of inputs inside the form element. NTS: You already have a variable for formElement, so you can use this._formElement + querySelectorAll
     const inputList = this._formElement.querySelectorAll(this._inputSelector);
 
-    //now that you have a list of inputs, forEach one of them, hideInputError
+    //now that a list of inputs is set up, forEach one of them, hideInputError
     inputList.forEach((input) => this._hideInputError(input));
 
-    // also, toggle the submit button (this._toggleButtonState())
+    // NTS: also, toggle the submit button (this._toggleButtonState())
     this._toggleButtonState();
   }
 }
