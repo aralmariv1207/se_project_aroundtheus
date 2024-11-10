@@ -29,7 +29,7 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputElement) {
-    const checkInputValidity = new this._checkInputValidity(
+    const checkInputValidity = this._checkInputValidity(
       this._formEl,
       this._inputEl,
       this._config
