@@ -29,11 +29,7 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputElement) {
-    const checkInputValidity = this._checkInputValidity(
-      this._formEl,
-      this._inputEl,
-      this._config
-    );
+    this._formEl, this._inputEl, this._config;
     if (!this._inputEl.validity.valid) {
       this._showInputError(inputElement);
     } else {
@@ -58,7 +54,6 @@ export default class FormValidator {
   }
 
   _hasInvalidInput(inputList, btnEl) {
-    const hasInvalidInput = this._hasInvalidInput(inputList);
     return !inputList.every((inputEl) => inputEl.validity.valid);
   }
 
