@@ -7,7 +7,8 @@ export default class FormValidator {
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
 
-    this._formElement = formElement;
+    this._formElement = config.formElement;
+    this._inputElement = config.inputElement;
   }
 
   _showInputError(inputElement) {
@@ -29,8 +30,7 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputElement) {
-    this._formEl, this._inputEl, this._config;
-    if (!this._inputEl.validity.valid) {
+    if (!this._inputElement.validity.valid) {
       this._showInputError(inputElement);
     } else {
       this._hideInputError(inputElement);
@@ -39,8 +39,8 @@ export default class FormValidator {
 
   _toggleButtonState(inputList) {
     let foundInvalid = false;
-    this._inputEls.forEach((inputEl) => {
-      if (!inputEl.validity.valid) {
+    this._inputElement.forEach((inputElement) => {
+      if (!inputElement.validity.valid) {
         foundInvalid = true;
       }
     });
@@ -54,22 +54,22 @@ export default class FormValidator {
   }
 
   _hasInvalidInput(inputList, btnEl) {
-    return !inputList.every((inputEl) => inputEl.validity.valid);
+    return !inputList.every((inputElement) => inputElement.validity.valid);
   }
 
-  _setEventListeners(formEl, config) {
+  _setEventListeners(formElement, config) {
     const { inputSelector } = config;
-    const inputEls = [...formEl.querySelectorAll(inputSelector)];
-    const submitButton = formEl.querySelector(config.submitButtonSelector);
-    inputEls.forEach((inputEl) => {
+    const inputElement = [...formElement.querySelectorAll(inputSelector)];
+    const submitButton = formElement.querySelector(config.submitButtonSelector);
+    inputElement.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        this._checkInputValidity(inputEl);
-        this._toggleButtonState(inputEls, submitButton);
+        this._checkInputValidity(inputElement);
+        this._toggleButtonState(inputElement, submitButton);
       });
     });
   }
 
-  enableValidation(formEl) {
+  enableValidation(formElement) {
     // Call the _setEventListeners method and pass the form element and the input selector (Note To Self [NTS]: because these are the things you expect in your setEventListener method— check it out :) )
     this._setEventListeners(this._formElement, {
       inputSelector: this._inputSelector,
