@@ -58,12 +58,12 @@ export default class FormValidator {
 
   _setEventListeners(formElement, config) {
     const { inputSelector } = config;
-    const inputElement = [...formElement.querySelectorAll(inputSelector)];
-    const submitButton = formElement.querySelector(config.submitButtonSelector);
-    inputElement.forEach((inputEl) => {
+    this._inputElement = [...formElement.querySelectorAll(this._inputSelector)];
+    this._submitButton = formElement.querySelector(this._submitButtonSelector);
+    this._inputElement.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        this._checkInputValidity(inputElement);
-        this._toggleButtonState(inputElement, submitButton);
+        this._checkInputValidity(inputEl);
+        this._toggleButtonState();
       });
     });
   }
