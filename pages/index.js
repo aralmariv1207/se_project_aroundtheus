@@ -38,7 +38,20 @@ function createNewCard(card) {
   return card.getView();
 }
 
-const handleImageClick = () => {};
+function handleImageClick(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+
+  cardImage.addEventListener("click", () => {
+    previewModalCaption.textContent = data._name;
+    previewImageModal.src = data._link;
+    previewImageModal.alt = data._name;
+    openModal(previewImageModal);
+  });
+}
 
 const cardSelector = "#card-template";
 
