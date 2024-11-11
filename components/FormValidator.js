@@ -29,7 +29,7 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputElement) {
-    if (!this._inputElement) {
+    if (inputElement.validity.valid) {
       this._showInputError(inputElement);
     } else {
       this._hideInputError(inputElement);
