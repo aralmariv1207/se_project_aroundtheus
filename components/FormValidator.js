@@ -57,7 +57,7 @@ export default class FormValidator {
   }
 
   _setEventListeners(formElement, config) {
-    const { inputSelector } = config;
+    const {} = config;
     this._inputElement = [...formElement.querySelectorAll(this._inputSelector)];
     this._submitButton = formElement.querySelector(this._submitButtonSelector);
     this._inputElement.forEach((inputEl) => {
@@ -68,7 +68,7 @@ export default class FormValidator {
     });
   }
 
-  enableValidation(formElement) {
+  enableValidation() {
     // Call the _setEventListeners method and pass the form element and the input selector (Note To Self [NTS]: because these are the things you expect in your setEventListener method— check it out :) )
     this._setEventListeners(this._formElement, {
       inputSelector: this._inputSelector,
@@ -77,9 +77,8 @@ export default class FormValidator {
       evt.preventDefault();
     });
   }
-  atus;
 
-  resetValidator() {
+  resetValidation() {
     //creates a variable to the input list
     // this variable will receive a list of inputs inside the form element. NTS: You already have a variable for formElement, so you can use this._formElement + querySelectorAll
     const inputList = this._formElement.querySelectorAll(this._inputSelector);
