@@ -105,6 +105,14 @@ const enableValidation = (config) => {
 
 enableValidation(config);
 
+const profileEditForm = document.forms["profile-form"];
+
+const addCardForm = document.forms["add-card-form"];
+formValidators[addCardForm.getAttribute("name")].enableValidation();
+
+const profileEditForm = document.forms["profile-form"];
+formValidators[profileEditForm.getAttribute("name")].enableValidation();
+
 formValidators[profileForm.getAttribute("name")].resetValidation();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
