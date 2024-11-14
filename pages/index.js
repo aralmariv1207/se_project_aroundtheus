@@ -67,8 +67,6 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
-const profileEditForm = profileEditModal.querySelector(".modal__form");
-
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
   .querySelector("#card-template")
@@ -108,7 +106,7 @@ enableValidation(config);
 const addCardForm = document.forms["add-card-form"];
 formValidators[addCardForm.getAttribute("name")].enableValidation();
 
-const profileEditForm = document.forms["profile-form"];
+const profileEditForm = document.forms[".modal__form"];
 formValidators[profileEditForm.getAttribute("name")].enableValidation();
 
 formValidators[profileForm.getAttribute("name")].resetValidation();
