@@ -39,10 +39,9 @@ function createNewCard(card) {
 }
 
 function handleImageClick(data) {
-  previewModalCaption.textContent = data._name;
-  previewImageElement.src = data._link;
-  previewImageElement.alt = data._name;
-  openModal(previewImageModal);
+  this._imageElement.addEventListener("click", () => {
+    this._handleImageClick({ name: this._name, link: this._link });
+  });
 }
 
 const cardSelector = "#card-template";
