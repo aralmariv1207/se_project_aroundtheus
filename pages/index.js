@@ -105,8 +105,6 @@ const enableValidation = (config) => {
 
 enableValidation(config);
 
-const profileEditForm = document.forms["profile-form"];
-
 const addCardForm = document.forms["add-card-form"];
 formValidators[addCardForm.getAttribute("name")].enableValidation();
 
