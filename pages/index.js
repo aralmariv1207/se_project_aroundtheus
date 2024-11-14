@@ -33,11 +33,6 @@ const initialCards = [
   },
 ];
 
-function createNewCard(card) {
-  const cards = new Card(initialCards, "#card-template");
-  return card.getView();
-}
-
 function handleImageClick(data) {
   this._imageElement.addEventListener("click", () => {
     this._handleImageClick({ name: this._name, link: this._link });
