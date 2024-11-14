@@ -156,35 +156,6 @@ function handleAddCardFormSubmit(evt) {
   addCardFormElement.reset();
 }
 
-function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__image");
-  const cardTitle = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-
-  cardImage.addEventListener("click", () => {
-    previewModalCaption.textContent = data.name;
-    previewImageElement.src = data.link;
-    previewImageElement.alt = data.name;
-    openModal(previewImageModal);
-  });
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  cardImage.src = data.link;
-  cardImage.alt = data.name;
-  cardTitle.textContent = data.name;
-
-  return cardElement;
-}
-
 // Form Listeners //
 
 profileEditModal.addEventListener("submit", handleProfileFormSubmit);
