@@ -87,6 +87,30 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewImageModal);
 });
 
+// define an object for storing validators
+const formValidators = {};
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    // Here you get the name of the form (if you don’t have it then you need to add it into each form in `index.html` first)
+    const formName = formElement.getAttribute("name");
+
+    // Here you store the validator using the `name` of the form
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(config);
+
+formValidators[profileForm.getAttribute("name")].resetValidation();
+
+// or you can use a string – the name of the form (you know it from `index.html`)
+
+formValidators["profile-form"].resetValidation();
+
 const profileEditFormValidator = new FormValidator(config, profileEditForm);
 profileEditFormValidator.enableValidation();
 
