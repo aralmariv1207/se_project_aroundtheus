@@ -47,8 +47,6 @@ function handleImageClick(data) {
 
 const cardSelector = "#card-template";
 
-const editForm = () => {};
-
 const createCard = (data) => {
   const card = new Card(data, cardSelector, handleImageClick);
   return card.getView();
