@@ -104,27 +104,18 @@ const enableValidation = (config) => {
 enableValidation(config);
 
 const addCardForm = document.forms["add-card-form"];
-formValidators[addCardForm.getAttribute("name")].enableValidation();
 
 const profileEditForm = document.forms[".modal__form"];
-formValidators[profileEditForm.getAttribute("name")].enableValidation();
-
-formValidators[profileEditForm.getAttribute("name")].resetValidation();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
 formValidators["profile-form"].resetValidation();
-
-const profileEditFormValidator = new FormValidator(config, profileEditForm);
-profileEditFormValidator.enableValidation();
 
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
 
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
-const addCardFormValidator = new FormValidator(config, addCardFormElement);
-addCardFormValidator.enableValidation();
 
 // Buttons and other DOM Nodes //
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
