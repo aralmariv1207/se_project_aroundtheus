@@ -71,9 +71,6 @@ export default class FormValidator {
         this._toggleButtonState();
       });
     });
-    this._imageElement.addEventListener("click", () => {
-      this._handleImageClick(this);
-    });
   }
 
   enableValidation() {
