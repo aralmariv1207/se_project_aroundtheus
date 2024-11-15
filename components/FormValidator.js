@@ -57,7 +57,7 @@ export default class FormValidator {
   }
 
   _setEventListeners(formElement, config) {
-    const {} = config;
+    const { _inputSelector } = config;
     this._inputElements = [
       this._formElement.querySelectorAll(this._inputSelector),
     ];
