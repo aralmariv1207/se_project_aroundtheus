@@ -60,7 +60,7 @@ export default class FormValidator {
 
   _setEventListeners() {
     this._inputElements = [
-      this._formElement.querySelectorAll(this._inputSelector),
+      ...this._formElement.querySelectorAll(this._inputSelector),
     ];
     this._submitButton = this._formElement.querySelector(
       this._submitButtonSelector
@@ -70,6 +70,9 @@ export default class FormValidator {
         this._checkInputValidity(inputElement);
         this._toggleButtonState();
       });
+    });
+    this._imageElement.addEventListener("click", () => {
+      this._handleImageClick(this);
     });
   }
 
