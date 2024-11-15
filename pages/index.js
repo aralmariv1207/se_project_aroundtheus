@@ -109,7 +109,7 @@ formValidators[addCardForm.getAttribute("name")].enableValidation();
 const profileEditForm = document.forms[".modal__form"];
 formValidators[profileEditForm.getAttribute("name")].enableValidation();
 
-formValidators[profileForm.getAttribute("name")].resetValidation();
+formValidators[profileEditForm.getAttribute("name")].resetValidation();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
