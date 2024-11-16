@@ -38,7 +38,7 @@ export default class FormValidator {
 
   _toggleButtonState(inputList) {
     let foundInvalid = false;
-    this._inputElement.forEach((inputElement) => {
+    this._inputElements.forEach((inputElement) => {
       if (!inputElement.validity.valid) {
         foundInvalid = true;
       }
@@ -86,7 +86,7 @@ export default class FormValidator {
   resetValidation() {
     //creates a variable to the input list
     // this variable will receive a list of inputs inside the form element. NTS: You already have a variable for formElement, so you can use this._formElement + querySelectorAll
-    const inputList = this._inputElement;
+    const inputList = this._inputElements;
 
     //now that a list of inputs is set up, forEach one of them, hideInputError
     inputList.forEach((input) => this._hideInputError(input));
