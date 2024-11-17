@@ -126,6 +126,9 @@
   font-size: 12px;
   line-height: 12px;
   height: 12px;
+
+  position: absolute;
+  bottom: 15px;
 }
 
 .modal__error_visible {
@@ -136,18 +139,22 @@
   border-bottom: 1px solid red;
 }
 
-.modal_label {
+.modal__label {
   position: relative;
+  display: block;
   width: 100%;
 }
 
 @media screen and (max-width: 550px) {
   .modal__heading {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 21.78;
   }
 
   .modal__input {
-    margin-top: 40px;
+    margin-top: 25px;
+    margin-bottom: 0;
   }
 
   .modal__close {
@@ -157,5 +164,15 @@
     margin-right: 18.62px;
     left: calc(100% - 40px);
     bottom: calc(100% + 20px);
+  }
+
+  .modal__container {
+    padding: 25px 22px;
+  }
+
+  .modal__button {
+    margin-top: 45px;
+    font-size: 14px;
+    line-height: 16.94px;
   }
 }

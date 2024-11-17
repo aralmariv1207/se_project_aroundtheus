@@ -51,31 +51,33 @@
             id="profile-form"
             name="profile-edit-button"
           >
-            <input
-              class="modal__input"
-              name="title"
-              id="profile-title-input"
-              placeholder="Name"
-              type="text"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <span id="profile-title-input-error" class="modal__error"> </span>
-
-            <input
-              class="modal__input"
-              name="description"
-              id="profile-description-input"
-              placeholder="Description"
-              type="text"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span id="profile-description-input-error" class="modal__error">
-            </span>
-
+            <label>
+              <input
+                class="modal__input"
+                name="title"
+                id="profile-title-input"
+                placeholder="Name"
+                type="text"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span id="profile-title-input-error" class="modal__error"> </span>
+            </label>
+            <label>
+              <input
+                class="modal__input"
+                name="description"
+                id="profile-description-input"
+                placeholder="Description"
+                type="text"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span id="profile-description-input-error" class="modal__error">
+              </span>
+            </label>
             <button class="button modal__button" type="submit">Save</button>
           </form>
         </div>
