@@ -76,7 +76,6 @@ export default class FormValidator {
   resetValidation() {
     //creates a variable to the input list
     // this variable will receive a list of inputs inside the form element. NTS: You already have a variable for formElement, so you can use this._formElement + querySelectorAll
-    this._inputElements.forEach;
 
     //now that a list of inputs is set up, forEach one of them, hideInputError
     this._inputElements.forEach((input) => this._hideInputError(input));
