@@ -37,13 +37,7 @@ export default class FormValidator {
   }
 
   _toggleButtonState(inputList) {
-    let foundInvalid = false;
-    this._inputElements.forEach((inputElement) => {
-      if (!inputElement.validity.valid) {
-        foundInvalid = true;
-      }
-    });
-    if (foundInvalid) {
+    if (this._hasInvalidInput) {
       this._submitButton.classList.add(this._inactiveButtonClass);
       this._submitButton.disabled = true;
     } else {
@@ -74,10 +68,6 @@ export default class FormValidator {
   }
 
   enableValidation() {
-    // Call the _setEventListeners method and pass the form element and the input selector (Note To Self [NTS]: because these are the things you expect in your setEventListener method— check it out :) )
-    this._setEventListeners(this._formElement, {
-      inputSelector: this._inputSelector,
-    });
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
@@ -86,7 +76,7 @@ export default class FormValidator {
   resetValidation() {
     //creates a variable to the input list
     // this variable will receive a list of inputs inside the form element. NTS: You already have a variable for formElement, so you can use this._formElement + querySelectorAll
-    const inputList = this._inputElements;
+    this._inputElements.forEach;
 
     //now that a list of inputs is set up, forEach one of them, hideInputError
     inputList.forEach((input) => this._hideInputError(input));
