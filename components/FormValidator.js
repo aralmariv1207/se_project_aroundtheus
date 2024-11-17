@@ -79,7 +79,7 @@ export default class FormValidator {
     this._inputElements.forEach;
 
     //now that a list of inputs is set up, forEach one of them, hideInputError
-    inputList.forEach((input) => this._hideInputError(input));
+    this._inputElements.forEach((input) => this._hideInputError(input));
 
     // NTS: also, toggle the submit button (this._toggleButtonState())
     this._toggleButtonState();
