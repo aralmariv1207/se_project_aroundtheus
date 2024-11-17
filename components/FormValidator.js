@@ -94,4 +94,8 @@ export default class FormValidator {
     // NTS: also, toggle the submit button (this._toggleButtonState())
     this._toggleButtonState();
   }
+
+  disableButton() {
+    const disableButton = this._inactiveButtonClass;
+  }
 }
