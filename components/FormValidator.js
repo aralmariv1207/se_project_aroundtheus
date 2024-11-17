@@ -86,6 +86,6 @@ export default class FormValidator {
   }
 
   disableButton() {
-    const disableButton = this._inactiveButtonClass;
+    const disableButton = this._inactiveButtonClass.forEach(closeModal);
   }
 }
