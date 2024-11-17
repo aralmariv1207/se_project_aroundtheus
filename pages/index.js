@@ -109,8 +109,6 @@ const profileEditForm = document.forms[".modal__form"];
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
-formValidators["profile-edit-button"].resetValidation();
-
 // Wrappers //
 const cardsWrap = document.querySelector(".cards__list");
 
