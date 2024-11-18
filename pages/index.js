@@ -38,7 +38,7 @@ function handleImageClick(data) {
     this._previewImage({ name: this._name, link: this._link });
 
     function openModal(previewImageModal);
-  });
+  })
 
   // Access the preview image element and set the src and alt attributes with data.link and data.name. You already have variables to store this element.
   // Access the preview modal caption and set the text content with data.name. You already have a variable to store this element.
