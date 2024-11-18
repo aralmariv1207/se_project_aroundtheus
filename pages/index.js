@@ -37,7 +37,7 @@ function handleImageClick(data) {
   this._imageElement.addEventListener("click", () => {
     this._previewImage({ name: this._name, link: this._link });
 
-    function openModal(previewImageModal);
+    function openModal(previewImageModal)
   })
 
   // Access the preview image element and set the src and alt attributes with data.link and data.name. You already have variables to store this element.
