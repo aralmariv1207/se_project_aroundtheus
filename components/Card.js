@@ -21,10 +21,10 @@ export default class Card {
     //add the event listener
     this.deleteButton.addEventListener("click", () => {
       this._handleDeleteCard();
+    });
 
-      this._imageElement.addEventListener("click", () => {
-        this._handleImageClick({ name: this._name, link: this._link });
-      });
+    this._imageElement.addEventListener("click", () => {
+      this._handleImageClick({ name: this._name, link: this._link });
     });
   }
 
