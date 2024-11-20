@@ -174,6 +174,8 @@ function handleAddCardFormSubmit(evt) {
   renderCard({ name, link }, cardsWrap);
   closeModal(addCardModal);
   addCardFormElement.reset();
+
+  formValidators["Add-a-New-Card"].disableButton();
 }
 
 // Form Listeners //
