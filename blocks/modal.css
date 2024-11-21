@@ -124,6 +124,7 @@
   font-size: 12px;
   line-height: 12px;
   position: absolute;
+  top: calc(100% - 25px);
   left: 0;
 }
 
@@ -169,5 +170,9 @@
     margin-top: 45px;
     font-size: 14px;
     line-height: 16.94px;
+  }
+
+  .modal__error {
+    top: calc(100% + 5px);
   }
 }
