@@ -124,7 +124,7 @@
   font-size: 12px;
   line-height: 12px;
   position: absolute;
-  top: calc(100% - 25px);
+  top: calc(100% - 30px);
   left: 0;
 }
 
@@ -173,6 +173,7 @@
   }
 
   .modal__error {
-    top: calc(100% + 5px);
+    top: calc(100% + 0px);
+    font-size: 11px;
   }
 }
