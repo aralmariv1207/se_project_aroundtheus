@@ -1,5 +1,40 @@
+import "../pages/index.css";
+
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+
+import Section from "../components/Section.js";
+import Popup from "../components/Popup.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import UserInfo from "../components/UserInfo.js";
+
+const cardSection = new Section({
+  items: [],
+  renderer: (item) => {
+    const card = new Card(item);
+    cardSection.addItem(card);
+  } 
+}, '.elements__list');
+
+const popupWithForm = new PopupWithForm('.popup_type_form', (data) => {
+  userInfo.setUserInfo(data);
+});
+
+const popupWithImage = new PopupWithImage('.popup_type_image');
+
+const userInfo = new UserInfo({
+  nameSelector: '.profile__name',
+  jobSelector: '.profile__job'
+});
+
+const formValidator = new FormValidator('.form-selector');
+
+cardSection.renderItems();
+formValidator.enableValidation();
+
+popupWithForm.setEventListeners();
+popupWithImage.setEventListeners();
 
 const initialCards = [
   {
