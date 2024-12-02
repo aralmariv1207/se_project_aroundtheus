@@ -1,13 +1,13 @@
-import "../pages/index.css";
+import "./index.css";
 
-import Card from "../components/Card.js";
-import FormValidator from "../components/FormValidator.js";
+import Card from "../blocks/components/Card.js";
+import FormValidator from "../blocks/components/FormValidator.js";
 
-import Section from "../components/Section.js";
-import Popup from "../components/Popup.js";
-import PopupWithForm from "../components/PopupWithForm.js";
-import PopupWithImage from "../components/PopupWithImage.js";
-import UserInfo from "../components/UserInfo.js";
+import Section from "../blocks/components/Section.js";
+import Popup from "../blocks/components/Popup.js";
+import PopupWithForm from "../blocks/components/PopupWithForm.js";
+import PopupWithImage from "../blocks/components/PopupWithImage.js";
+import UserInfo from "../blocks/components/UserInfo.js";
 
 const cardSection = new Section({
   items: [],
