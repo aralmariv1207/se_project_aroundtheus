@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <link href="./pages/index.css" rel="stylesheet" />
+
     <title>Around the U.S.</title>
   </head>
   <body class="page">
@@ -12,7 +12,7 @@
       <header class="header page__section">
         <img
           class="header__logo"
-          src="./images/around-the-us_logo.svg"
+          src="<%=require('./images/around-the-us_logo.svg')%>"
           alt="Around the U.S. Logo"
         />
       </header>
@@ -20,7 +20,7 @@
         <section class="profile page__section">
           <img
             class="profile__image"
-            src="./images/jacques-cousteau.png"
+            src="<%=require('./images/jacques-cousteau.png')%>"
             alt="Jacques Cousteau's Picture"
           />
           <div class="profile__info">
@@ -143,9 +143,6 @@
         <p class="modal__caption"></p>
       </div>
     </div>
-
-    <script src="./pages/index.js" type="module"></script>
-    <script type="module" src="./components/FormValidator.js"></script>
 
     <template id="card-template">
       <li class="card">
