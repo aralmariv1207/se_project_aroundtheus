@@ -28,10 +28,10 @@ const userInfo = new UserInfo({
   jobSelector: '.profile__job'
 });
 
-const formValidator = new FormValidator('.form-selector');
+
 
 cardSection.renderItems();
-formValidator.enableValidation();
+
 
 popupWithForm.setEventListeners();
 popupWithImage.setEventListeners();
