@@ -53,3 +53,26 @@ Previous concepts like functions are further expanded to cover more advanced one
 Based on Sprint 8, enhancing this project will entail applying more advanced concepts and tasks learned in the Software Engineering bootcamp, such as Interfaces in OOP, and Webpack among others.
 
 [Link to project on GH Pages](https://aralmariv1207.github.io/se_project_aroundtheus/)
+
+# [UPDATE] Project 8: Around the U.S. (cont.)
+
+**Overview**
+
+Project 8's focus of the "Around the U.S." series has been introducing students to such technologies as NodeJS and Webpack.
+
+As we learned both technologies, we were introduced to concepts like Advanced OOP, for example. 
+
+More specifically, we learned how to bundle and build with Webpack as well as how to handle Syntax and Interfaces through Advanced OOP.
+
+**Project Features**
+
+-NodeJS
+-Webpack
+-Advanced OOP
+
+**Enhancement Plans**
+
+Based on Sprint 9, enhacing this project will entail learning more advanced concepts and skills. These concepts and skills will include applying Asynchronous JavaScript and working with  Application Programming Interfaces (APIs).
+
+[Link to project on GH Pages](https://aralmariv1207.github.io/se_project_aroundtheus/)
+
