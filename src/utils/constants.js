@@ -42,4 +42,4 @@ const initialCards = [
   };
 
   export { initialCards };
-  export { validationConfig };
+  export { config };

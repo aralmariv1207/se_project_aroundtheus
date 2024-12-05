@@ -9,8 +9,8 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 
-import { initialCards } from "./utils/constants.js";
-import { validationConfig } from "./utils/constants.js";
+import { initialCards } from "../utils/constants.js";
+import { config } from "../utils/constants.js";
 
 const cardSection = new Section(
   {
