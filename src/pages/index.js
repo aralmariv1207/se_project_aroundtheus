@@ -9,29 +9,29 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 
-const cardSection = new Section({
-  items: [],
-  renderer: (item) => {
-    const card = new Card(item);
-    cardSection.addItem(card);
-  } 
-}, '.elements__list');
+const cardSection = new Section(
+  {
+    items: [],
+    renderer: (item) => {
+      const card = new Card(item);
+      cardSection.addItem(card);
+    },
+  },
+  ".elements__list"
+);
 
-const popupWithForm = new PopupWithForm('.popup_type_form', (data) => {
+const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   userInfo.setUserInfo(data);
 });
 
-const popupWithImage = new PopupWithImage('.popup_type_image');
+const popupWithImage = new PopupWithImage("#add-card-modal");
 
 const userInfo = new UserInfo({
-  nameSelector: '.profile__name',
-  jobSelector: '.profile__job'
+  nameSelector: "#profile__title",
+  jobSelector: "#profile__description",
 });
 
-
-
 cardSection.renderItems();
-
 
 popupWithForm.setEventListeners();
 popupWithImage.setEventListeners();
