@@ -28,16 +28,37 @@ const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
-    popupWithForm.open();
+    popupWithForm.open(data);
+    popupWithForm.setEventListeners();
   });
 });
 
-const popupWithImage = new PopupWithImage("#add-card-modal");
+const popupWithFormAddCard = new PopupWithForm(
+  "#add-card-modal",
+  (data) => {
+    addNewCardButton.addEventListenener("click", () =>
+      popupWithFormAddCard.open(data)
+    );
+popupWithFormAddCard.setEventListeners();
+  }
+);
+
+const popupWithImage = new PopupWithImage(
+  "#image-preview-modal",
+  (data) => {
+    addNewCardButton.addEventListenener("click", () =>
+      popupWithImage.open(data)
+    );
+    popupWithImage.setEventListeners();
+  }
+);
 
 const userInfo = new UserInfo({
   nameSelector: "#profile__title",
   jobSelector: "#profile__description",
-});
+}
+);
+userInfo.setEventListeners();
 
 cardSection.renderItems();
 
