@@ -25,6 +25,11 @@ const cardSection = new Section(
 
 const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   userInfo.setUserInfo(data);
+  profileEditButton.addEventListener("click", () => {
+    profileTitleInput.value = profileTitle.textContent;
+    profileDescriptionInput.value = profileDescription.textContent;
+    popupWithForm.open();
+  });
 });
 
 const popupWithImage = new PopupWithImage("#add-card-modal");
@@ -55,23 +60,17 @@ const createCard = (data) => {
   return card.getView();
 };
 
-
 // Elements //
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
+
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-
-const cardListEl = document.querySelector(".cards__list");
-const cardTemplate = document
-  .querySelector("#card-template")
-  .content.querySelector(".card");
 
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageElement = previewImageModal.querySelector(
@@ -103,10 +102,6 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
-
-const addCardForm = document.forms["add-card-form"];
-
-const profileEditForm = document.forms[".modal__form"];
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
