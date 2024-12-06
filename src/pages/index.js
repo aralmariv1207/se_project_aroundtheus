@@ -58,7 +58,7 @@ const userInfo = new UserInfo({
   jobSelector: "#profile__description",
 }
 );
-userInfo.setEventListeners();
+
 
 cardSection.renderItems();
 
