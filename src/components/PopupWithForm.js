@@ -5,6 +5,7 @@ export default class PopupWithForm extends Popup {
     super(popupSelector);
     this._handleFormSubmit = handleFormSubmit;
     this._form = this._popup.querySelector(".modal__form");
+    this._inputList = this._form.querySelectorAll(".modal__input");
   }
 
   _getInputValues() {
