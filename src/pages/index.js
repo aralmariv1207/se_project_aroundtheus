@@ -71,7 +71,6 @@ function handleImageClick(data) {
 
   previewModalCaption.textContent = data.name;
 
-  openModal(previewImageModal);
 }
 
 const cardSelector = "#card-template";
@@ -103,7 +102,7 @@ const previewModalCloseButton =
   previewImageModal.querySelector(".modal__close");
 
 previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewImageModal);
+  
 });
 
 // define an object for storing validators
@@ -148,13 +147,13 @@ modals.forEach((modal) => {
 function closeModalByPressingESC(evt) {
   if (evt.key === "Escape") {
     const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
+    
   }
 }
 
 function closeModalByOverlay(evt) {
   if (evt.target.classList.contains("modal")) {
-    closeModal(evt.target);
+ 
   }
 }
 
@@ -177,7 +176,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closeModal(profileEditModal);
+ 
 }
 
 function handleAddCardFormSubmit(evt) {
@@ -186,7 +185,7 @@ function handleAddCardFormSubmit(evt) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardsWrap);
-  closeModal(addCardModal);
+ 
   addCardFormElement.reset();
 
   formValidators["Add-a-New-Card"].disableButton();
@@ -200,18 +199,18 @@ addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  openModal(profileEditModal);
+
 });
 
 profileModalCloseButton.addEventListener("click", () =>
-  closeModal(profileEditModal)
+  
 );
 
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener("click", () =>
-  closeModal(addCardModal)
+ 
 );
 
 initialCards.forEach((card) => {
