@@ -28,20 +28,20 @@ const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
-    popupWithForm.open(data);
+    popupWithForm.open();
     popupWithForm.setEventListeners();
   });
 });
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
   addNewCardButton.addEventListenener("click", () =>
-    popupWithFormAddCard.open(data)
+    popupWithFormAddCard.open()
   );
   popupWithFormAddCard.setEventListeners();
 });
 
 const popupWithImage = new PopupWithImage("#image-preview-modal", (data) => {
-  addNewCardButton.addEventListenener("click", () => popupWithImage.open(data));
+  addNewCardButton.addEventListenener("click", () => popupWithImage.open());
   popupWithImage.setEventListeners();
 });
 
@@ -151,7 +151,6 @@ function handleAddCardFormSubmit(evt) {
 }
 
 // Form Listeners //
-
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
