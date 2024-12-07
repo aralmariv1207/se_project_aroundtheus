@@ -23,16 +23,16 @@ const cardSection = new Section(
   ".cards__list"
 );
 
+const profileEditButton = document.querySelector("#profile-edit-button");
+
 const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   userInfo.setUserInfo(data);
-  const profileEditButton = document.querySelector("#profile-edit-button");
-  profileEditButton.addEventListener("click", () => {
-    profileTitleInput.value = profileTitle.textContent;
-    profileDescriptionInput.value = profileDescription.textContent;
-    popupWithForm.open();
-  });
-  popupWithForm.setEventListeners();
 });
+profileEditButton.addEventListener("click", () => {
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+});
+popupWithForm.setEventListeners();
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
   cardSection.addItem(
@@ -45,10 +45,8 @@ const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
 });
 popupWithFormAddCard.setEventListeners();
 
-const popupWithImage = new PopupWithImage("#image-preview-modal", (data) => {
-  addNewCardButton.addEventListenener("click", () => popupWithImage.open());
-  popupWithImage.setEventListeners();
-});
+const popupWithImage = new PopupWithImage("#image-preview-modal");
+popupWithImage.setEventListeners();
 
 const userInfo = new UserInfo({
   nameSelector: "#profile__title",
@@ -65,6 +63,7 @@ function handleImageClick(data) {
   previewImageElement.alt = data.name;
 
   previewModalCaption.textContent = data.name;
+  popupWithImage.open({ name: data.name, link: data.link });
 }
 
 const cardSelector = "#card-template";
@@ -76,7 +75,6 @@ const createCard = (data) => {
 
 // Elements //
 
-const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 
 const profileTitle = document.querySelector(".profile__title");
