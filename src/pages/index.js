@@ -20,25 +20,30 @@ const cardSection = new Section(
       cardSection.addItem(card);
     },
   },
-  ".elements__list"
+  ".cards__list"
 );
 
 const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   userInfo.setUserInfo(data);
+  const profileEditButton = document.querySelector("#profile-edit-button");
   profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
     popupWithForm.open();
-    popupWithForm.setEventListeners();
   });
+  popupWithForm.setEventListeners();
 });
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
-  addNewCardButton.addEventListenener("click", () =>
-    popupWithFormAddCard.open()
+  cardSection.addItem(
+    createCard({
+      name: data.title,
+      link: data.url,
+    })
   );
-  popupWithFormAddCard.setEventListeners();
+  popupWithFormAddCard.close();
 });
+popupWithFormAddCard.setEventListeners();
 
 const popupWithImage = new PopupWithImage("#image-preview-modal", (data) => {
   addNewCardButton.addEventListenener("click", () => popupWithImage.open());
