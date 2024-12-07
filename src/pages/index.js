@@ -132,7 +132,6 @@ const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 // Buttons and other DOM Nodes //
-const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 
@@ -140,32 +139,8 @@ const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 const modals = [addCardModal, profileEditModal, previewImageModal];
-modals.forEach((modal) => {
-  modal.addEventListener("click", closeModalByOverlay);
-});
 
-function closeModalByPressingESC(evt) {
-  if (evt.key === "Escape") {
-    const modal = document.querySelector(".modal_opened");
-    
-  }
-}
 
-function closeModalByOverlay(evt) {
-  if (evt.target.classList.contains("modal")) {
- 
-  }
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalByPressingESC);
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalByPressingESC);
-}
 
 function renderCard(cardData, wrapper) {
   const cardElement = createCard(cardData);
@@ -202,16 +177,11 @@ profileEditButton.addEventListener("click", () => {
 
 });
 
-profileModalCloseButton.addEventListener("click", () =>
-  
-);
 
 // Adding a New Card //
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardModalCloseButton.addEventListener("click", () =>
- 
-);
+addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
+addCardModalCloseButton.addEventListener("click", () => );
 
 initialCards.forEach((card) => {
   console.log(card);
