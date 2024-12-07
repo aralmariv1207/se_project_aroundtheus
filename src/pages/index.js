@@ -64,9 +64,9 @@ popupWithForm.setEventListeners();
 popupWithImage.setEventListeners();
 
 function handleImageClick(data) {
+  console.log("Image clicked");
   previewImageElement.src = data.link;
   previewImageElement.alt = data.name;
-
   previewModalCaption.textContent = data.name;
   popupWithImage.open({ name: data.name, link: data.link });
 }
