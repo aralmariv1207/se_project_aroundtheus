@@ -26,13 +26,18 @@ const cardSection = new Section(
 const profileEditButton = document.querySelector("#profile-edit-button");
 
 const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
-  userInfo.setUserInfo(data);
+  userInfo.setUserInfo({
+    name: data.title,
+    job: data.description,
+  });
+  popupWithForm.close();
 });
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  popupWithForm.open();
 });
-popupWithForm.setEventListeners();
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
   cardSection.addItem(
@@ -49,8 +54,8 @@ const popupWithImage = new PopupWithImage("#image-preview-modal");
 popupWithImage.setEventListeners();
 
 const userInfo = new UserInfo({
-  nameSelector: "#profile__title",
-  jobSelector: "#profile__description",
+  nameSelector: ".profile__title",
+  jobSelector: ".profile__description",
 });
 
 cardSection.renderItems();
