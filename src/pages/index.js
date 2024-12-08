@@ -12,7 +12,6 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
-
 const cardSection = new Section(
   {
     items: initialCards,
@@ -71,7 +70,7 @@ const cardSelector = "#card-template";
 function createCard(data) {
   const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
-};
+}
 
 // Elements //
 
@@ -140,24 +139,10 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-const modals = [addCardModal, profileEditModal, previewImageModal];
-
-const section = new Section(
-  {
-    items: [],
-    renderer: createCard,
-  },
-  ".container-selector"
-);
-
 function renderCard(cardData) {
   const cardElement = createCard(cardData);
   section.addItem(cardElement);
 }
-
-
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
@@ -187,19 +172,6 @@ function handleAddCardFormSubmit(evt) {
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
-
-// Create an instance of Section
-const initialCardsSection = new Section(
-  {
-    items: initialCards,
-    renderer: (cardData) => {
-      const card = new Card(cardData); // Assuming you have a Card class
-      const cardElement = card.generateCard(); // Method to create card element
-      section.addItem(cardElement);
-    },
-  },
-  ".cards-container"
-);
 
 // Render the initial cards
 section.renderItems();
