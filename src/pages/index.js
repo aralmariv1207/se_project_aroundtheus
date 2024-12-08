@@ -34,9 +34,7 @@ const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
 });
 
 profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  popupWithForm.open();
+  const currentUserData = userInfo.getUserInfo();
 });
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
@@ -64,9 +62,6 @@ popupWithForm.setEventListeners();
 popupWithImage.setEventListeners();
 
 function handleImageClick(data) {
-  previewImageElement.src = data.link;
-  previewImageElement.alt = data.name;
-  previewModalCaption.textContent = data.name;
   popupWithImage.open({ name: data.name, link: data.link });
 }
 
@@ -96,8 +91,6 @@ const previewModalCaption = document.querySelector(".modal__caption");
 
 const previewModalCloseButton =
   previewImageModal.querySelector(".modal__close");
-
-previewModalCloseButton.addEventListener("click", () => {});
 
 // define an object for storing validators
 const formValidators = {};
@@ -134,41 +127,34 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 const modals = [addCardModal, profileEditModal, previewImageModal];
 
-function renderCard(cardData, wrapper) {
+const section = new Section(
+  {
+    items: [],
+    renderer: createCard,
+  },
+  ".container-selector"
+);
+
+function renderCard(cardData) {
   const cardElement = createCard(cardData);
-  wrapper.prepend(cardElement);
+  section.addItem(cardElement);
 }
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-}
-
-function handleAddCardFormSubmit(evt) {
-  evt.preventDefault();
-  console.log(cardTitleInput);
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  renderCard({ name, link }, cardsWrap);
-
-  addCardFormElement.reset();
-
-  formValidators["Add-a-New-Card"].disableButton();
-}
-
-// Form Listeners //
-
-profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-});
 
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
 
-initialCards.forEach((card) => {
-  console.log(card);
-  renderCard(card, cardsWrap);
-});
+
+// Create an instance of Section
+const initialCardsSection = new Section({
+  items: initialCards,
+  renderer: (cardData) => {
+    const card = new Card(cardData); // Assuming you have a Card class
+    const cardElement = card.generateCard(); // Method to create card element
+    section.addItem(cardElement);
+  },
+}, '.cards-container');
+
+// Render the initial cards
+section.renderItems();
