@@ -12,6 +12,7 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
+
 const cardSection = new Section(
   {
     items: [],
