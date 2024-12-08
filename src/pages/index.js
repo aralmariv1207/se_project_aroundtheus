@@ -163,15 +163,6 @@ function handleProfileFormSubmit(evt) {
   profileFormElement.reset();
 }
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-
-  profileFormElement.reset();
-}
-
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
