@@ -75,11 +75,13 @@ const createCard = (data) => {
 // Elements //
 
 // Selectors for profile form elements
-const profileTitleInput = document.querySelector('#profile-title-input');
-const profileDescriptionInput = document.querySelector('#profile-description-input');
-const profileTitle = document.querySelector('#profile-title');
-const profileDescription = document.querySelector('#profile-description');
-const profileFormElement = document.querySelector('#profile-form');
+const profileTitleInput = document.querySelector("#profile-title-input");
+const profileDescriptionInput = document.querySelector(
+  "#profile-description-input"
+);
+const profileTitle = document.querySelector("#profile-title");
+const profileDescription = document.querySelector("#profile-description");
+const profileFormElement = document.querySelector("#profile-form");
 
 // Your submit handler function
 function handleProfileFormSubmit(evt) {
@@ -87,7 +89,7 @@ function handleProfileFormSubmit(evt) {
 
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  
+
   profileFormElement.reset();
 }
 
@@ -152,38 +154,68 @@ function renderCard(cardData) {
   section.addItem(cardElement);
 }
 
-const handleSubmit = { (_handleAddCardFormSubmit, _handleProfileFormSubmit )};
-
-handleSubmit(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  // Logic to submit the card goes here
-  // Assuming it is an asynchronous operation
+  profileTitle.textContent = profileTitleInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
 
-  this.submitCardData().then(() => {
+  profileFormElement.reset();
+}
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileTitle.textContent = profileTitleInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
+
+  profileFormElement.reset();
+}
+
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
+
+function handleAddCardFormSubmit(evt) {
+  evt.preventDefault();
+
+  const name = cardTitleInput.value;
+  const link = cardUrlInput.value;
+  renderCard({ name, link }, cardsWrap);
+
+  addCardFormElement.reset();
+  formValidators["Add-a-New-Card"].disableButton();
+}
+
+// Logic to submit the card goes here
+// Assuming it is an asynchronous operation
+
+this.submitCardData()
+  .then(() => {
     // Only reset the form after successful submission
     this._form.reset();
     this.close();
-  }).catch((error) => {
-    console.error('Submission failed:', error);
+  })
+  .catch((error) => {
+    console.error("Submission failed:", error);
     // Handle submission error
   });
-}
 
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
 
-
 // Create an instance of Section
-const initialCardsSection = new Section({
-  items: initialCards,
-  renderer: (cardData) => {
-    const card = new Card(cardData); // Assuming you have a Card class
-    const cardElement = card.generateCard(); // Method to create card element
-    section.addItem(cardElement);
+const initialCardsSection = new Section(
+  {
+    items: initialCards,
+    renderer: (cardData) => {
+      const card = new Card(cardData); // Assuming you have a Card class
+      const cardElement = card.generateCard(); // Method to create card element
+      section.addItem(cardElement);
+    },
   },
-}, '.cards-container');
+  ".cards-container"
+);
 
 // Render the initial cards
 section.renderItems();
