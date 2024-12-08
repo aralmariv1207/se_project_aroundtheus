@@ -16,8 +16,8 @@ const cardSection = new Section(
   {
     items: [],
     renderer: (item) => {
-      const card = new Card(item);
-      cardSection.addItem(card);
+      const createCard = new Card(item);
+      cardSection.addItem(createCard);
     },
   },
   ".cards__list"
