@@ -154,14 +154,6 @@ function renderCard(cardData) {
   section.addItem(cardElement);
 }
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-
-  profileFormElement.reset();
-}
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
