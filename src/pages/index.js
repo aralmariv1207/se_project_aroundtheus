@@ -74,14 +74,26 @@ const createCard = (data) => {
 
 // Elements //
 
-const profileEditModal = document.querySelector("#profile-edit-modal");
+// Selectors for profile form elements
+const profileTitleInput = document.querySelector('#profile-title-input');
+const profileDescriptionInput = document.querySelector('#profile-description-input');
+const profileTitle = document.querySelector('#profile-title');
+const profileDescription = document.querySelector('#profile-description');
+const profileFormElement = document.querySelector('#profile-form');
 
-const profileTitle = document.querySelector(".profile__title");
-const profileDescription = document.querySelector(".profile__description");
-const profileTitleInput = document.querySelector("#profile-title-input");
-const profileDescriptionInput = document.querySelector(
-  "#profile-description-input"
-);
+// Your submit handler function
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileTitle.textContent = profileTitleInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
+  
+  profileFormElement.reset();
+}
+
+// Attach event listeners, handle initialization, etc.
+
+const profileEditModal = document.querySelector("#profile-edit-modal");
 
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageElement = previewImageModal.querySelector(
@@ -140,6 +152,23 @@ function renderCard(cardData) {
   section.addItem(cardElement);
 }
 
+const handleSubmit = { (_handleAddCardFormSubmit, _handleProfileFormSubmit )};
+
+handleSubmit(evt) {
+  evt.preventDefault();
+
+  // Logic to submit the card goes here
+  // Assuming it is an asynchronous operation
+
+  this.submitCardData().then(() => {
+    // Only reset the form after successful submission
+    this._form.reset();
+    this.close();
+  }).catch((error) => {
+    console.error('Submission failed:', error);
+    // Handle submission error
+  });
+}
 
 // Adding a New Card //
 

@@ -28,9 +28,17 @@ export default class Card {
     });
   }
 
-  _handleAddCardFormSubmit() {
+  _handleAddCardFormSubmit(evt) {
+    evt.preventDefault();
     this._cardElement.added();
-    this._cardElement.null;
+    this._cardElement.reset;
+  }
+
+  _handleProfileFormSubmit(evt) {
+    evt.preventDefault();
+    profileTitle.textContent = profileTitleInput.value;
+    profileDescription.textContent = profileDescriptionInput.value;
+    profileFormElement.reset();
   }
 
   _handleDeleteCard() {
