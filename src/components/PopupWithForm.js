@@ -20,7 +20,12 @@ export default class PopupWithForm extends Popup {
 
   setInputValues(data) {
     this._inputList.forEach((input) => {
-      input.value = data[input.name];
+      if (data[input.name] !== undefined) {
+        input.value = data[input.name];
+      } else {
+        console.warm(`No data provided for input with name: ${input.name}`);
+        input.value = "";
+      }
     });
   }
 
