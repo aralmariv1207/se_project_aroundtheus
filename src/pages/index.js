@@ -15,10 +15,10 @@ import { config } from "../utils/utils.js";
 
 const cardSection = new Section(
   {
-    items: [],
+    items: [submitCardData],
     renderer: (item) => {
       const createCard = new Card(item);
-      cardSection.addItem(createCard);
+      cardSection.addItem(cardElement);
     },
   },
   ".cards__list"
@@ -68,8 +68,8 @@ function handleImageClick(data) {
 
 const cardSelector = "#card-template";
 
-const createCard = (data) => {
-  const card = new Card(data, cardSelector, handleImageClick);
+function createCard(data) {
+  const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
 };
 
@@ -173,16 +173,16 @@ function handleAddCardFormSubmit(evt) {
 // Logic to submit the card goes here
 // Assuming it is an asynchronous operation
 
-this.submitCardData()
-  .then(() => {
-    // Only reset the form after successful submission
-    this._form.reset();
-    this.close();
-  })
-  .catch((error) => {
-    console.error("Submission failed:", error);
-    // Handle submission error
-  });
+// this.submitCardData()
+//   .then(() => {
+//     // Only reset the form after successful submission
+//     this._form.reset();
+//     this.close();
+//   })
+//   .catch((error) => {
+//     console.error("Submission failed:", error);
+//     // Handle submission error
+//   });
 
 // Adding a New Card //
 
