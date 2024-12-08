@@ -15,9 +15,9 @@ import { config } from "../utils/utils.js";
 
 const cardSection = new Section(
   {
-    items: [initialCards],
+    items: initialCards,
     renderer: (item) => {
-      const cardElement = new Card(item);
+      const cardElement = createCard(item);
       cardSection.addItem(cardElement);
     },
   },
