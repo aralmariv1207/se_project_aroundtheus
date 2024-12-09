@@ -84,14 +84,6 @@ const profileDescription = document.querySelector("#profile-description");
 const profileFormElement = document.querySelector("#profile-form");
 
 // Your submit handler function
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-
-  profileFormElement.reset();
-}
 
 // Attach event listeners, handle initialization, etc.
 
@@ -139,21 +131,8 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-function renderCard(cardData) {
-  const cardElement = createCard(cardData);
-  section.addItem(cardElement);
-}
 
-function handleAddCardFormSubmit(evt) {
-  evt.preventDefault();
 
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  renderCard({ name, link }, cardsWrap);
-
-  addCardFormElement.reset();
-  formValidators["Add-a-New-Card"].disableButton();
-}
 
 // Logic to submit the card goes here
 // Assuming it is an asynchronous operation
@@ -173,5 +152,3 @@ function handleAddCardFormSubmit(evt) {
 
 addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
 
-// Render the initial cards
-section.renderItems();
