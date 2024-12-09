@@ -51,6 +51,7 @@ popupWithFormAddCard.setEventListeners();
 const popupWithImage = new PopupWithImage("#image-preview-modal");
 popupWithImage.setEventListeners();
 
+
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
