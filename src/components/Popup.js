@@ -33,5 +33,3 @@ export default class Popup {
     });
   }
 }
-
-console.log(this._popup);
