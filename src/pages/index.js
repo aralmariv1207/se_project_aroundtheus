@@ -35,6 +35,8 @@ const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
+  popupWithForm.setInputValues(currentUserData);
+  popupWithForm.open();
 });
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
@@ -50,7 +52,6 @@ popupWithFormAddCard.setEventListeners();
 
 const popupWithImage = new PopupWithImage("#image-preview-modal");
 popupWithImage.setEventListeners();
-
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
@@ -132,9 +133,6 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardFormElement.querySelector("#add-card-form");
 const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
-
-
-
 // Logic to submit the card goes here
 // Assuming it is an asynchronous operation
 
@@ -152,4 +150,3 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
-
