@@ -18,6 +18,7 @@ const cardSection = new Section(
     renderer: (item) => {
       const cardElement = createCard(item);
       cardSection.addItem(cardElement);
+      cardSection.renderItems();
     },
   },
   ".cards__list"
@@ -40,6 +41,7 @@ profileEditButton.addEventListener("click", () => {
     description: currentUserData.job,
   });
   popupWithForm.open();
+  popupWithForm.setEventListeners();
 });
 
 const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
@@ -50,8 +52,8 @@ const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
     })
   );
   popupWithFormAddCard.close();
+  popupWithFormAddCard.setEventListeners();
 });
-popupWithFormAddCard.setEventListeners();
 
 const popupWithImage = new PopupWithImage("#image-preview-modal");
 popupWithImage.setEventListeners();
@@ -60,11 +62,6 @@ const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
 });
-
-cardSection.renderItems();
-
-popupWithForm.setEventListeners();
-popupWithImage.setEventListeners();
 
 function handleImageClick(data) {
   popupWithImage.open({ name: data.name, link: data.link });
@@ -76,6 +73,8 @@ function createCard(data) {
   const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
 }
+
+cardSection.renderItems();
 
 // Elements //
 
