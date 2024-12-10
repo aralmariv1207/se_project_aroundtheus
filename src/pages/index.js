@@ -35,7 +35,10 @@ const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
-  popupWithForm.setInputValues(currentUserData);
+  popupWithForm.setInputValues({
+    title: currentUserData.name,
+    description: currentUserData.job,
+  });
   popupWithForm.open();
 });
 
