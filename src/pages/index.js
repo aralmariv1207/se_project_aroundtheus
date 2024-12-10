@@ -18,7 +18,6 @@ const cardSection = new Section(
     renderer: (item) => {
       const cardElement = createCard(item);
       cardSection.addItem(cardElement);
-      cardSection.renderItems();
     },
   },
   ".cards__list"
