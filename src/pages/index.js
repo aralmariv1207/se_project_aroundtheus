@@ -33,6 +33,8 @@ const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   handlePopupWithForm.close();
 });
 
+handlePopupWithForm.setEventListeners();
+
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
   handlePopupWithForm.setInputValues({
