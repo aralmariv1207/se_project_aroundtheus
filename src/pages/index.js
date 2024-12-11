@@ -51,8 +51,9 @@ const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
     })
   );
   popupWithFormAddCard.close();
-  popupWithFormAddCard.setEventListeners();
+  formValidators["Add-a-New-Card"].disableButton();
 });
+popupWithFormAddCard.setEventListeners();
 
 const popupWithImage = new PopupWithImage("#image-preview-modal");
 popupWithImage.setEventListeners();
