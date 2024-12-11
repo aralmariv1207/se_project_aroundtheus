@@ -42,8 +42,4 @@ export default class PopupWithForm extends Popup {
   getForm() {
     return this._form;
   }
-
-  close() {
-    super.close();
-  }
 }

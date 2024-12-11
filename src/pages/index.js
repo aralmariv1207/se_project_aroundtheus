@@ -25,38 +25,40 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const popupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
+const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
   userInfo.setUserInfo({
     name: data.title,
     job: data.description,
   });
-  popupWithForm.close();
+  handlePopupWithForm.close();
 });
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
-  popupWithForm.setInputValues({
+  handlePopupWithForm.setInputValues({
     title: currentUserData.name,
     description: currentUserData.job,
   });
-  popupWithForm.open();
-  popupWithForm.setEventListeners();
+  handlePopupWithForm.open();
 });
 
-const popupWithFormAddCard = new PopupWithForm("#add-card-modal", (data) => {
-  cardSection.addItem(
-    createCard({
-      name: data.title,
-      link: data.url,
-    })
-  );
-  popupWithFormAddCard.close();
-  formValidators["Add-a-New-Card"].disableButton();
-});
-popupWithFormAddCard.setEventListeners();
+const addCardWithPopupWithForm = new PopupWithForm(
+  "#add-card-modal",
+  (data) => {
+    cardSection.reset(
+      createCard({
+        name: data.title,
+        link: data.url,
+      })
+    );
+    addCardWithPopupWithForm.close();
+    formValidators["Add-a-New-Card"].disableButton();
+  }
+);
+addCardWithPopupWithForm.setEventListeners();
 
-const popupWithImage = new PopupWithImage("#image-preview-modal");
-popupWithImage.setEventListeners();
+const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
+handlePopupWithImage.setEventListeners();
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
@@ -64,7 +66,7 @@ const userInfo = new UserInfo({
 });
 
 function handleImageClick(data) {
-  popupWithImage.open({ name: data.name, link: data.link });
+  handlePopupWithImage.open({ name: data.name, link: data.link });
 }
 
 const cardSelector = "#card-template";
@@ -79,7 +81,7 @@ cardSection.renderItems();
 // Elements //
 
 // Selectors for profile form elements
-const profileTitleInput = document.querySelector("#profile-title-input");
+
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
@@ -151,4 +153,6 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 // Adding a New Card //
 
-addNewCardButton.addEventListener("click", () => popupWithFormAddCard.open());
+addNewCardButton.addEventListener("click", () =>
+  addCardWithPopupWithForm.open()
+);
