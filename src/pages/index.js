@@ -42,12 +42,13 @@ profileEditButton.addEventListener("click", () => {
   handlePopupWithForm.open();
 });
 
-const addCardForm = document.querySelector();
+const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
+
 const addCardWithPopupWithForm = new PopupWithForm(
   "#add-card-modal",
   (data) => {
-    cardSection.add(
+    cardSection.addItem(
       createCard({
         name: data.title,
         link: data.url,
