@@ -47,20 +47,18 @@ profileEditButton.addEventListener("click", () => {
 const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
-const addCardWithPopupWithForm = new PopupWithForm(
-  "#add-card-modal",
-  (data) => {
-    cardSection.addItem(
-      createCard({
-        name: data.title,
-        link: data.url,
-      })
-    );
-    addCardWithPopupWithForm.close();
-    formValidators["Add-a-New-Card"].disableButton();
-  }
-);
-addCardWithPopupWithForm.setEventListeners();
+const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
+  cardSection.addItem(
+    createCard({
+      name: data.title,
+      link: data.url,
+    })
+  );
+  addCardWithPopupForm.close();
+  addCardForm.reset();
+  formValidators["Add-a-New-Card"].disableButton();
+});
+addCardWithPopupForm.setEventListeners();
 
 const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
 handlePopupWithImage.setEventListeners();
@@ -145,6 +143,4 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 // Adding a New Card //
 
-addNewCardButton.addEventListener("click", () =>
-  addCardWithPopupWithForm.open()
-);
+addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
