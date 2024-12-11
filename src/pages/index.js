@@ -42,10 +42,12 @@ profileEditButton.addEventListener("click", () => {
   handlePopupWithForm.open();
 });
 
+const addCardForm = document.querySelector();
+addCardForm.reset();
 const addCardWithPopupWithForm = new PopupWithForm(
   "#add-card-modal",
   (data) => {
-    cardSection.reset(
+    cardSection.add(
       createCard({
         name: data.title,
         link: data.url,
@@ -56,9 +58,6 @@ const addCardWithPopupWithForm = new PopupWithForm(
   }
 );
 addCardWithPopupWithForm.setEventListeners();
-
-const addCardForm = document.querySelector();
-addCardForm.reset();
 
 const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
 handlePopupWithImage.setEventListeners();
