@@ -28,11 +28,8 @@ export default class Card {
     });
   }
 
-  _handleAddCardFormSubmit(evt) {
-    evt.preventDefault();
-    this._cardElement.added();
-    this._cardElement.reset;
-  }
+
+  
 
   
 
