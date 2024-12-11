@@ -57,6 +57,9 @@ const addCardWithPopupWithForm = new PopupWithForm(
 );
 addCardWithPopupWithForm.setEventListeners();
 
+const addCardForm = document.querySelector();
+addCardForm.reset();
+
 const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
 handlePopupWithImage.setEventListeners();
 
@@ -77,19 +80,6 @@ function createCard(data) {
 }
 
 cardSection.renderItems();
-
-// Elements //
-
-// Selectors for profile form elements
-
-const profileDescriptionInput = document.querySelector(
-  "#profile-description-input"
-);
-const profileTitle = document.querySelector("#profile-title");
-const profileDescription = document.querySelector("#profile-description");
-const profileFormElement = document.querySelector("#profile-form");
-
-// Your submit handler function
 
 // Attach event listeners, handle initialization, etc.
 
