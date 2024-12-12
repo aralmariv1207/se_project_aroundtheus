@@ -30,4 +30,10 @@ api
     console.error(err);
   });
 
+  function renderCardsAfterUserInfo(() => {
+Promise.all();
+  });
+    
+  
+
   
