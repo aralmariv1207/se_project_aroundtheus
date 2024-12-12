@@ -44,9 +44,9 @@ Previous concepts like functions are further expanded to cover more advanced one
 
 **Project Features**
 
--OOP
--Modular JS
--JS Classes
+- OOP
+- Modular JS
+- JS Classes
 
 **Enhancement Plans**
 
@@ -66,9 +66,9 @@ More specifically, we learned how to bundle and build with Webpack as well as ho
 
 **Project Features**
 
--NodeJS
--Webpack
--Advanced OOP
+- NodeJS
+- Webpack
+- Advanced OOP
 
 **Enhancement Plans**
 
