@@ -5,9 +5,12 @@ export default class Api {
       headers: {
         authorization: "093dd200-595d-48b5-923b-6b70cedcb3ea",
       },
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        return Promise.reject(`Error: ${res.status}`);
+      }
+    });
   }
 }
-
-// // if the server returns an error, reject the promise
-// return Promise.reject(`Error: ${res.status}`);

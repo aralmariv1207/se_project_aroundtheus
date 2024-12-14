@@ -12,7 +12,7 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
-import Api from "../src/Api.js";
+import Api from "../components/Api.js";
 
 const cardSection = new Section(
   {
