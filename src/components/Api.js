@@ -5,12 +5,16 @@ export default class Api {
       headers: {
         authorization: "093dd200-595d-48b5-923b-6b70cedcb3ea",
       },
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        return Promise.reject(`Error: ${res.status}`);
-      }
-    });
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 }
