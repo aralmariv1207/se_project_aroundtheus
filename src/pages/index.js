@@ -81,8 +81,6 @@ function createCard(data) {
   return card.getView();
 }
 
-cardSection.renderItems();
-
 // Attach event listeners, handle initialization, etc.
 
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -164,9 +162,7 @@ api
 
 function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards()]).then(([cards]) => {
-    cards.forEach((card) => {
-      cardSection.renderItems(card);
-    });
+    cardSection.renderItems(cards);
   });
 }
 renderCardsAfterUserInfo();
