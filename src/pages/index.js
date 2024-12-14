@@ -162,20 +162,11 @@ api
     console.error(err);
   });
 
-  function getUserinfo() {
-    return fetch('/user/info').then(response => response.json());
-  } 
-  
-  function getInitialCards() {
-    return fetch('/cards').then(response => response.json());
-  }
-  
-  function renderCardsAfterUserInfo() {
-    return Promise.all([handleUserInfo(),
-      getInitialCards()])
-      .then(([userInfo, cards]) => {
-        cards.forEach(card => {
-          renderCard(card);
-        });
-      })
-    }
+function renderCardsAfterUserInfo() {
+  return Promise.all([api.getInitialCards]).then(([cards]) => {
+    cards.forEach((card) => {
+      cardSection.renderItems(card);
+    });
+  });
+}
+renderCardsAfterUserInfo();
