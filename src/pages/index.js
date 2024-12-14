@@ -12,6 +12,8 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
+import Api from "../src/Api.js";
+
 const cardSection = new Section(
   {
     items: initialCards,
@@ -145,4 +147,35 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "093dd200-595d-48b5-923b-6b70cedcb3ea",
+    "Content-Type": "application/json",
+  },
+});
 
+api
+  .getInitialCards()
+  .then((result) => {})
+  .catch((err) => {
+    console.error(err);
+  });
+
+  function getUserinfo() {
+    return fetch('/user/info').then(response => response.json());
+  } 
+  
+  function getInitialCards() {
+    return fetch('/cards').then(response => response.json());
+  }
+  
+  function renderCardsAfterUserInfo() {
+    return Promise.all([handleUserInfo(),
+      getInitialCards()])
+      .then(([userInfo, cards]) => {
+        cards.forEach(card => {
+          renderCard(card);
+        });
+      })
+    }
