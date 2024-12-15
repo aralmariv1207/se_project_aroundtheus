@@ -148,7 +148,7 @@ addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "093dd200-595d-48b5-923b-6b70cedcb3ea",
+    authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
     "Content-Type": "application/json",
   },
 });
