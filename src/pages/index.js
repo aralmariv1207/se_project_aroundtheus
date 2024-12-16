@@ -77,6 +77,7 @@ function handleImageClick(data) {
 const cardSelector = "#card-template";
 
 function createCard(data) {
+  console.log(data);
   const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
 }
@@ -155,7 +156,10 @@ const api = new Api({
 
 api
   .getInitialCards()
-  .then((result) => {})
+  .then((result) => {
+    console.log(result.length);
+    cardSection.renderItems(result);
+  })
   .catch((err) => {
     console.error(err);
   });
