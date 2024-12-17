@@ -165,7 +165,7 @@ api
   });
 
 function renderCardsAfterUserInfo() {
-  return Promise.all([api.getInitialCards()]).then(([cards]) => {
+  return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(([cards, userInfo]) => {
     cardSection.renderItems(cards);
   });
 }
