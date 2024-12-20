@@ -5,12 +5,9 @@ export default class Card {
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
     this._deletePopup = deletePopup;
-    this._element
-      .querySelector(".card__delete-button")
-      .addEventListener("click", () => {
-        deletePopup.open();
-      });
+  
   }
+}
 
   _setEventListeners() {
     //create the variable: ".card__like-button"

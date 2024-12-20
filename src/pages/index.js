@@ -175,3 +175,7 @@ function renderCardsAfterUserInfo() {
 renderCardsAfterUserInfo();
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
+
+function handleConfirmModal(){
+  // whatever you need to do when the trash icon is clicked
+}
