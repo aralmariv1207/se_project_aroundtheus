@@ -153,7 +153,27 @@
           <button class="card__delete-button" type="button"></button>
         </div>
       </li>
+
     </template>
+    
+<div class="modal" id="remove-card-popup">
+  <div class="modal__container">
+    <button
+      aria-label="Close modal"
+      type="button"
+      class="modal__close"
+    ></button>
+    <h3 class="modal__heading">Are you sure?</h3>
+    <form
+      class="modal__form"
+      id="remove-card-form"
+      novalidate
+    >
+      <button type="submit" class="button modal__button">Yes</button>
+    </form>
+  </div>
+</div>
+
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
     </footer>
