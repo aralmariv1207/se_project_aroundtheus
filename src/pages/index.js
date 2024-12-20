@@ -13,6 +13,7 @@ import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
 import Api from "../components/Api.js";
+import PopupWithConfirm from "../components/PopupWithConfirm.js"
 
 const cardSection = new Section(
   {
@@ -165,8 +166,12 @@ api
   });
 
 function renderCardsAfterUserInfo() {
-  return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(([cards, userInfo]) => {
-    cardSection.renderItems(cards);
-  });
+  return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
+    ([cards, userInfo]) => {
+      cardSection.renderItems(cards);
+    }
+  );
 }
 renderCardsAfterUserInfo();
+
+const deletePopup = new PopupWithConfirm("#remove-card-popup");
