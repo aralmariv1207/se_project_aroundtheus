@@ -7,7 +7,7 @@ export default class Card {
     this._deletePopup = deletePopup;
   
   }
-}
+
 
   _setEventListeners() {
     //create the variable: ".card__like-button"
