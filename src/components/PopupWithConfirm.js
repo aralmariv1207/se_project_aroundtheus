@@ -4,4 +4,8 @@ export default class PopupWithConfirm extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
   }
+  setSubmitFunction(submitFunction){}
+  setEventListeners(){
+    
+  }
 }
