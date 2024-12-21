@@ -24,6 +24,7 @@ export default class Card {
     //add the event listener
     this.deleteButton.addEventListener("click", () => {
       this._handleDeleteCard();
+      
     });
 
     this._imageElement.addEventListener("click", () => {
