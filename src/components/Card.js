@@ -30,16 +30,17 @@ export default class Card {
     this._imageElement.addEventListener("click", () => {
       this._handleImageClick({ name: this._name, link: this._link });
     });
-    
-this._handleConfirmModal.addEventListener("click", () => {
-  this._handle({ name: this._name, link: this._link });
-});
 
   }
+
+  this._handleConfirmModal.addEventListener("click", () => {
+    this._handleConfirmModal({ name: this._name, link: this._link });
+  });
 
   _handleDeleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
+    this._deletePopup = deletePopup;
   }
   _handleLikeIcon() {
     this.likeButton.classList.toggle("card__like-button_active");
