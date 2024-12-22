@@ -145,6 +145,10 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 // Adding a New Card //
 
+
+
+
+
 addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
 
 const api = new Api({
@@ -157,9 +161,18 @@ const api = new Api({
 
 api
   .getInitialCards()
-  .then((result) => {
-    console.log(result.length);
-    cardSection.renderItems(result);
+  .then((cards) => {
+    console.log(cards.length);
+    cards.forEach((cardData) => {
+      const card = new Card({
+        name: cardData.name,
+        link: cardData.link,
+        id: cardData._id}, cardSelector,
+        handleImageClick,
+        handleConfirmModal);
+
+        cardSection.addItem(card.getView());
+      });
   })
   .catch((err) => {
     console.error(err);
@@ -176,19 +189,16 @@ renderCardsAfterUserInfo();
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
 
-function handleConfirmModal(data){
-  confirmDeleteModal.setSubmitFunction(() => {
-    api.handleDeleteCard(card._id)
-    .then((res) => {
-      console.log(res);
+function handleConfirmModal(cardData){
+  deletePopup.setSubmitFunction(() => {
+    api.handleDeleteCard(cardData._id)
+    .then(() => {
+      cardData.element.remove();
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((err) => 
+      console.error(err));
     });
-    })
-    handleConfirmModal.open({ name: data.name, link: data.link });
- 
+    deletePopup.open();
+  
 }
-
-
 
