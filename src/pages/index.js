@@ -13,7 +13,7 @@ import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
 import Api from "../components/Api.js";
-import PopupWithConfirm from "../components/PopupWithConfirm.js"
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
 
 const cardSection = new Section(
   {
@@ -79,7 +79,12 @@ const cardSelector = "#card-template";
 
 function createCard(data) {
   console.log(data);
-  const card = new Card(data, "#card-template", handleImageClick);
+  const card = new Card(
+    data,
+    "#card-template",
+    handleImageClick,
+    handleConfirmModal
+  );
   return card.getView();
 }
 
@@ -145,10 +150,6 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 
 // Adding a New Card //
 
-
-
-
-
 addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
 
 const api = new Api({
@@ -163,16 +164,6 @@ api
   .getInitialCards()
   .then((cards) => {
     console.log(cards.length);
-    cards.forEach((cardData) => {
-      const card = new Card({
-        name: cardData.name,
-        link: cardData.link,
-        id: cardData._id}, cardSelector,
-        handleImageClick,
-        handleConfirmModal);
-
-        cardSection.addItem(card.getView());
-      });
   })
   .catch((err) => {
     console.error(err);
@@ -188,17 +179,15 @@ function renderCardsAfterUserInfo() {
 renderCardsAfterUserInfo();
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
-
-function handleConfirmModal(cardData){
+deletePopup.setEventListeners();
+function handleConfirmModal(cardData) {
   deletePopup.setSubmitFunction(() => {
-    api.handleDeleteCard(cardData._id)
-    .then(() => {
-      cardData.element.remove();
-    })
-    .catch((err) => 
-      console.error(err));
-    });
-    deletePopup.open();
-  
+    api
+      .handleDeleteCard(cardData._id)
+      .then(() => {
+        cardData.element.remove();
+      })
+      .catch((err) => console.error(err));
+  });
+  deletePopup.open();
 }
-
