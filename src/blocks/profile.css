@@ -83,15 +83,16 @@
   height: 100px;
 }
 
-
 .profile-picture img {
   display: block;
+  margin: 0 auto;
 }
 .profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .edit-icon {
