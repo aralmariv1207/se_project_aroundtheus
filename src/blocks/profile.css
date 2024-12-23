@@ -77,15 +77,21 @@
 
 .profile-picture {
   position: relative;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   width: 100px;
   height: 100px;
 }
 
+
+.profile-picture img {
+  display: block;
+}
 .profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .edit-icon {
