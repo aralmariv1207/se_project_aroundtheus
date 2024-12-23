@@ -75,6 +75,21 @@
   fill: #c4c4c4;
 }
 
+.profile-picture {
+  position: relative;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.profile-picture:hover.edit-icon {
+  display: block;
+}
+
 @media screen and (max-width: 480px) {
   .profile {
     background-color: black;

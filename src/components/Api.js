@@ -24,18 +24,19 @@ export default class Api {
   }
   getUserInfo() {
     return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
-      method: "PATCH", 
+      method: "PATCH",
       headers: {
-        authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json"        
+        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: "Jacques Cousteau",
-        about: "Explorer"
-      })
+        about: "Explorer",
+        avatar: "https://placehold.co/600x400",
+      }),
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
   }
-} 
+}
