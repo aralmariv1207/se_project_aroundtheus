@@ -77,6 +77,15 @@
 
 .profile-picture {
   position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .edit-icon {
@@ -140,5 +149,10 @@
     width: 18px;
     height: 18px;
     margin-right: 10px;
+  }
+
+  .profile-picture {
+    width: 80px;
+    height: 80px;
   }
 }
