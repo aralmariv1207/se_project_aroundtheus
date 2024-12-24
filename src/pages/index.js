@@ -69,6 +69,7 @@ handlePopupWithImage.setEventListeners();
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
+  avatarSelector: ".profile__image",
 });
 
 function handleImageClick(data) {
@@ -173,6 +174,13 @@ function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
     ([cards, userInfo]) => {
       cardSection.renderItems(cards);
+      userInfo.setUserInfo({
+        name: userInfo.name,
+        job: userInfo.about,
+      });
+      userInfo.setUserAvatar({
+        avatar: userInfo.avatar,
+      });
     }
   );
 }
