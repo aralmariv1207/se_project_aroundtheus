@@ -18,11 +18,6 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            class="profile__image"
-            src="<%=require('./images/jacques-cousteau.png')%>"
-            alt="Jacques Cousteau's Picture"
-          />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -39,7 +34,6 @@
           <ul class="cards__list"></ul>
         </section>
         <div class="profile-picture">
-          <img src="./images/jacques-cousteau.png" alt="Profile Picture" />
           <div class="edit-icon">✎</div>
         </div>
       </main>
@@ -48,6 +42,15 @@
 
       <div class="modal" id="profile-edit-modal">
         <div class="modal__container">
+          <img
+            class="profile__image"
+            src="<%=require('./images/jacques-cousteau.png')%>"
+            alt="Jacques Cousteau's Picture"
+          />
+          <img
+            src="<%=require('./images/jacques-cousteau.png')%>"
+            alt="Profile Picture"
+          />
           <button class="modal__close" type="button"></button>
           <h2 class="modal__heading">Edit Profile</h2>
           <form

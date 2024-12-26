@@ -172,14 +172,14 @@ api
 
 function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
-    ([cards, userInfo]) => {
+    ([cards, userData]) => {
       cardSection.renderItems(cards);
       userInfo.setUserInfo({
-        name: userInfo.name,
-        job: userInfo.about,
+        name: userData.name,
+        job: userData.about,
       });
       userInfo.setUserAvatar({
-        avatar: userInfo.avatar,
+        avatar: userData.avatar,
       });
     }
   );
