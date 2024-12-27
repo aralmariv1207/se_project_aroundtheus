@@ -24,12 +24,6 @@
               src="<%=require('./images/jacques-cousteau.png')%>"
               alt="Jacques Cousteau's Picture"
             />
-
-            <img
-              class="profile__button"
-              src="<%=require('./images/edit-button_vector.svg')%>"
-              alt="Edit Profile"
-            />
           </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
@@ -38,7 +32,13 @@
               class="profile__edit-button"
               id="profile-edit-button"
               aria-label
-            ></button>
+            >
+              <img
+                class="profile__edit-icon"
+                src="<%=require('./images/edit-button_vector.svg')%>"
+                alt="Edit Profile"
+              />
+            </button>
             <p class="profile__description">Explorer</p>
           </div>
           <button type="button" class="profile__add-button" aria-label></button>
