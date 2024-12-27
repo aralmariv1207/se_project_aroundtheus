@@ -27,13 +27,13 @@
 
 .avatar__edit-icon {
   position: absolute;
-
+  display: none;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   background: black;
-  opacity: 0.6;
+
   border: none;
 }
 
@@ -106,19 +106,10 @@
 }
 
 .profile__container {
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
 
-.edit-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: none;
+  position: relative;
 }
 
 .profile-picture:hover.edit-icon {
