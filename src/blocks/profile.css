@@ -104,7 +104,8 @@
   display: block;
   margin: 0 auto;
 }
-.profile-container {
+
+.profile__container {
   display: flex;
   justify-content: center;
   align-items: center;
