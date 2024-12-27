@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 
-.profile__edit-icon {
+.avatar__edit-icon {
   position: absolute;
 
   top: 0;
@@ -37,7 +37,7 @@
   border: none;
 }
 
-.profile__edit-icon:hover {
+.avatar__edit-icon:hover {
   opacity: 0.6;
   cursor: pointer;
 }
