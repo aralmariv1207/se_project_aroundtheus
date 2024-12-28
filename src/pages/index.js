@@ -207,3 +207,19 @@ avatarEditButton.addEventListener("click", () => {
   handleAvatarModal.open();
   handleAvatarModal.setEventListeners();
 });
+
+const renderModalFormLoading = new PopupWithForm(
+  ".modal__button",
+  (data) => {}
+);
+
+function handleFormSubmit(inputValues) {
+  return new Promise((resolve, reject) => {
+    userInfo(inputValues)
+      .then((response) => resolve(response))
+      .catch((error) => reject(error));
+  });
+}
+
+const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
+popupWithForm.setEventListeners();

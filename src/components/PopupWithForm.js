@@ -35,7 +35,18 @@ export default class PopupWithForm extends Popup {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      this._handleFormSubmit(this._getInputValues());
+      this.renderModalFormLoading(true);
+
+      this._handleFormSubmit(this._getInputValues())
+        .then(() => {
+          this.close();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        })
+        .finally(() => {
+          this.renderModalFormLoading(false);
+        });
     });
   }
 
@@ -46,6 +57,14 @@ export default class PopupWithForm extends Popup {
   handleAvatarModal() {
     this._handleAvatarModal;
     this._form.addEventListener.open();
-  rs();
+  }
+
+  renderModalFormLoading(isLoading) {
+    this._submitButton = this._form.querySelector(".modal__button");
+    if (isLoading) {
+      this._submitButton.textContent = "Saving...";
+    } else {
+      this._submitButton.textContent = "Save";
+    }
   }
 }
