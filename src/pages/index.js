@@ -199,3 +199,5 @@ function handleConfirmModal(cardData) {
   });
   deletePopup.open();
 }
+
+const handleAvatarModal = new PopupWithForm("#avatar-edit-icon", (data) => {});

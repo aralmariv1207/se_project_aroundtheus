@@ -24,12 +24,7 @@
               src="<%=require('./images/jacques-cousteau.png')%>"
               alt="Jacques Cousteau's Picture"
             />
-            <button
-              type="button"
-              class="avatar__edit-icon"
-              id="avatar__edit-icon"
-              aria-label
-            ></button>
+           
           </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
@@ -177,6 +172,27 @@
         </form>
       </div>
     </div>
+
+<!-- Avatar Modal -->
+
+<div class="modal" id="avatar-modal">
+  <div class="avatar__modal">
+
+
+  <button
+  type="button"
+  class="avatar__edit-icon"
+  id="avatar-edit-icon"
+  aria-label
+>
+<img
+    class="profile__button-image"
+    src="<%=require('./images/edit-button_vector.svg')%>"
+    alt="Edit Profile"
+  />
+</button>
+</div>
+
 
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Around The U.S.</p>

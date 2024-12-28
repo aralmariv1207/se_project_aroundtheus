@@ -42,4 +42,8 @@ export default class PopupWithForm extends Popup {
   getForm() {
     return this._form;
   }
+
+  handleAvatarModal() {
+    this._handleAvatarModal;
+  }
 }
