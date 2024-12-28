@@ -25,6 +25,13 @@
               alt="Jacques Cousteau's Picture"
             />
            
+            <button
+            type="button"
+            class="avatar__edit-icon"
+            id="avatar-edit-icon"
+            aria-label
+          ></button>  
+
           </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
@@ -176,22 +183,25 @@
 <!-- Avatar Modal -->
 
 <div class="modal" id="avatar-modal">
-  <div class="avatar__modal">
+  <div class="modal__container">
+    <button
+    aria-label="Close modal"
+    type="button"
+    class="modal__close"
+  ></button>
+  <h3 class="modal__heading">Are you sure?</h3>
+  <form class="modal__form" id="remove-card-form" novalidate>
+    <button type="submit" class="button modal__button">Yes</button>
+  </form>
+</div>
+</div>
 
-
-  <button
-  type="button"
-  class="avatar__edit-icon"
-  id="avatar-edit-icon"
-  aria-label
->
-<img
+<!-- <img
     class="profile__button-image"
     src="<%=require('./images/edit-button_vector.svg')%>"
     alt="Edit Profile"
   />
-</button>
-</div>
+</div> -->
 
 
     <footer class="footer">
