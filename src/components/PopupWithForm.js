@@ -46,5 +46,6 @@ export default class PopupWithForm extends Popup {
   handleAvatarModal() {
     this._handleAvatarModal;
     this._form.addEventListener.open();
+  rs();
   }
 }

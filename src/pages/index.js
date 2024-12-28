@@ -205,4 +205,5 @@ const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
 const avatarEditButton = document.querySelector(".avatar__edit-icon");
 avatarEditButton.addEventListener("click", () => {
   handleAvatarModal.open();
+  handleAvatarModal.setEventListeners();
 });
