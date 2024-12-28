@@ -200,4 +200,9 @@ function handleConfirmModal(cardData) {
   deletePopup.open();
 }
 
-const handleAvatarModal = new PopupWithForm("#avatar-edit-icon", (data) => {});
+const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
+
+const avatarEditButton = document.querySelector(".avatar__edit-icon");
+avatarEditButton.addEventListener("click", () => {
+  handleAvatarModal.open();
+});
