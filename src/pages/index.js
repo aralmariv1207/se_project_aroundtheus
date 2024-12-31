@@ -140,7 +140,10 @@ enableValidation(config);
 const cardsWrap = document.querySelector(".cards__list");
 
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardFormElement = addCardModal.querySelector(".modal__form");
+const addCardFormElement = addCardModal.querySelector(
+  ".modal__form",
+  ".modal__input"
+);
 
 // Buttons and other DOM Nodes //
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
@@ -209,7 +212,7 @@ avatarEditButton.addEventListener("click", () => {
   handleAvatarModal.setEventListeners();
 });
 
-const popupWithForm = new PopupWithForm(handleFormSubmit);
+const popupWithForm = new PopupWithForm(handleFormSubmit.bind(this));
 popupWithForm.setEventListeners();
 
 const renderModalFormLoading = new PopupWithForm((data) => {});
