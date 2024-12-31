@@ -91,7 +91,6 @@ function handleConfirmModal(userInfo) {
   deletePopup.open();
 }
 
-
 const cardSelector = "#card-template";
 
 function createCard(data) {
@@ -201,23 +200,18 @@ function renderCardsAfterUserInfo() {
   );
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderCardsAfterUserInfo();
+renderCardsAfterUserInfo();
 
- 
+const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
 
- 
-  const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
-
-  const avatarEditButton = document.querySelector(".avatar__edit-icon");
-  avatarEditButton.addEventListener("click", () => {
-    handleAvatarModal.open();
-    handleAvatarModal.setEventListeners();
-  });
-
-  const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
-  popupWithForm.setEventListeners();
+const avatarEditButton = document.querySelector(".avatar__edit-icon");
+avatarEditButton.addEventListener("click", () => {
+  handleAvatarModal.open();
+  handleAvatarModal.setEventListeners();
 });
+
+const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
+popupWithForm.setEventListeners();
 
 const renderModalFormLoading = new PopupWithForm(
   ".modal__button",
