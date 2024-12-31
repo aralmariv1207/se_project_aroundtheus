@@ -28,13 +28,12 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
-  userInfo.setUserInfo({
-    name: data.title,
-    job: data.description,
-  });
-  handlePopupWithForm.close();
-});
+const handlePopupWithForm = new PopupWithForm(
+  "#profile-edit-modal",
+  handleFormSubmit
+);
+
+handlePopupWithForm.close();
 
 handlePopupWithForm.setEventListeners();
 
@@ -210,13 +209,10 @@ avatarEditButton.addEventListener("click", () => {
   handleAvatarModal.setEventListeners();
 });
 
-const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
+const popupWithForm = new PopupWithForm(handleFormSubmit);
 popupWithForm.setEventListeners();
 
-const renderModalFormLoading = new PopupWithForm(
-  ".modal__button",
-  (data) => {}
-);
+const renderModalFormLoading = new PopupWithForm((data) => {});
 
 function handleFormSubmit(inputValues) {
   return userInfo(inputValues)
