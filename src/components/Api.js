@@ -53,18 +53,23 @@ export default class Api {
   addNewCard(name, link) {
     return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
 method: "POST",
-header: {
+headers: {
   Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
   "Content-Type": "application/json",
 },
 body: JSON.stringify({
   name: name,
   link: link,
-})
-
+}),
     })
+    .then(reponse => {
+      if (!response.ok) {
+        return Promise.reject(`Error: ${response.status}`);
+      }
+      return response.json();
+    });
   }
 
-  
+
 }
 
