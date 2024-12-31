@@ -76,6 +76,22 @@ function handleImageClick(data) {
   handlePopupWithImage.open({ name: data.name, link: data.link });
 }
 
+const deletePopup = new PopupWithConfirm("#remove-card-popup");
+deletePopup.setEventListeners();
+
+function handleConfirmModal(userInfo) {
+  deletePopup.setSubmitFunction(() => {
+    api
+      .handleDeleteCard(userInfo._id)
+      .then(() => {
+        userInfo.element.remove();
+      })
+      .catch((err) => console.error(err));
+  });
+  deletePopup.open();
+}
+
+
 const cardSelector = "#card-template";
 
 function createCard(data) {
@@ -184,28 +200,23 @@ function renderCardsAfterUserInfo() {
     }
   );
 }
-renderCardsAfterUserInfo();
 
-const deletePopup = new PopupWithConfirm("#remove-card-popup");
-deletePopup.setEventListeners();
-function handleConfirmModal(cardData) {
-  deletePopup.setSubmitFunction(() => {
-    api
-      .handleDeleteCard(cardData._id)
-      .then(() => {
-        cardData.element.remove();
-      })
-      .catch((err) => console.error(err));
+document.addEventListener("DOMContentLoaded", () => {
+  renderCardsAfterUserInfo();
+
+ 
+
+ 
+  const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
+
+  const avatarEditButton = document.querySelector(".avatar__edit-icon");
+  avatarEditButton.addEventListener("click", () => {
+    handleAvatarModal.open();
+    handleAvatarModal.setEventListeners();
   });
-  deletePopup.open();
-}
 
-const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
-
-const avatarEditButton = document.querySelector(".avatar__edit-icon");
-avatarEditButton.addEventListener("click", () => {
-  handleAvatarModal.open();
-  handleAvatarModal.setEventListeners();
+  const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
+  popupWithForm.setEventListeners();
 });
 
 const renderModalFormLoading = new PopupWithForm(
@@ -227,6 +238,3 @@ function handleFormSubmit(inputValues) {
       this.renderModalFormLoading(false);
     });
 }
-
-const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
-popupWithForm.setEventListeners();
