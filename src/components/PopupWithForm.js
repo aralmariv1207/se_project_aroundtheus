@@ -37,17 +37,7 @@ export default class PopupWithForm extends Popup {
 
       this.renderModalFormLoading(true);
 
-      this._handleFormSubmit(this._getInputValues())
-        .then(() => {
-          console.log("Form submission successful");
-          this.close();
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        })
-        .finally(() => {
-          this.renderModalFormLoading(false);
-        });
+      this._handleFormSubmit(this._getInputValues());
     });
   }
 

@@ -214,11 +214,18 @@ const renderModalFormLoading = new PopupWithForm(
 );
 
 function handleFormSubmit(inputValues) {
-  return new Promise((resolve, reject) => {
-    userInfo(inputValues)
-      .then((response) => resolve(response))
-      .catch((error) => reject(error));
-  });
+  return userInfo(inputValues)
+    .then((response) => {
+      console.log("Form submission successful");
+      this.close();
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    })
+    .finally(() => {
+      this.renderModalFormLoading(false);
+    });
 }
 
 const popupWithForm = new PopupWithForm(".popup-selector", handleFormSubmit);
