@@ -50,7 +50,7 @@ export default class Api {
       .catch((error) => console.error("Error:", error));
   }
 
-  addNewCard(name, link) {
+  createNewCard(name, link) {
     return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
       method: "POST",
       headers: {
@@ -67,5 +67,43 @@ export default class Api {
       }
       return response.json();
     });
+  }
+
+  editProfile(name, about) {
+    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+      method: "PATCH",
+      headers: {
+        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        about: about,
+      }),
+    }).then((response) => {
+      if (!response.ok) {
+        return Promise.reject(`Error: ${response.status}`);
+      }
+      return response.json();
+    });
+  }
+  editAvatar(avatar) {
+    return fetch(
+      "https://around-api.en.tripleten-services.com/v1/users/me/avatar",
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+          "Content-Type": "application/json",
+        },
+body: JSON.stringify({
+  avatar: avatar,
+}),
+      }).then((response) => {
+        if (!response.ok) {
+          return Promise.reject(`Error: ${response.status}`);
+        }
+        return response.json();
+      });
   }
 }
