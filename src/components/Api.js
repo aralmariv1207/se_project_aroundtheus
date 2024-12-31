@@ -4,7 +4,7 @@ export default class Api {
     console.log("Fetching initial cards");
     return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
       headers: {
-        authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
       },
     })
       .then((res) => {
@@ -25,7 +25,7 @@ export default class Api {
   getUserInfo() {
     return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
       headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
         "Content-Type": "application/json",
       },
     })
@@ -49,5 +49,22 @@ export default class Api {
       .then((response) => response.json())
       .catch((error) => console.error("Error:", error));
   }
+
+  addNewCard(name, link) {
+    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+method: "POST",
+header: {
+  Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+  "Content-Type": "application/json",
+},
+body: JSON.stringify({
+  name: name,
+  link: link,
+})
+
+    })
+  }
+
+  
 }
 
