@@ -49,7 +49,7 @@ profileEditButton.addEventListener("click", () => {
 const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
-const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
+const addCardWithPopupForm = new PopupWithForm("Add-a-New-Card", (data) => {
   cardSection.addItem(
     createCard({
       name: data.title,
