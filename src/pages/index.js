@@ -212,11 +212,6 @@ avatarEditButton.addEventListener("click", () => {
   handleAvatarModal.setEventListeners();
 });
 
-const popupWithForm = new PopupWithForm(handleFormSubmit.bind(this));
-popupWithForm.setEventListeners();
-
-const renderModalFormLoading = new PopupWithForm((data) => {});
-
 function handleFormSubmit(inputValues) {
   return userInfo(inputValues)
     .then((response) => {
