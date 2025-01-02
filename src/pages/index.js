@@ -50,16 +50,19 @@ const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("Add-a-New-Card", (data) => {
-  cardSection.addItem(
-    createCard({
+  api
+    .createNewCard({
       name: data.title,
       link: data.url,
     })
-  );
-  addCardWithPopupForm.close();
-  addCardForm.reset();
-  formValidators["Add-a-New-Card"].disableButton();
-});
+    .then((newCard) => {
+      cardSection.addItem(createCard({ newCard }));
+      addCardWithPopupForm.close();
+      addCardForm.reset();
+      formValidators["Add-a-New-Card"].disableButton();
+    });
+}).catch((err) => console.error(err));
+
 addCardWithPopupForm.setEventListeners();
 
 const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
