@@ -178,62 +178,6 @@ const api = new Api({
   },
 });
 
-// Api class functions are called here:
-
-api
-  .getInitialCards()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
-  .getUserInfo()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
-  .updateUserInfo()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
-  .createNewCard()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
-  .editProfile()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
-  .editAvatar()
-  .then((cards) => {
-    console.log(cards.length);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
 function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
     ([cards, userData]) => {

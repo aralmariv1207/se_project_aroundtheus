@@ -69,6 +69,25 @@ export default class Api {
     });
   }
 
+  handleDeleteCard(name, link) {
+    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+      method: "POST",
+      headers: {
+        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        link: link,
+      }),
+    }).then((response) => {
+      if (!response.ok) {
+        return Promise.reject(`Error: ${response.status}`);
+      }
+      return response.json();
+    });
+  }
+
   editProfile(name, about) {
     return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
       method: "PATCH",
@@ -96,14 +115,15 @@ export default class Api {
           Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
           "Content-Type": "application/json",
         },
-body: JSON.stringify({
-  avatar: avatar,
-}),
-      }).then((response) => {
-        if (!response.ok) {
-          return Promise.reject(`Error: ${response.status}`);
-        }
-        return response.json();
-      });
+        body: JSON.stringify({
+          avatar: avatar,
+        }),
+      }
+    ).then((response) => {
+      if (!response.ok) {
+        return Promise.reject(`Error: ${response.status}`);
+      }
+      return response.json();
+    });
   }
 }
