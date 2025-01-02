@@ -49,7 +49,7 @@ profileEditButton.addEventListener("click", () => {
 const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
-const addCardWithPopupForm = new PopupWithForm("Add-a-New-Card", (data) => {
+const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
   api
     .createNewCard({
       name: data.title,
@@ -60,8 +60,9 @@ const addCardWithPopupForm = new PopupWithForm("Add-a-New-Card", (data) => {
       addCardWithPopupForm.close();
       addCardForm.reset();
       formValidators["Add-a-New-Card"].disableButton();
-    });
-}).catch((err) => console.error(err));
+    })
+    .catch((err) => console.error(err));
+});
 
 addCardWithPopupForm.setEventListeners();
 
