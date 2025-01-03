@@ -51,8 +51,8 @@ editProfilePopup.setEventListeners();
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
   editProfilePopup.setInputValues({
-    title: currentUserData.name,
-    description: currentUserData.job,
+    title: currentUserData.title,
+    description: currentUserData.description,
   });
   editProfilePopup.open();
 });
@@ -84,7 +84,7 @@ const userInfo = new UserInfo({
 });
 
 function handleImageClick(data) {
-  handlePopupWithImage.open({ name: data.name, link: data.link });
+  handlePopupWithImage.open({ name: data.title, link: data.link });
 }
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
@@ -205,8 +205,8 @@ function renderCardsAfterUserInfo() {
     ([cards, userData]) => {
       cardSection.renderItems(cards);
       userInfo.setUserInfo({
-        name: userData.name,
-        job: userData.about,
+        name: userData.title,
+        job: userData.description,
       });
       userInfo.setUserAvatar({
         avatar: userData.avatar,
