@@ -195,7 +195,7 @@ function handleLikeCard(card, cardId, isLiked) {
   api
     .updateLikeStatus(cardId, isLiked)
     .then((updatedCard) => {
-      card.setIsLiked(!card._setIsLiked);
+      card.setIsLiked(updatedCard.isLiked);
     })
     .catch((err) => console.error(err));
 }
