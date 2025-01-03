@@ -57,8 +57,7 @@ const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
-  api
-    .createNewCard({
+  api.createNewCard({
       name: data.title,
       link: data.url,
     })
@@ -91,8 +90,7 @@ deletePopup.setEventListeners();
 
 function handleConfirmModal(userInfo) {
   deletePopup.setSubmitFunction(() => {
-    api
-      .handleDeleteCard(userInfo._id)
+    api.handleDeleteCard(userInfo._id)
       .then(() => {
         userInfo.element.remove();
       })
