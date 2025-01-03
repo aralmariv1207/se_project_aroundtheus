@@ -111,6 +111,8 @@ function createCard(data) {
 
 const profileEditModal = document.querySelector("#profile-edit-modal");
 
+
+
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageElement = previewImageModal.querySelector(
   ".modal__preview-image"
