@@ -1,11 +1,12 @@
 export default class Card {
-  constructor({ name, link, id }, cardSelector, handleImageClick, handleConfirmModal) {
+  constructor({ name, link, id }, cardSelector, handleImageClick, handleConfirmModal, handleCardLike) {
     this._name = name;
     this._link = link;
     this._id = id;
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
     this._handleConfirmModal = handleConfirmModal;
+    this._handleCardLike = handleCardLike;
   
     this._element =
     this._getTemplate();

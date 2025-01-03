@@ -110,8 +110,7 @@ function createCard(data) {
     data,
     "#card-template",
     handleImageClick,
-    handleConfirmModal
-  );
+    handleConfirmModal, handleCardLike);
   return card.getView();
 }
 
@@ -189,12 +188,12 @@ const api = new Api({
     "Content-Type": "application/json",
   },
 });
-api
-  .updateLikeStatus(userInfo, true)
-  .then((data) => {
-    console.log("Like status updated", data);
-  })
-  .catch((err) => console.error(err));
+
+function handleLikeCard(card, cardId, isLiked) {
+  api.updateLikeStatus(cardId, isLiked).then((updatedCard) => {
+    handleLikeCard(yourCardObject, yourCardId, true)
+  });
+}
 
 function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
