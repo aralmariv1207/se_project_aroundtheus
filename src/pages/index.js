@@ -31,7 +31,7 @@ const profileEditButton = document.querySelector("#profile-edit-button");
 const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
   editProfilePopup.renderModalFormLoading(true);
   api
-    .editProfile(data.name, data.about)
+    .editProfile(data.title, data.description)
     .then((updatedUserInfo) => {
       userInfo.setUserInfo(updatedUserInfo);
       editProfilePopup.close();
@@ -62,12 +62,9 @@ addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
   api
-    .createNewCard({
-      name: data.title,
-      link: data.url,
-    })
+    .createNewCard(data.title, data.url)
     .then((newCard) => {
-      cardSection.addItem(createCard({ newCard }));
+      cardSection.addItem(createCard(newCard));
       addCardWithPopupForm.close();
       addCardForm.reset();
       formValidators["Add-a-New-Card"].disableButton();
@@ -223,10 +220,10 @@ renderCardsAfterUserInfo();
 const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
   api
     .editAvatar({
-      avatar: data.avatarUrl,
+      avatar: data.avatar,
     })
     .then((updatedAvatarInfo) => {
-      userInfo.setAvatar(updatedAvatarInfo);
+      userInfo.setUserAvatar(updatedAvatarInfo);
       handleAvatarModal.close();
     })
     .catch((err) => console.error(err));
