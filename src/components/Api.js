@@ -109,7 +109,7 @@ export default class Api {
       return response.json();
     });
   }
-  editAvatar(avatar) {
+  editAvatar({ avatar }) {
     return fetch(
       "https://around-api.en.tripleten-services.com/v1/users/me/avatar",
       {
