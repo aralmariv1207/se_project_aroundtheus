@@ -28,10 +28,17 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const handlePopupWithForm = new PopupWithForm(
-  "#profile-edit-modal",
-  handleFormSubmit
-);
+const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
+  api.editProfile({
+  name: data.name,
+  about: data.about,
+  })
+  .then((updatedUserInfo) => { userInfo.setUserInfo(updatedUserInfo);
+  handlePopupWithForm.close();
+  })
+  .catch((err) => console.error(err));
+  });
+  
 
 handlePopupWithForm.close();
 
@@ -201,7 +208,15 @@ function renderCardsAfterUserInfo() {
 
 renderCardsAfterUserInfo();
 
-const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {});
+const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
+    api.editAvatar({
+    avatar: data.avatarUrl,
+    
+    }).then((updatedAvatarInfo) => { userInfo.setAvatar(updatedAvatarInfo);
+    handleAvatarModal.close();
+    })
+    .catch((err) => console.error(err));
+});
 
 const avatarEditButton = document.querySelector(".avatar__edit-icon");
 avatarEditButton.addEventListener("click", () => {
