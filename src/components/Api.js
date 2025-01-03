@@ -126,4 +126,18 @@ export default class Api {
       return response.json();
     });
   }
+
+  updateLikeStatus(cardId, isLiked) {
+    return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
+      method: isLiked ? "PUT" : "DELETE",
+      headers: this.headers,
+    }).then((response) => this._handleResponse(response));
+  }
+
+  _handleResponse(response) {
+    if (!response.ok) {
+      return Promise.reject(`Error: ${response.status}`);
+    }
+    return response.json();
+  }
 }
