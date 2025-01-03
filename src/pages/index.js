@@ -64,6 +64,7 @@ const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
+  addCardWithPopupForm.renderModalFormLoading(true);
   api
     .createNewCard(data.title, data.url)
     .then((newCard) => {
@@ -221,6 +222,7 @@ function renderCardsAfterUserInfo() {
 renderCardsAfterUserInfo();
 
 const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
+  handleAvatarModal.renderModalFormLoading(true);
   api
     .editAvatar({
       avatar: data.avatar,
