@@ -29,16 +29,17 @@ const cardSection = new Section(
 const profileEditButton = document.querySelector("#profile-edit-button");
 
 const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
-  api.editProfile({
-  name: data.name,
-  about: data.about,
-  })
-  .then((updatedUserInfo) => { userInfo.setUserInfo(updatedUserInfo);
-  handlePopupWithForm.close();
-  })
-  .catch((err) => console.error(err));
-  });
-  
+  api
+    .editProfile({
+      name: data.name,
+      about: data.about,
+    })
+    .then((updatedUserInfo) => {
+      userInfo.setUserInfo(updatedUserInfo);
+      handlePopupWithForm.close();
+    })
+    .catch((err) => console.error(err));
+});
 
 handlePopupWithForm.close();
 
@@ -57,7 +58,8 @@ const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
-  api.createNewCard({
+  api
+    .createNewCard({
       name: data.title,
       link: data.url,
     })
@@ -90,7 +92,8 @@ deletePopup.setEventListeners();
 
 function handleConfirmModal(userInfo) {
   deletePopup.setSubmitFunction(() => {
-    api.handleDeleteCard(userInfo._id)
+    api
+      .handleDeleteCard(userInfo._id)
       .then(() => {
         userInfo.element.remove();
       })
@@ -115,8 +118,6 @@ function createCard(data) {
 // Attach event listeners, handle initialization, etc.
 
 const profileEditModal = document.querySelector("#profile-edit-modal");
-
-
 
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageElement = previewImageModal.querySelector(
@@ -188,6 +189,12 @@ const api = new Api({
     "Content-Type": "application/json",
   },
 });
+api
+  .updateLikeStatus(userInfo, true)
+  .then((data) => {
+    console.log("Like status updated", data);
+  })
+  .catch((err) => console.error(err));
 
 function renderCardsAfterUserInfo() {
   return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
@@ -207,11 +214,13 @@ function renderCardsAfterUserInfo() {
 renderCardsAfterUserInfo();
 
 const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
-    api.editAvatar({
-    avatar: data.avatarUrl,
-    
-    }).then((updatedAvatarInfo) => { userInfo.setAvatar(updatedAvatarInfo);
-    handleAvatarModal.close();
+  api
+    .editAvatar({
+      avatar: data.avatarUrl,
+    })
+    .then((updatedAvatarInfo) => {
+      userInfo.setAvatar(updatedAvatarInfo);
+      handleAvatarModal.close();
     })
     .catch((err) => console.error(err));
 });
