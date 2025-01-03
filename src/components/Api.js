@@ -73,13 +73,16 @@ export default class Api {
   }
 
   handleDeleteCard(cardId) {
-    return fetch("https://around-api.en.tripleten-services.com/v1/cards", cardId {
-      method: "DELETE",
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
+    return fetch(
+      "https://around-api.en.tripleten-services.com/v1/cards/${cardId}",
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => {
       if (!response.ok) {
         return Promise.reject(`Error: ${response.status}`);
       }
