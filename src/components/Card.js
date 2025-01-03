@@ -79,4 +79,8 @@ export default class Card {
     this.renderLike();
     return this._element;
   }
+
+  removeCard() {
+    this._element.remove();
+  }
 }

@@ -94,14 +94,16 @@ function handleImageClick(data) {
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
 deletePopup.setEventListeners();
 
-function handleConfirmModal(userInfo) {
+function handleConfirmModal(card) {
   deletePopup.setSubmitFunction(() => {
+    deletePopup.renderModalFormLoading(true);
     api
-      .handleDeleteCard(userInfo._id)
+      .handleDeleteCard(card._id)
       .then(() => {
-        userInfo.element.remove();
+        card.removeCard();
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(() => deletePopup.renderModalFormLoading(false));
   });
   deletePopup.open();
 }
