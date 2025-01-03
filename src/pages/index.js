@@ -28,15 +28,23 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {})
-  .then((updatedUserInfo) => {
-    userInfo.setUserInfo(updatedUserInfo);
-    editProfilePopup.close();
-  })
-  .catch((err) => console.error(err))
-  .finally(() => editProfilePopup(false));
+const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
+  editProfilePopup.renderModalFormLoading(true);
+  api
+    .editProfile(data.name, data.about)
+    .then((updatedUserInfo) => {
+      userInfo.setUserInfo(updatedUserInfo);
+      editProfilePopup.close();
+    })
+    .catch((err) => console.error(err))
+    .finally(() => editProfilePopup.renderModalFormLoading(false));
+});
 
-editProfilePopup.close();
+profileEditButton.addEventListener("click", () => {
+  const currentUserData = userInfo.getUserInfo();
+  editProfilePopup.setInputValues({ currentUserData });
+  editProfilePopup.open();
+});
 
 editProfilePopup.setEventListeners();
 
