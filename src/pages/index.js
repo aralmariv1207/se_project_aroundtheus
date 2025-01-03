@@ -28,30 +28,25 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
-  api
-    .editProfile({
-      name: data.name,
-      about: data.about,
-    })
-    .then((updatedUserInfo) => {
-      userInfo.setUserInfo(updatedUserInfo);
-      handlePopupWithForm.close();
-    })
-    .catch((err) => console.error(err));
-});
+const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {})
+  .then((updatedUserInfo) => {
+    userInfo.setUserInfo(updatedUserInfo);
+    editProfilePopup.close();
+  })
+  .catch((err) => console.error(err))
+  .finally(() => editProfilePopup(false));
 
-handlePopupWithForm.close();
+editProfilePopup.close();
 
-handlePopupWithForm.setEventListeners();
+editProfilePopup.setEventListeners();
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
-  handlePopupWithForm.setInputValues({
+  editProfilePopup.setInputValues({
     title: currentUserData.name,
     description: currentUserData.job,
   });
-  handlePopupWithForm.open();
+  editProfilePopup.open();
 });
 
 const addCardForm = document.forms["Add-a-New-Card"];
