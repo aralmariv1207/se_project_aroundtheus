@@ -1,5 +1,8 @@
 export default class Api {
-  constructor(options) {}
+  constructor(options) {
+    this.baseUrl = options.baseUrl;
+    this.headers = options.headers;
+  }
   getInitialCards() {
     console.log("Fetching initial cards");
     return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
