@@ -33,7 +33,10 @@ const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
   api
     .editProfile(data.title, data.description)
     .then((updatedUserInfo) => {
-      userInfo.setUserInfo(updatedUserInfo);
+      userInfo.setUserInfo({
+        name: updatedUserInfo.name,
+        job: updatedUserInfo.about,
+      });
       editProfilePopup.close();
     })
     .catch((err) => console.error(err))
@@ -51,8 +54,8 @@ editProfilePopup.setEventListeners();
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
   editProfilePopup.setInputValues({
-    title: currentUserData.title,
-    description: currentUserData.description,
+    title: currentUserData.name,
+    description: currentUserData.job,
   });
   editProfilePopup.open();
 });
@@ -205,8 +208,8 @@ function renderCardsAfterUserInfo() {
     ([cards, userData]) => {
       cardSection.renderItems(cards);
       userInfo.setUserInfo({
-        name: userData.title,
-        job: userData.description,
+        name: userData.name,
+        job: userData.about,
       });
       userInfo.setUserAvatar({
         avatar: userData.avatar,
