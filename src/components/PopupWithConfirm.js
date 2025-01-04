@@ -17,4 +17,13 @@ export default class PopupWithConfirm extends Popup {
       this._submitFunction();
     });
   }
+
+  renderModalFormLoading(isLoading) {
+    const submitButton = this._form.querySelector(".modal__button");
+    if (isLoading) {
+      submitButton.textContent = "Saving...";
+    } else {
+      submitButton.textContent = "Save";
+    }
+  }
 }
