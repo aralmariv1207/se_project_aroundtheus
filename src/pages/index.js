@@ -235,7 +235,8 @@ const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
       userInfo.setUserAvatar(updatedAvatarInfo);
       handleAvatarModal.close();
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err))
+    .finally(() => handleAvatarModal.renderModalFormLoading(false));
 });
 
 const avatarEditButton = document.querySelector(".avatar__edit-icon");
