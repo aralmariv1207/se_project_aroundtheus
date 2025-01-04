@@ -73,7 +73,8 @@ const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
       addCardForm.reset();
       formValidators["Add-a-New-Card"].disableButton();
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err))
+    .finally(() => addCardWithPopupForm.renderModalFormLoading(false));
 });
 
 addCardWithPopupForm.setEventListeners();
