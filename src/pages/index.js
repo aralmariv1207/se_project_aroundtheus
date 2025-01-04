@@ -101,6 +101,7 @@ function handleConfirmModal(card) {
       .handleDeleteCard(card._id)
       .then(() => {
         card.removeCard();
+        deletePopup.close();
       })
       .catch((err) => console.error(err))
       .finally(() => deletePopup.renderModalFormLoading(false));
