@@ -5,7 +5,7 @@ export default class Api {
   }
   getInitialCards() {
     console.log("Fetching initial cards");
-    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+    return fetch(`${this.baseUrl}/cards`, {
       headers: {
         Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
       },
@@ -26,7 +26,7 @@ export default class Api {
       });
   }
   getUserInfo() {
-    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+    return fetch(`${this.baseUrl}/users/me`, {
       headers: {
         authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export default class Api {
   }
 
   updateUserInfo(name, about, avatar) {
-    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+    return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
         Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
@@ -54,7 +54,7 @@ export default class Api {
   }
 
   createNewCard(name, link) {
-    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+    return fetch(`${this.baseUrl}/cards`, {
       method: "POST",
       headers: {
         Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
@@ -73,16 +73,13 @@ export default class Api {
   }
 
   handleDeleteCard(cardId) {
-    return fetch(
-      `https://around-api.en.tripleten-services.com/v1/cards/${cardId}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((response) => {
+    return fetch(`${this.baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
       if (!response.ok) {
         return Promise.reject(`Error: ${response.status}`);
       }
@@ -91,7 +88,7 @@ export default class Api {
   }
 
   editProfile(name, about) {
-    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+    return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
         Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
@@ -110,7 +107,7 @@ export default class Api {
   }
   editAvatar({ avatar }) {
     return fetch(
-      "https://around-api.en.tripleten-services.com/v1/users/me/avatar",
+     `${this.baseUrl}/users/me/avatar`,
       {
         method: "PATCH",
         headers: {
