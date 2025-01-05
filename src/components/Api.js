@@ -6,9 +6,7 @@ export default class Api {
   getInitialCards() {
     console.log("Fetching initial cards");
     return fetch(`${this.baseUrl}/cards`, {
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-      },
+      headers: this.headers,
     })
       .then((res) => {
         if (res.ok) {
@@ -27,10 +25,7 @@ export default class Api {
   }
   getUserInfo() {
     return fetch(`${this.baseUrl}/users/me`, {
-      headers: {
-        authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
     })
       .then((response) => response.json())
       .catch((error) => console.error("Error:", error));
@@ -39,10 +34,7 @@ export default class Api {
   updateUserInfo(name, about, avatar) {
     return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({
         name: name,
         about: about,
@@ -56,10 +48,7 @@ export default class Api {
   createNewCard(name, link) {
     return fetch(`${this.baseUrl}/cards`, {
       method: "POST",
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({
         name: name,
         link: link,
@@ -75,10 +64,7 @@ export default class Api {
   handleDeleteCard(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}`, {
       method: "DELETE",
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
     }).then((response) => {
       if (!response.ok) {
         return Promise.reject(`Error: ${response.status}`);
@@ -90,10 +76,7 @@ export default class Api {
   editProfile(name, about) {
     return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
-      headers: {
-        Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({
         name: name,
         about: about,
@@ -106,19 +89,13 @@ export default class Api {
     });
   }
   editAvatar({ avatar }) {
-    return fetch(
-     `${this.baseUrl}/users/me/avatar`,
-      {
-        method: "PATCH",
-        headers: {
-          Authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          avatar: avatar,
-        }),
-      }
-    ).then((response) => {
+    return fetch(`${this.baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({
+        avatar: avatar,
+      }),
+    }).then((response) => {
       if (!response.ok) {
         return Promise.reject(`Error: ${response.status}`);
       }
