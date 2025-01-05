@@ -89,7 +89,7 @@ const userInfo = new UserInfo({
 });
 
 function handleImageClick(data) {
-  handlePopupWithImage.open({ name: data.title, link: data.link });
+  handlePopupWithImage.open({ name: data.name, link: data.link });
 }
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
@@ -234,6 +234,7 @@ const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
     .then((updatedAvatarInfo) => {
       userInfo.setUserAvatar(updatedAvatarInfo);
       handleAvatarModal.close();
+      formValidators["avatar-modal"].disableButton();
     })
     .catch((err) => console.error(err))
     .finally(() => handleAvatarModal.renderModalFormLoading(false));
