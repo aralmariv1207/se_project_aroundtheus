@@ -154,6 +154,7 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
+formValidators["avatar-modal"].disableButton();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
