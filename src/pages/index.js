@@ -148,13 +148,13 @@ const enableValidation = (config) => {
     const formName = formElement.getAttribute("name");
 
     // Here you store the validator using the `name` of the form
-    formValidators[formName] = validator;
-    validator.enableValidation();
+    // formValidators[formName] = validator;
+    // validator.enableValidation();
   });
 };
 
 enableValidation(config);
-formValidators["avatar-modal"].disableButton();
+formValidators["avatar-form"].disableButton();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
