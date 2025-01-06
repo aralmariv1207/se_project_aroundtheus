@@ -36,19 +36,12 @@ export default class PopupWithForm extends Popup {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-    
-
       this._handleFormSubmit(this._getInputValues());
     });
   }
 
   getForm() {
     return this._form;
-  }
-
-  handleAvatarModal() {
-    this._handleAvatarModal;
-    this._form.addEventListener.open();
   }
 
   renderModalFormLoading(isLoading) {
