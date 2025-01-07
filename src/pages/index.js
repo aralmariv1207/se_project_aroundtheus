@@ -73,8 +73,8 @@ const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
 
 addCardWithPopupForm.setEventListeners();
 
-const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
-handlePopupWithImage.setEventListeners();
+const popupWithImage = new PopupWithImage("#image-preview-modal");
+popupWithImage.setEventListeners();
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
@@ -83,7 +83,7 @@ const userInfo = new UserInfo({
 });
 
 function handleImageClick(data) {
-  handlePopupWithImage.open({ name: data.name, link: data.link });
+  popupWithImage.open({ name: data.name, link: data.link });
 }
 
 const deletePopup = new PopupWithConfirm("#remove-card-popup");
@@ -220,38 +220,23 @@ function renderCardsAfterUserInfo() {
 
 renderCardsAfterUserInfo();
 
-const handleAvatarModal = new PopupWithForm("#avatar-modal", (data) => {
-  handleAvatarModal.renderModalFormLoading(true);
+const avatarModal = new PopupWithForm("#avatar-modal", (data) => {
+  avatarModal.renderModalFormLoading(true);
   api
     .editAvatar({
       avatar: data.avatar,
     })
     .then((updatedAvatarInfo) => {
       userInfo.setUserAvatar(updatedAvatarInfo);
-      handleAvatarModal.close();
+      avatarModal.close();
       formValidators["avatar-modal"].disableButton();
     })
     .catch((err) => console.error(err))
-    .finally(() => handleAvatarModal.renderModalFormLoading(false));
+    .finally(() => avatarModal.renderModalFormLoading(false));
 });
 
 const avatarEditButton = document.querySelector(".avatar__edit-icon");
 avatarEditButton.addEventListener("click", () => {
-  handleAvatarModal.open();
-  handleAvatarModal.setEventListeners();
+  avatarModal.open();
 });
-
-function handleFormSubmit(inputValues) {
-  return userInfo(inputValues)
-    .then((response) => {
-      console.log("Form submission successful");
-      this.close();
-      return response;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    })
-    .finally(() => {
-      this.renderModalFormLoading(false);
-    });
-}
+avatarModal.setEventListeners();

@@ -21,9 +21,9 @@ export default class PopupWithConfirm extends Popup {
   renderModalFormLoading(isLoading) {
     const submitButton = this._form.querySelector(".modal__button");
     if (isLoading) {
-      submitButton.textContent = "Saving...";
+      submitButton.textContent = "Deleting...";
     } else {
-      submitButton.textContent = "Save";
+      submitButton.textContent = "Yes";
     }
   }
 }
