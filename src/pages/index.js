@@ -200,8 +200,7 @@ function handleLikeCard(card, cardId, isLiked) {
     .then((updatedCard) => {
       card.setIsLiked(updatedCard.isLiked);
     })
-    .catch((err) => console.error(err))
-    .finally(() => handleLikeCard.renderModalFormLoading(false));
+    .catch((err) => console.error(err));
 }
 
 function renderCardsAfterUserInfo() {
