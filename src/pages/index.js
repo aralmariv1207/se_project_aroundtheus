@@ -45,20 +45,14 @@ const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
-  editProfilePopup.setInputValues({ currentUserData });
-  editProfilePopup.open();
-});
-
-editProfilePopup.setEventListeners();
-
-profileEditButton.addEventListener("click", () => {
-  const currentUserData = userInfo.getUserInfo();
   editProfilePopup.setInputValues({
     title: currentUserData.name,
     description: currentUserData.job,
   });
   editProfilePopup.open();
 });
+
+editProfilePopup.setEventListeners();
 
 const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
@@ -206,7 +200,8 @@ function handleLikeCard(card, cardId, isLiked) {
     .then((updatedCard) => {
       card.setIsLiked(updatedCard.isLiked);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err))
+    .finally(() => handleLikeCard.renderModalFormLoading(false));
 }
 
 function renderCardsAfterUserInfo() {
