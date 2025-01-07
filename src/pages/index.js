@@ -12,6 +12,9 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/utils.js";
 import { config } from "../utils/utils.js";
 
+import Api from "../components/Api.js";
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
+
 const cardSection = new Section(
   {
     items: initialCards,
@@ -25,61 +28,95 @@ const cardSection = new Section(
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 
-const handlePopupWithForm = new PopupWithForm("#profile-edit-modal", (data) => {
-  userInfo.setUserInfo({
-    name: data.title,
-    job: data.description,
-  });
-  handlePopupWithForm.close();
+const editProfilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
+  editProfilePopup.renderModalFormLoading(true);
+  api
+    .editProfile(data.title, data.description)
+    .then((updatedUserInfo) => {
+      userInfo.setUserInfo({
+        name: updatedUserInfo.name,
+        job: updatedUserInfo.about,
+      });
+      editProfilePopup.close();
+    })
+    .catch((err) => console.error(err))
+    .finally(() => editProfilePopup.renderModalFormLoading(false));
 });
-
-handlePopupWithForm.setEventListeners();
 
 profileEditButton.addEventListener("click", () => {
   const currentUserData = userInfo.getUserInfo();
-  handlePopupWithForm.setInputValues({
+  editProfilePopup.setInputValues({
     title: currentUserData.name,
     description: currentUserData.job,
   });
-  handlePopupWithForm.open();
+  editProfilePopup.open();
 });
+
+editProfilePopup.setEventListeners();
 
 const addCardForm = document.forms["Add-a-New-Card"];
 addCardForm.reset();
 
 const addCardWithPopupForm = new PopupWithForm("#add-card-modal", (data) => {
-  cardSection.addItem(
-    createCard({
-      name: data.title,
-      link: data.url,
+  addCardWithPopupForm.renderModalFormLoading(true);
+  api
+    .createNewCard(data.title, data.url)
+    .then((newCard) => {
+      cardSection.addItem(createCard(newCard));
+      addCardWithPopupForm.close();
+      addCardForm.reset();
+      formValidators["Add-a-New-Card"].disableButton();
     })
-  );
-  addCardWithPopupForm.close();
-  addCardForm.reset();
-  formValidators["Add-a-New-Card"].disableButton();
+    .catch((err) => console.error(err))
+    .finally(() => addCardWithPopupForm.renderModalFormLoading(false));
 });
+
 addCardWithPopupForm.setEventListeners();
 
-const handlePopupWithImage = new PopupWithImage("#image-preview-modal");
-handlePopupWithImage.setEventListeners();
+const popupWithImage = new PopupWithImage("#image-preview-modal");
+popupWithImage.setEventListeners();
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
+  avatarSelector: ".profile__image",
 });
 
 function handleImageClick(data) {
-  handlePopupWithImage.open({ name: data.name, link: data.link });
+  popupWithImage.open({ name: data.name, link: data.link });
+}
+
+const deletePopup = new PopupWithConfirm("#remove-card-popup");
+deletePopup.setEventListeners();
+
+function handleConfirmModal(card) {
+  deletePopup.setSubmitFunction(() => {
+    deletePopup.renderModalFormLoading(true);
+    api
+      .handleDeleteCard(card._id)
+      .then(() => {
+        card.removeCard();
+        deletePopup.close();
+      })
+      .catch((err) => console.error(err))
+      .finally(() => deletePopup.renderModalFormLoading(false));
+  });
+  deletePopup.open();
 }
 
 const cardSelector = "#card-template";
 
 function createCard(data) {
-  const card = new Card(data, "#card-template", handleImageClick);
+  console.log(data);
+  const card = new Card(
+    data,
+    "#card-template",
+    handleImageClick,
+    handleConfirmModal,
+    handleLikeCard
+  );
   return card.getView();
 }
-
-cardSection.renderItems();
 
 // Attach event listeners, handle initialization, etc.
 
@@ -111,6 +148,7 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
+formValidators["avatar-form"].disableButton();
 
 // or you can use a string – the name of the form (you know it from `index.html`)
 
@@ -118,7 +156,10 @@ enableValidation(config);
 const cardsWrap = document.querySelector(".cards__list");
 
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardFormElement = addCardModal.querySelector(".modal__form");
+const addCardFormElement = addCardModal.querySelector(
+  ".modal__form",
+  ".modal__input"
+);
 
 // Buttons and other DOM Nodes //
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
@@ -144,3 +185,58 @@ const cardUrlInput = addCardFormElement.querySelector("#add-url");
 // Adding a New Card //
 
 addNewCardButton.addEventListener("click", () => addCardWithPopupForm.open());
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "89dc4b2f-fab0-42f3-ad8c-2593f7f5189c",
+    "Content-Type": "application/json",
+  },
+});
+
+function handleLikeCard(card, cardId, isLiked) {
+  api
+    .updateLikeStatus(cardId, isLiked)
+    .then((updatedCard) => {
+      card.setIsLiked(updatedCard.isLiked);
+    })
+    .catch((err) => console.error(err));
+}
+
+function renderCardsAfterUserInfo() {
+  return Promise.all([api.getInitialCards(), api.getUserInfo()]).then(
+    ([cards, userData]) => {
+      cardSection.renderItems(cards);
+      userInfo.setUserInfo({
+        name: userData.name,
+        job: userData.about,
+      });
+      userInfo.setUserAvatar({
+        avatar: userData.avatar,
+      });
+    }
+  );
+}
+
+renderCardsAfterUserInfo();
+
+const avatarModal = new PopupWithForm("#avatar-modal", (data) => {
+  avatarModal.renderModalFormLoading(true);
+  api
+    .editAvatar({
+      avatar: data.avatar,
+    })
+    .then((updatedAvatarInfo) => {
+      userInfo.setUserAvatar(updatedAvatarInfo);
+      avatarModal.close();
+      formValidators["avatar-modal"].disableButton();
+    })
+    .catch((err) => console.error(err))
+    .finally(() => avatarModal.renderModalFormLoading(false));
+});
+
+const avatarEditButton = document.querySelector(".avatar__edit-icon");
+avatarEditButton.addEventListener("click", () => {
+  avatarModal.open();
+});
+avatarModal.setEventListeners();

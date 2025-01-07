@@ -76,3 +76,20 @@ Based on Sprint 9, enhacing this project will entail learning more advanced conc
 
 [Link to project on GH Pages](https://aralmariv1207.github.io/se_project_aroundtheus/)
 
+# [UPDATE] Project 9: Around the U.S. (cont.)
+
+**Overview**
+
+Project 9's focus of the "Around the U.S." series has been introducing students to more topics and skills within Advanced JavaScript like APIs.
+
+As we learned both technologies, we were introduced to advanced concepts like Asynchronous Programming, for example. 
+
+More specifically, we learned that when Asynchronous Programming is applied to JavaScript it is known as Asynchronous JavaScript.
+
+**Project Features**
+
+-Advanced JavaScript
+-Application Programming Interfaces (APIs)
+-Asynchronous Programming
+
+[Link to project on GH Pages](https://github.com/aralmariv1207/se_project_aroundtheus/pull/1)
